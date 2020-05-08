@@ -288,7 +288,7 @@
                                     <span class="filter_child_item pl-4">
                                         <input class="form-check-input" type="checkbox" value="" id="tingkat2">
                                         <label class="form-check-label" for="tingkat2">
-                                            Pemula
+                                            TEST
                                         </label>
                                     </span>
                                     <span class="filter_child_item pl-4">
