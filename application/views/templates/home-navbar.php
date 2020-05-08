@@ -110,7 +110,7 @@
                             </div>
                         </li>
                         <li class="nav-item mr-4" id="header-prakerja">
-                            <a class="nav-link text-uppercase" href="<?php echo base_url('home'); ?>">Kartu Prakerja</a>
+                            <a class="nav-link text-uppercase" href="<?php echo base_url('home/kartu_prakerja'); ?>">Kartu Prakerja</a>
                         </li>
                         <li class="nav-item mr-4" id="header-articles">
                             <a class="nav-link text-uppercase" href="<?php echo base_url('home'); ?>">Artikel</a>

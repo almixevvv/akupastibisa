@@ -63,6 +63,14 @@ class Home extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    public function kartu_prakerja()
+    {
+        $this->load->view('templates/header');
+        $this->load->view('templates/home-navbar');
+        $this->load->view('pages/kartu_prakerja');
+        $this->load->view('templates/footer');
+    }
+
     /* Footer Section */
     public function faq()
     {
