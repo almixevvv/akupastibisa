@@ -178,99 +178,84 @@
 
 
 
-<section class="trainer_area section_gap_top" style="font-size: 14px;">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <div class="main_title">
-                    <h2 class="mb-3">List Instruktur</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center d-flex align-items-center">
-            <?php foreach ($topTrainer->result() as $trainer) { ?>
-                <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
-                    <div class="thumb d-flex justify-content-sm-center">
-                        <img class="img-fluid trainer_image" src="<?php echo base_url($trainer->TRAINER_IMAGE); ?>" alt="<?php echo $trainer->TRAINER_NAME; ?>" />
-                    </div>
-                    <div class="meta-text text-sm-center">
-                        <h4 class="text-capitalize"><?php echo $trainer->TRAINER_NAME; ?></h4>
-                        <p class="designation p-color text-capitalize"><?php echo $trainer->TRAINER_TITLE; ?></p>
-                        <div class="mb-4">
-                            <p class="p-color">
-                                <?php echo $trainer->TRAINER_BIO; ?>
-                            </p>
-                        </div>
+<section class="trainer_area section_gap_top" style="background-color:#e5e5e5;">
+    <div class="container" >
+        <div class="form-row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8" style="background-color:#fff; padding:50px; font-size: 90%; ">
+                <?php echo form_open_multipart('Instructor/addInstruktur') ?>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <h3>Form Pendaftaran Instruktur</h3>
                     </div>
                 </div>
-            <?php } ?>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Nama Lengkap*</label>
+                        <input type="text" name="instruktur_name" class="form-control" id="inputEmail4" placeholder="Nama Lengkap" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">No. Handphone*</label>
+                        <input type="text" name="instruktur_hp" class="form-control" id="inputPassword4" placeholder="No. Handphone">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email*</label>
+                        <input type="email" name="instruktur_email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                </div>
+                <hr/>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <h5 for="inputEmail4">Kelengkapan Dokumen</h5>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="exampleFormControlFile1">Curriculum Vitae*</label>
+                        <label style="font-size: 12px;">(Harap Upload File dalam Bentuk PDF atau PNG)</label>
+                        <input type="file" name="instruktur_cv" class="form-control-file" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Topik yang Ingin Diajukan</label>
+                        <input type="text" name="instruktur_topik" class="form-control" id="inputPassword4" placeholder="Judul Topik">
+                    </div>
+                </div>
+                <hr/>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <h5 for="inputEmail4">Akun Media Sosial</h5>
+                        <label style="font-size: 12px;" for="inputEmail4">Cantumkan Link Media Sosial Anda</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Youtube</label>
+                        <input type="text" name="instruktur_youtube" class="form-control" id="inputEmail4" placeholder="Link Akun Youtube">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Instagram</label>
+                        <input type="text" name="instruktur_instagram" class="form-control" id="inputPassword4" placeholder="Link Akun Instagram">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">LinkedIn</label>
+                        <input type="text" name="instruktur_linkedin" class="form-control" id="inputEmail4" placeholder="Link Akun LinkedIn">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Facebook</label>
+                        <input type="text" name="instruktur_facebook" class="form-control" id="inputPassword4" placeholder="Link Akun Facebook">
+                    </div>
+                </div>
+                <div class="g-recaptcha" data-sitekey="6Ld2qPIUAAAAACBW438Lt3L5DJJhSQoOCm4GkUli"></div>
+                <br>
+                <button type="submit" class="btn btn-primary">Daftar</button>
+                <?php echo form_close(); ?>
+            </div>
+            <div class="col-lg-2"></div>
         </div>
-        <?php echo form_open_multipart('Instructor/addInstruktur') ?>
-        <div class="row">
-            <h2>Informasi Pribadi</h2>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Nama Lengkap*</label>
-                <input type="text" name="instruktur_name" class="form-control" id="inputEmail4" placeholder="Nama Lengkap" required>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">No. Handphone</label>
-                <input type="text" name="instruktur_hp" class="form-control" id="inputPassword4" placeholder="No. Handphone">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" name="instruktur_email" class="form-control" id="inputEmail4" placeholder="Email">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <h3 for="inputEmail4">Kelengkapan Dokumen</h3>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="exampleFormControlFile1">Curriculum Vitae*</label>
-                <label style="font-size: 12px;">(Harap Upload File dalam Bentuk PDF atau PNG)</label>
-                <input type="file" name="instruktur_cv" class="form-control-file" required>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Topik yang Ingin Diajukan</label>
-                <input type="text" name="instruktur_topik" class="form-control" id="inputPassword4" placeholder="Judul Topik">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <h3 for="inputEmail4">Akun Media Sosial</h3>
-                <label style="font-size: 12px;" for="inputEmail4">Cantumkan Link Media Sosial Anda</label>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Youtube</label>
-                <input type="text" name="instruktur_youtube" class="form-control" id="inputEmail4" placeholder="Link Akun Youtube">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Instagram</label>
-                <input type="text" name="instruktur_instagram" class="form-control" id="inputPassword4" placeholder="Link Akun Instagram">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">LinkedIn</label>
-                <input type="text" name="instruktur_linkedin" class="form-control" id="inputEmail4" placeholder="Link Akun LinkedIn">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Facebook</label>
-                <input type="text" name="instruktur_facebook" class="form-control" id="inputPassword4" placeholder="Link Akun Facebook">
-            </div>
-        </div>
-        <div class="g-recaptcha" data-sitekey="6Ld2qPIUAAAAACBW438Lt3L5DJJhSQoOCm4GkUli"></div>
-        <br>
-        <button type="submit" class="btn btn-primary">Daftar</button>
-        <?php echo form_close(); ?>
     </div>
 </section>
 <section class="home_quotes">
