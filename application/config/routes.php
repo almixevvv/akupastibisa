@@ -19,6 +19,10 @@ $route['faq'] = "Home/faq";
 $route['privacy'] = "Home/privacy";
 $route['about-us'] = "Home/aboutUs";
 $route['contact'] = 'Contact';
+$route['pencari-kerja'] = 'home/pencari_kerja';
+$route['umkm'] = 'home/umkm';
+$route['ojek-online'] = 'home/ojek_online';
+$route['industri-pariwisata'] = 'home/industri_pariwisata';
 
 /* CMS Section */
 $route['cms'] = 'CMS/index';

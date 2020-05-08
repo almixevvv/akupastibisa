@@ -102,5 +102,45 @@ class Home extends CI_Controller
         $this->load->view('pages/footer/footer_pages', $data);
         $this->load->view('templates/footer');
     }
+
+    public function pencari_kerja()
+    {
+        $data['content'] = $this->footer->footerDetail('pencari-kerja');
+
+        $this->load->view('templates/header');
+        $this->load->view('templates/home-navbar');
+        $this->load->view('pages/footer/footer_pages', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function umkm()
+    {
+        $data['content'] = $this->footer->footerDetail('umkm');
+
+        $this->load->view('templates/header');
+        $this->load->view('templates/home-navbar');
+        $this->load->view('pages/footer/footer_pages', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function ojek_online()
+    {
+        $data['content'] = $this->footer->footerDetail('ojek-online');
+
+        $this->load->view('templates/header');
+        $this->load->view('templates/home-navbar');
+        $this->load->view('pages/footer/footer_pages', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function industri_pariwisata()
+    {
+        $data['content'] = $this->footer->footerDetail('industri-pariwisata');
+
+        $this->load->view('templates/header');
+        $this->load->view('templates/home-navbar');
+        $this->load->view('pages/footer/footer_pages', $data);
+        $this->load->view('templates/footer');
+    }
     /* END OF FOOTER SECTION */
 }
