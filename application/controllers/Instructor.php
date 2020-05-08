@@ -13,7 +13,7 @@ class Instructor extends CI_Controller
 	function index()
 	{
 		$data['topCourses'] = $this->courses->topCourse();
-		$data['topTrainer'] = $this->courses->topTrainer();
+		$data['topTrainer'] = $this->courses->topTrainer_all();
 
 		$this->load->view('templates/header');
 		$this->load->view('templates/home-navbar');
@@ -64,7 +64,7 @@ class Instructor extends CI_Controller
 
 		$defaultPath = '/assets/img/cv/' . $_FILES['instruktur_cv']['name'];
 		$ext = end((explode(".", $_FILES['instruktur_cv']['name'])));
-		echo $defaultPath;
+		// echo $defaultPath;
 
 
 		$config['upload_path']   = './assets/img/cv/';
