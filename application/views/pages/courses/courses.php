@@ -243,21 +243,6 @@
                                         </label>
                                     </span>
                                 </div>
-                                <!-- <div class="subcategory_filter mt-2 d-flex flex-column">
-                                    <span class="filter_child_header font-weight-bold mb-2 pt-1">Subkategori</span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="subtopic1">
-                                        <label class="form-check-label" for="subtopic1">
-                                            Manajemen
-                                        </label>
-                                    </span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="subtopic2">
-                                        <label class="form-check-label" for="subtopic2">
-                                            Sertifikasi
-                                        </label>
-                                    </span>
-                                </div> -->
                                 <div class="price_filter mt-2 d-flex flex-column">
                                     <span class="filter_child_header font-weight-bold mb-2 pt-1">Harga</span>
                                     <span class="filter_child_item pl-1">
@@ -288,7 +273,7 @@
                                     <span class="filter_child_item pl-4">
                                         <input class="form-check-input" type="checkbox" value="" id="tingkat2">
                                         <label class="form-check-label" for="tingkat2">
-                                            TEST
+                                            Pemula
                                         </label>
                                     </span>
                                     <span class="filter_child_item pl-4">
@@ -304,21 +289,6 @@
                                         </label>
                                     </span>
                                 </div>
-                                <!-- <div class="price_filter mt-2 d-flex flex-column">
-                                    <span class="filter_child_header font-weight-bold mb-2 pt-1">Harga</span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="price1">
-                                        <label class="form-check-label" for="tingkat1">
-                                            Berbayar
-                                        </label>
-                                    </span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="price2">
-                                        <label class="form-check-label" for="tingkat2">
-                                            Gratis
-                                        </label>
-                                    </span>
-                                </div> -->
                                 <div class="rating_filter mt-2 d-flex flex-column">
                                     <span class="filter_child_header font-weight-bold mb-2 pt-1">Rating</span>
                                     <span class="filter_child_item pl-4">

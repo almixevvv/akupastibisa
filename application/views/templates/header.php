@@ -17,6 +17,9 @@
 
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>" />
 
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/plugin/sweet-alert/sweetalert2.min.css'); ?>">
+    <script src="<?php echo base_url('assets/plugin/sweet-alert/sweetalert2.all.min.js'); ?>" type="text/javascript"></script>
+
     <style>
         * {
             /* background: #000 !important;
