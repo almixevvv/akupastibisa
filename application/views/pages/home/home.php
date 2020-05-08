@@ -35,6 +35,7 @@
         border-radius: 5px;
         object-fit: cover;
         height: 60vh;
+        min-height: 60vh;
         width: 500px;
     }
 
@@ -155,7 +156,7 @@
                             Dapatkan insentif Rp 2.550.000
                         </h2>
                         <div>
-                            <a href="<?php echo base_url('courses/list/prakerja')?>" class="primary-btn2 mb-3 mb-sm-0" style="color: #ffff;">Lihat Info</a>
+                            <a href="<?php echo base_url('courses/list/prakerja') ?>" class="primary-btn2 mb-3 mb-sm-0" style="color: #ffff;">Lihat Info</a>
                             <a href="#" class="primary-btn ml-sm-3 ml-0" style="color: #ffff;">Lihat Kategori</a>
                         </div>
                     </div>
@@ -348,10 +349,10 @@
                     <div class="thumb d-flex justify-content-sm-center">
                         <img class="img-fluid trainer_image" src="<?php echo base_url($trainer->TRAINER_IMAGE); ?>" alt="<?php echo $trainer->TRAINER_NAME; ?>" />
                     </div>
-                    <div class="meta-text text-sm-center">
+                    <div class="meta-text text-sm-center meta-text text-sm-center pl-0 pr-0">
                         <h4 class="text-capitalize"><?php echo $trainer->TRAINER_NAME; ?></h4>
                         <p class="designation p-color text-capitalize"><?php echo $trainer->TRAINER_TITLE; ?></p>
-                        <div class="mb-4">
+                        <div class="mb-4" style="min-height: 75px;">
                             <p class="p-color">
                                 <?php echo $trainer->TRAINER_BIO; ?>
                             </p>

@@ -145,6 +145,10 @@
             'sitekey': '6Ld2qPIUAAAAACBW438Lt3L5DJJhSQoOCm4GkUli',
         });
     }
+
+    var registerCaptcha = function(response) {
+        console.log('INI DARI CALLBACK ' + response);
+    };
 </script>
 
 <body>
@@ -213,7 +217,7 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="d-flex justify-content-center">
-                                                <div id="loginWidget" class="g-recaptcha" data-sitekey="6Ld2qPIUAAAAACBW438Lt3L5DJJhSQoOCm4GkUli"></div>
+                                                <div id="loginWidget" class="g-recaptcha" data-callback="loginCaptcha" data-sitekey="6Ld2qPIUAAAAACBW438Lt3L5DJJhSQoOCm4GkUli"></div>
                                             </div>
                                         </div>
                                         <div class="col-12 pt-3">
@@ -307,8 +311,7 @@
 
                                         <div class="col-12 mt-2 mb-4">
                                             <div class="d-flex justify-content-center">
-                                                <div id="registerWidget" class="g-recaptcha" data-sitekey="6Ld2qPIUAAAAACBW438Lt3L5DJJhSQoOCm4GkUli"></div>
-                                                <input type="hidden" class="hidden-recaptcha" name="rg_hiddenCaptcha" id="rg_hiddenCaptcha">
+                                                <div id="registerWidget" class="g-recaptcha" data-sitekey="6Ld2qPIUAAAAACBW438Lt3L5DJJhSQoOCm4GkUli" data-callback="registerCaptcha"></div>
                                             </div>
                                         </div>
 
@@ -356,8 +359,10 @@
             Swal.fire({
                 title: 'Login gagal',
                 text: "Google Captcha bermasalah. Mohon periksa kembali",
-                icon: 'error',
+                type: 'error',
                 timer: 4000,
+                showCloseButton: true,
+                showCancelButton: false
             });
         </script>
     <?php } ?>
@@ -367,8 +372,10 @@
             Swal.fire({
                 title: 'Login gagal',
                 text: "Email tidak terdaftar. Mohon periksa kembali",
-                icon: 'error',
+                type: 'error',
                 timer: 4000,
+                showCloseButton: true,
+                showCancelButton: false
             });
         </script>
     <?php } ?>
@@ -376,7 +383,7 @@
     <?php if ($this->session->userdata('error') == 'password') { ?>
         <script>
             Swal.fire({
-                icon: 'error',
+                type: 'error',
                 title: '<h4>Login gagal</h4>',
                 text: '<p>Password salah. Mohon periksa kembali</p>',
                 showCloseButton: true,
@@ -437,6 +444,8 @@
             console.log(registerWidget);
             var response = grecaptcha.getResponse(registerWidget);
             console.log(response);
+
+            console.log(grecaptcha);
 
             // if (response.length === 0) {
             //     e.preventDefault();
