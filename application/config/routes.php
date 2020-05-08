@@ -8,6 +8,7 @@ $route['home'] = 'home';
 $route['courses/list/:any'] = 'Courses/coursesList';
 $route['courses/list/prakerja'] = 'Courses/coursesList';
 $route['courses/:any/:any'] = 'Courses';
+$route['courses/search'] = 'Courses/searchCourses';
 $route['blog'] = 'home/blog';
 $route['blogdetail'] = 'home/blogdetail';
 $route['elements'] = 'home/elements';

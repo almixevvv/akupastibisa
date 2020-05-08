@@ -13,7 +13,6 @@ class Home extends CI_Controller
 
     public function index()
     {
-
         $data['topCourses'] = $this->courses->topCourse();
         $data['topTrainer'] = $this->courses->topTrainer();
 

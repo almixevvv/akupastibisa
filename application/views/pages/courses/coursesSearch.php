@@ -122,9 +122,6 @@
     }
 </style>
 
-
-<?php foreach ($courseDetail->result() as $detail); ?>
-
 <section class="banner_area">
     <div class="banner_inner d-flex align-items-center">
         <div class="overlay"></div>
@@ -132,11 +129,10 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="banner_content text-center">
-                        <h2><?php echo $detail->CATEGORY_NAME;
-                            ?></h2>
+                        <h2><?php echo ucwords($this->input->get('query')); ?></h2>
                         <div class="page_link">
                             <a href="<?php echo base_url(); ?>">Home</a>
-                            <a href="<?php echo base_url('courses/' . $detail->CATEGORY_URL); ?>"><?php echo $detail->CATEGORY_NAME; ?></a>
+                            <a href="<?php echo base_url('courses/serach?query=' . $this->input->get('query')); ?>"><?php echo ucwords($this->input->get('query')); ?></a>
                         </div>
                     </div>
                 </div>
@@ -157,68 +153,6 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <?php foreach ($topCourse->result() as $bestCourse) { ?>
-                                <div class="col-4">
-                                    <img class="img-fluid" src="<?php echo base_url($bestCourse->COURSE_IMAGE); ?> " alt="" />
-                                </div>
-                                <div class="col-8">
-                                    <div class="d-flex flex-column">
-                                        <span>
-                                            <h4 class="text-bold"><?php echo $bestCourse->COURSE_NAME; ?></h4>
-                                        </span>
-                                        <span>
-                                            <p>Terakhir diperharui Maret 2020</p>
-                                        </span>
-                                        <span>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">2 total jam &#8226; </li>
-                                                <li class="list-inline-item">14 pelajaran &#8226;</li>
-                                                <li class="list-inline-item">Semua Tingkat</li>
-                                                <li class="list-inline-item">
-                                                    <?php for ($i = 0; $i < $bestCourse->COURSE_AVERAGE_RATING; $i++) { ?>
-                                                        <span class="rating-star"></span>
-                                                    <?php } ?>
-                                                    <?php for ($j = $i; $j <= 5; $j++) { ?>
-                                                        <span class="rating-star-unmarked"></span>
-                                                    <?php } ?>
-                                                </li>
-                                                <li class="list-inline-item"><?php echo $bestCourse->COURSE_AVERAGE_RATING; ?> (<?php echo number_format($bestCourse->COURSE_RATING); ?> ratings)</li>
-                                            </ul>
-                                        </span>
-                                        <span>
-                                            <?php echo $bestCourse->COURSE_DESCRIPTION . ' | Oleh ' . $bestCourse->TRAINER_NAME; ?>
-                                        </span>
-                                        <span class="mt-3">
-                                            <a href="#" class="primary-btn2" style="color: #ffff;">Jelajahi Kursus</a>
-                                        </span>
-                                        <span class="d-flex flex-row-reverse">
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <span class="price-promo">
-                                                        <b>Rp. <?php echo number_format($bestCourse->COURSE_PRICE); ?></b>
-                                                    </span>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <span class="price-regular">
-                                                        <?php echo ($bestCourse->COURSE_DISCOUNT_PRICE != 0 ? '<del>Rp. ' . number_format($bestCourse->COURSE_DISCOUNT_PRICE) . '<del>' : ' '); ?>
-                                                    </span></li>
-                                            </ul>
-                                        </span>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- BEST COURSE SECTION -->
-
         <!-- MAIN SECTION -->
         <div class="row mt-4">
             <div class="col-3">
@@ -360,9 +294,9 @@
             </div>
             <div class="col-9">
 
-                <div class="row mb-3">
-                    <div class="col-12">
-                        <div class="sort_by_filter" id="filterDropdown" data-toggle="dropdown" aria-expanded="false">
+                <div class="row mb-3 sort_by_filter">
+                    <div class="col-10">
+                        <div id="filterDropdown" data-toggle="dropdown" aria-expanded="false">
                             <i class="ti-angle-down pr-2"></i>
                             Urutkan
                         </div>
@@ -372,15 +306,26 @@
                             <a class="dropdown-item" href="#">Terbaru</a>
                             <a class="dropdown-item" href="#">Harga Termurah</a>
                         </div>
-
+                    </div>
+                    <div class="col-2">
+                        <div class="d-flex justify-content-end">
+                            <?php echo $courseList->num_rows() . ' Kursus'; ?>
+                        </div>
                     </div>
                 </div>
 
                 <div class="row">
+                    <?php if ($courseList->num_rows() == 0) { ?>
+                        <div class="col-12 mt-4">
+                            <div class="d-flex justify-content-center">
+                                <h3>Kursus dengan kata kunci <?php echo $this->input->get('query'); ?> tidak ditemukan</h3>
+                            </div>
+                        </div>
+                    <?php } ?>
                     <?php foreach ($courseList->result() as $list) { ?>
                         <div class="custom_course_list">
                             <div class="card single_course_list">
-                                <a href="<?php echo base_url('courses/' . $detail->CATEGORY_URL . '/' . $list->COURSE_ID); ?>" class="h-100">
+                                <a href="<?php echo base_url('courses/' . $list->COURSE_URL . '/' . $list->COURSE_ID); ?>" class="h-100">
                                     <img src="<?php echo base_url($list->COURSE_IMAGE); ?>" alt="<?php echo $list->COURSE_NAME; ?>" class="card-img-top">
                                     <div class="card-body p-0">
                                         <div class="card-course-title pl-2 pt-1 mb-3">
@@ -427,7 +372,7 @@
                                         <div class="p-2 mb-2">
                                             <div class="d-flex justify-content-center">
                                                 <span class="price-regular">
-                                                    <a href="<?php echo base_url('courses/' . $detail->CATEGORY_URL . '/' . $list->COURSE_ID); ?>" class="primary-btn2" style="color: #ffff;">Beli kelas online</a>
+                                                    <a href="<?php echo base_url('courses/' . $list->COURSE_URL . '/' . $list->COURSE_ID); ?>" class="primary-btn2" style="color: #ffff;">Beli kelas online</a>
                                                 </span>
                                             </div>
                                         </div>

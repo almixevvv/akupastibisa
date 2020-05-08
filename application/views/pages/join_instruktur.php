@@ -200,10 +200,10 @@
                     <div class="thumb d-flex justify-content-sm-center">
                         <img class="img-fluid trainer_image" src="<?php echo base_url($trainer->TRAINER_IMAGE); ?>" alt="<?php echo $trainer->TRAINER_NAME; ?>" />
                     </div>
-                    <div class="meta-text text-sm-center">
+                    <div class="meta-text text-sm-center pl-0 pr-0">
                         <h4 class="text-capitalize"><?php echo $trainer->TRAINER_NAME; ?></h4>
                         <p class="designation p-color text-capitalize"><?php echo $trainer->TRAINER_TITLE; ?></p>
-                        <div class="mb-4" style="min-height: 100px;">
+                        <div class="mb-4 px-2" style="min-height: 100px;">
                             <p class="p-color">
                                 <?php echo $trainer->TRAINER_BIO; ?>
                             </p>
@@ -294,7 +294,7 @@
                 </div>
                 <div class="g-recaptcha" data-sitekey="6Ld2qPIUAAAAACBW438Lt3L5DJJhSQoOCm4GkUli"></div>
                 <br>
-                <button type="submit" class="btn btn-primary">Daftar</button>
+                <button type="submit" class="btn primary-btn2" style="color: white;">Daftar</button>
                 <?php echo form_close(); ?>
             </div>
             <div class="col-lg-2"></div>

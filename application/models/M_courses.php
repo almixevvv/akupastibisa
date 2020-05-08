@@ -60,6 +60,19 @@ class M_courses extends CI_Model
         return $query;
     }
 
+    function searchCourse($query)
+    {
+        $this->db->select('*');
+        $this->db->from('v_g_courses');
+        $this->db->like('COURSE_NAME', $query);
+        $this->db->or_like('COURSE_DESCRIPTION', $query);
+        $this->db->order_by('REC_ID', 'DESC');
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
     function navbarCategory()
     {
         $this->db->select('*');

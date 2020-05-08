@@ -82,14 +82,16 @@
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav w-100">
                         <li class="nav-item" id="header-search-box">
-                            <div class="input-group pt-4">
-                                <input type="text" class="form-control" id="searchBox" placeholder="Mau bisa apa Anda hari ini?" aria-describedby="searchBox">
-                                <div class="input-group-append">
-                                    <span class="input-group-text" id="searchBox">
-                                        <i class="ti-search"></i>
-                                    </span>
+                            <form action="<?php echo base_url('courses/search'); ?>" type="GET">
+                                <div class="input-group pt-4">
+                                    <input type="text" class="form-control" id="query" name="query" placeholder="Mau bisa apa Anda hari ini?" aria-describedby="searchBox">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="query">
+                                            <i class="ti-search"></i>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </li>
                         <li class="nav-item mr-0" id="header-categories">
                             <div class="dropdown">

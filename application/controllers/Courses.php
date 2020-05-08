@@ -6,7 +6,7 @@ class Courses extends CI_Controller
     function __construct()
     {
         parent::__construct(true);
-        // $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(TRUE);
         $this->load->model('M_courses', 'courses');
     }
 
@@ -34,6 +34,19 @@ class Courses extends CI_Controller
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');
         $this->load->view('pages/courses/courses', $data);
+        $this->load->view('templates/footer');
+    }
+
+    function searchCourses()
+    {
+
+        $searchQuery = $this->input->get('query');
+
+        $data['courseList'] = $this->courses->searchCourse($searchQuery);
+
+        $this->load->view('templates/header');
+        $this->load->view('templates/home-navbar');
+        $this->load->view('pages/courses/coursesSearch', $data);
         $this->load->view('templates/footer');
     }
 }
