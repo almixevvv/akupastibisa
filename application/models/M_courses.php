@@ -88,7 +88,7 @@ class M_courses extends CI_Model
         $this->db->select('*');
         $this->db->from('g_trainer');
         $this->db->order_by('TRAINER_NAME', 'ASC');
-        $this->db->where('TRAINER_STATUS', not_in('NEW'));
+        $this->db->where('TRAINER_STATUS !=', 'NEW');
 
         $query = $this->db->get();
 
