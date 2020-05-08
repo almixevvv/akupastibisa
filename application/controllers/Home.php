@@ -62,17 +62,6 @@ class Home extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function instruktur()
-    {
-        $data['topCourses'] = $this->courses->topCourse();
-        $data['topTrainer'] = $this->courses->topTrainer();
-
-        $this->load->view('templates/header');
-        $this->load->view('templates/main-navbar');
-        $this->load->view('pages/join_instruktur', $data);
-        $this->load->view('templates/footer');
-    }
-
     /* Footer Section */
     public function faq()
     {

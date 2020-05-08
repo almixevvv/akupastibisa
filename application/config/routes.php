@@ -10,7 +10,7 @@ $route['courses/:any/:any'] = 'Courses';
 $route['blog'] = 'home/blog';
 $route['blogdetail'] = 'home/blogdetail';
 $route['elements'] = 'home/elements';
-$route['instruktur'] = 'home/instruktur';
+$route['instruktur'] = 'Instructor';
 
 
 // $route['policy'] = "Home/policy";
@@ -19,7 +19,6 @@ $route['faq'] = "Home/faq";
 $route['privacy'] = "Home/privacy";
 $route['about-us'] = "Home/aboutUs";
 $route['contact'] = 'home/contact';
-$route['instruktur'] = 'AddInstruktur/addItem';
 
 /* CMS Section */
 $route['cms'] = 'CMS/index';

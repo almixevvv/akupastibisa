@@ -3,20 +3,27 @@ class Instructor extends CI_Controller
 {
 
 	function __construct()
-    {
-        parent::__construct(true);
-        $this->output->enable_profiler(TRUE);
-        $this->load->model('M_profile', 'profile');
-        $this->load->model('M_cms', 'cms');
-    }
+	{
+		parent::__construct(true);
+		// $this->output->enable_profiler(TRUE);
+		$this->load->model('M_profile', 'profile');
+	}
 
-    function index() {
+	function index()
+	{
+		$data['topCourses'] = $this->courses->topCourse();
+		$data['topTrainer'] = $this->courses->topTrainer();
 
-    }
+		$this->load->view('templates/header');
+		$this->load->view('templates/home-navbar');
+		$this->load->view('pages/join_instruktur', $data);
+		$this->load->view('templates/footer');
+	}
 
-    function addInstruktur() {
+	function addInstruktur()
+	{
 
-    	$this->load->library('upload');
+		$this->load->library('upload');
 
 		$name = $this->input->post('instruktur_name');
 		$hp = $this->input->post('instruktur_hp');
@@ -50,34 +57,34 @@ class Instructor extends CI_Controller
 		// 	// }
 		// }
 
-		
 
-		
-		
+
+
+
 		$defaultPath = '/assets/img/cv/' . $_FILES['instruktur_cv']['name'];
 		$ext = end((explode(".", $_FILES['instruktur_cv']['name'])));
 		echo $defaultPath;
-	
 
-    	$config['upload_path']   = './assets/img/cv/';
-    	$config['allowed_types'] = 'jpeg|png|pdf|jpg';
-    	$config['max_size']		 = '1048';
-    	$config['file_name']	 = $name.'_CV';
-    	$config['overwrite']	 = TRUE;
 
-    	$tmpFilename = $config['file_name'];
+		$config['upload_path']   = './assets/img/cv/';
+		$config['allowed_types'] = 'jpeg|png|pdf|jpg';
+		$config['max_size']		 = '1048';
+		$config['file_name']	 = $name . '_CV';
+		$config['overwrite']	 = TRUE;
+
+		$tmpFilename = $config['file_name'];
 
 		$this->upload->initialize($config);
 
-    	$img = 'file_image';
+		$img = 'file_image';
 
-		if ( ! $this->upload->do_upload('instruktur_cv')) {
+		if (!$this->upload->do_upload('instruktur_cv')) {
 			echo $this->upload->display_errors();
 		} else {
-				$this->upload->data();
-	   	}
+			$this->upload->data();
+		}
 
-	   	$data = array(
+		$data = array(
 			'TRAINER_NAME' => $name,
 			'TRAINER_HP' => $hp,
 			'TRAINER_EMAIL'  => $email,
@@ -93,10 +100,9 @@ class Instructor extends CI_Controller
 		);
 		$this->cms->insert_instruktur($data);
 
-	   	
-	   	// redirect('home/instruktur');
+
+		// redirect('home/instruktur');
 
 
-    }
-
+	}
 }
