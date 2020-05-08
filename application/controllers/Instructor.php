@@ -7,6 +7,7 @@ class Instructor extends CI_Controller
 		parent::__construct(true);
 		// $this->output->enable_profiler(TRUE);
 		$this->load->model('M_profile', 'profile');
+		$this->load->model('M_cms', 'cms');
 	}
 
 	function index()
@@ -101,7 +102,7 @@ class Instructor extends CI_Controller
 		$this->cms->insert_instruktur($data);
 
 
-		redirect('home/instruktur');
+		redirect('Instructor');
 
 
 	}
