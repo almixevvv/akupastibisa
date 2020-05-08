@@ -6,10 +6,12 @@ $route['default_controller'] = 'home';
 $route['home'] = 'home';
 // $route['about'] = 'home/about';
 $route['courses/list/:any'] = 'Courses/coursesList';
+$route['courses/list/prakerja'] = 'Courses/coursesPrakerja';
 $route['courses/:any/:any'] = 'Courses';
 $route['blog'] = 'home/blog';
 $route['blogdetail'] = 'home/blogdetail';
 $route['elements'] = 'home/elements';
+$route['kartu_prakerja'] = 'home/kartu_prakerja';
 $route['instruktur'] = 'Instructor';
 
 
