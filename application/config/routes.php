@@ -18,7 +18,7 @@ $route['terms'] = "Home/terms";
 $route['faq'] = "Home/faq";
 $route['privacy'] = "Home/privacy";
 $route['about-us'] = "Home/aboutUs";
-$route['contact'] = 'home/contact';
+$route['contact'] = 'Contact';
 
 /* CMS Section */
 $route['cms'] = 'CMS/index';
