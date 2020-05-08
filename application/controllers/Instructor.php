@@ -101,7 +101,7 @@ class Instructor extends CI_Controller
 		$this->cms->insert_instruktur($data);
 
 
-		// redirect('home/instruktur');
+		redirect('home/instruktur');
 
 
 	}
