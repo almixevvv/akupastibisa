@@ -205,7 +205,7 @@
                 </div>
             <?php } ?>
         </div>
-        <?php echo form_open_multipart('AddInstruktur/addItem') ?>
+        <?php echo form_open_multipart('Instructor/addInstruktur') ?>
         <div class="row">
             <h2>Informasi Pribadi</h2>
         </div>
