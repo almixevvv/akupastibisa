@@ -150,6 +150,13 @@
     .quotes_text {
         color: white;
     }
+
+    .single-trainer .meta-text .designation {
+        font-size: 14px;
+        margin-bottom: 9px;
+        padding-top: 10px;
+        line-height: 17px;
+    }
 </style>
 
 <section class="about_banner_area">
