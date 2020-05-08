@@ -82,4 +82,16 @@ class M_courses extends CI_Model
 
         return $query;
     }
+
+    function topTrainer_all()
+    {
+        $this->db->select('*');
+        $this->db->from('g_trainer');
+        $this->db->order_by('TRAINER_NAME', 'ASC');
+        $this->db->where('TRAINER_STATUS', not_in('NEW'));
+
+        $query = $this->db->get();
+
+        return $query;
+    }
 }
