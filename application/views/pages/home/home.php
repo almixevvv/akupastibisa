@@ -352,7 +352,7 @@
                     <div class="meta-text text-sm-center meta-text text-sm-center pl-0 pr-0">
                         <h4 class="text-capitalize"><?php echo $trainer->TRAINER_NAME; ?></h4>
                         <p class="designation p-color text-capitalize"><?php echo $trainer->TRAINER_TITLE; ?></p>
-                        <div class="mb-4" style="min-height: 75px;">
+                        <div class="mb-4" style="min-height: 100px;">
                             <p class="p-color">
                                 <?php echo $trainer->TRAINER_BIO; ?>
                             </p>
