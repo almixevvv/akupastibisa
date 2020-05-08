@@ -178,8 +178,44 @@
 
 
 
+<section class="trainer_area section_gap_top" style="font-size: 14px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="main_title">
+                    <h2 class="mb-3">List Instruktur</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center d-flex align-items-center">
+            <?php foreach ($topTrainer->result() as $trainer) { ?>
+                <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
+                    <div class="thumb d-flex justify-content-sm-center">
+                        <img class="img-fluid trainer_image" src="<?php echo base_url($trainer->TRAINER_IMAGE); ?>" alt="<?php echo $trainer->TRAINER_NAME; ?>" />
+                    </div>
+                    <div class="meta-text text-sm-center">
+                        <h4 class="text-capitalize"><?php echo $trainer->TRAINER_NAME; ?></h4>
+                        <p class="designation p-color text-capitalize"><?php echo $trainer->TRAINER_TITLE; ?></p>
+                        <div class="mb-4" style="min-height: 100px;">
+                            <p class="p-color">
+                                <?php echo $trainer->TRAINER_BIO; ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</section>
+<section class="home_quotes">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+            <h4 class="quotes_text">"Another text goes here, Another text goes here, Another text goes here"</h4>
+        </div>
+    </div>
+</section>
 <section class="trainer_area section_gap_top" style="background-color:#e5e5e5;">
-    <div class="container" >
+    <div class="container">
         <div class="form-row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8" style="background-color:#fff; padding:50px; font-size: 90%; ">
@@ -205,7 +241,7 @@
                         <input type="email" name="instruktur_email" class="form-control" id="inputEmail4" placeholder="Email">
                     </div>
                 </div>
-                <hr/>
+                <hr />
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <h5 for="inputEmail4">Kelengkapan Dokumen</h5>
@@ -222,7 +258,7 @@
                         <input type="text" name="instruktur_topik" class="form-control" id="inputPassword4" placeholder="Judul Topik">
                     </div>
                 </div>
-                <hr/>
+                <hr />
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <h5 for="inputEmail4">Akun Media Sosial</h5>
@@ -255,13 +291,6 @@
                 <?php echo form_close(); ?>
             </div>
             <div class="col-lg-2"></div>
-        </div>
-    </div>
-</section>
-<section class="home_quotes">
-    <div class="container-fluid">
-        <div class="d-flex justify-content-center">
-            <h4 class="quotes_text">"Another text goes here, Another text goes here, Another text goes here"</h4>
         </div>
     </div>
 </section>
