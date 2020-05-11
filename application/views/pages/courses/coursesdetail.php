@@ -39,57 +39,19 @@
                 </div>
 
                 <div class="content_wrapper">
-                    <h4 class="title">Objectives</h4>
+                    <h4 class="title">Penjelasan Kursus</h4>
                     <div class="content">
-                        When you enter into any new area of science, you almost always find yourself with a
-                        baffling new language of
-                        technical terms to learn before you can converse with the experts. This is certainly
-                        true in astronomy both in
-                        terms of terms that refer to the cosmos and terms that describe the tools of the trade,
-                        the most prevalent
-                        being the telescope.
-                        <br>
-                        <br>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                        ut aliquip ex ea
-                        commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum. Lorem ipsum dolor sit
-                        amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim
-                        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute
-                        irure dolor in reprehenderit in voluptate velit esse cillum.
+                        <?php echo $course->COURSE_DESCRIPTION;?>
                     </div>
-                    <h4 class="title">Eligibility</h4>
+                    <h4 class="title">Materi Pembelajaran</h4>
                     <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                        ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
-                        <br>
-                        <br>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                        ut aliquip ex ea
-                        commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum. Lorem ipsum dolor sit
-                        amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim
-                        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute
-                        irure dolor in reprehenderit in voluptate velit esse cillum.
+                        
+                        <?php echo $course->COURSE_WHAT_YOU_GET;?>
                     </div>
 
-                    <h4 class="title">Preview</h4>
+                    <h4 class="title">Persyaratan</h4>
                     <div class="content">
-                        <video controls width="100%">
-                            <source src="<?php echo base_url('assets/video/video.mp4'); ?>" type="video/mp4">
-                            Sorry, your browser doesn't support embedded videos.
-                        </video>
+                        <?php echo $course->COURSE_REQUIREMENT;?>
                     </div>
 
                     <h4 class="title">Course Outline</h4>
@@ -147,12 +109,6 @@
                         <a class="justify-content-between d-flex" href="#">
                             <p>Biaya Kursus </p>
                             <span>Rp. <?php echo number_format($course->COURSE_PRICE); ?></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="justify-content-between d-flex" href="#">
-                            <p>Kursi Tersisa </p>
-                            <span>15</span>
                         </a>
                     </li>
                     <li>
