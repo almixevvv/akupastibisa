@@ -78,6 +78,7 @@ class M_courses extends CI_Model
         $this->db->select('*');
         $this->db->from('g_course_categories');
         $this->db->order_by('REC_ID', 'ASC');
+        $this->db->where('CATEGORY_PARENT_ID', '0');
 
         $query = $this->db->get();
 

@@ -6,7 +6,7 @@ class Courses extends CI_Controller
     function __construct()
     {
         parent::__construct(true);
-        $this->output->enable_profiler(TRUE);
+        // $this->output->enable_profiler(TRUE);
         $this->load->model('M_courses', 'courses');
     }
 

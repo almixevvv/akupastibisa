@@ -17,7 +17,7 @@ class Instructor extends CI_Controller
 
 		$this->load->view('templates/header');
 		$this->load->view('templates/home-navbar');
-		$this->load->view('pages/join_instruktur', $data);
+		$this->load->view('pages/instructor/instructor', $data);
 		$this->load->view('templates/footer');
 	}
 
@@ -103,7 +103,5 @@ class Instructor extends CI_Controller
 
 
 		redirect('Instructor');
-
-
 	}
 }

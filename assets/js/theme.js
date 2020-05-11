@@ -17,14 +17,22 @@ var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split
 					$('.menu_nav').css('padding-top', '0.5rem');
 					$('#shopping-cart-separator').css('border-left', 'black solid 1px');
 					$('#shopping-cart-separator').css('color', 'black');
-					$('#navbar-signup a').css('color', ' rgb(95, 95, 95)');
 					$('#categoryDropdown').css('color', 'rgb(95, 95, 95)');
-					$('#header-articles a').css('color', 'rgb(95, 95, 95)');
-					$('#header-prakerja a').css('color', 'rgb(95, 95, 95)');
 					$('#header-categories').css('padding-top', '0.5rem');
+
 					$('#header-articles').css('padding-top', '0.5rem');
+					$('#header-articles a').css('color', 'rgb(95, 95, 95)');
+
 					$('#header-signup').css('padding-top', '0.5rem');
+					$('#navbar-signup a').css('color', ' rgb(95, 95, 95)');
+
 					$('#header-prakerja').css('padding-top', '0.5rem');
+					$('#header-prakerja a').css('color', 'rgb(95, 95, 95)');
+
+					$('#header-instruktur').css('padding-top', '0.5rem');
+					$('#header-instruktur a').css('color', 'rgb(95, 95, 95)');
+
+					$('.main_menu').css({ 'padding-top': '15px', 'padding-bottom': '15px' });
 				} else {
 					$('.header_area').removeClass('navbar_fixed');
 					$('#navbar-images').attr('src', baseUrl + '/assets/img/logo.png');
@@ -32,15 +40,23 @@ var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split
 					$('#navbar-images').css('padding-top', '0rem');
 					$('.menu_nav').css('padding-top', '0rem');
 					$('#shopping-cart-separator').css('color', 'white');
-					$('#navbar-signup a').css('color', '#00c5dd');
 					$('#categoryDropdown').css('color', 'white');
-					$('#header-articles a').css('color', 'white');
-					$('#header-prakerja a').css('color', 'white');
 					$('#shopping-cart-separator').css('border-left', 'white solid 1px');
 					$('#header-categories').css('padding-top', '0rem');
+
 					$('#header-articles').css('padding-top', '0rem');
+					$('#header-articles a').css('color', 'white');
+
 					$('#header-signup').css('padding-top', '0rem');
+					$('#navbar-signup a').css('color', '#00c5dd');
+
 					$('#header-prakerja').css('padding-top', '0rem');
+					$('#header-prakerja a').css('color', 'white');
+
+					$('#header-instruktur').css('padding-top', '0rem');
+					$('#header-instruktur a').css('color', 'white');
+
+					$('.main_menu').css({ 'padding-top': '0', 'padding-bottom': '0' });
 				}
 			});
 		}

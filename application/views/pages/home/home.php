@@ -60,7 +60,7 @@
         padding-top: 0.3rem;
     }
 
-    .rating-star:before {
+    /* .rating-star:before {
         content: "\2605";
         color: #f4c150;
     }
@@ -68,6 +68,28 @@
     .rating-star-unmarked:before {
         content: "\2605";
         color: #d6d6d6;
+    } */
+    :root {
+        --star-size: 25px;
+        --star-color: #c8c8c8;
+        --star-background: #fc0;
+    }
+
+    .rating-star {
+        --percent: calc(var(--rating) / 5 * 100%);
+
+        display: inline-block;
+        font-size: var(--star-size);
+        font-family: Times;
+        line-height: 1;
+    }
+
+    .rating-star::before {
+        content: '★★★★★';
+        letter-spacing: 3px;
+        background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     .rating-text,
@@ -146,10 +168,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner_content text-center">
-                        <p class="text-uppercase" style="color: #ffff;">
+                        <p class="text-uppercase" style="color: #ffff; color: #ffff; margin-bottom: 15px;">
                             Anda Dapat Membeli Kelas Kami dengan
                         </p>
-                        <p class="text-uppercase" style="color: #ffff;">
+                        <p class="text-uppercase" style="color: #ffff; ">
                             Gratis Melalui Platform Prakerja
                         </p>
                         <h2 class="text-uppercase mt-4 mb-5" style="color: #ffff;">
@@ -229,12 +251,7 @@
                             <div class="d-flex">
                                 <span class="rating-text"><b><?php echo $data->COURSE_AVERAGE_RATING; ?></b></span>
                                 <div class="d-flex flex-row">
-                                    <?php for ($i = 0; $i < $data->COURSE_AVERAGE_RATING; $i++) { ?>
-                                        <span class="rating-star"></span>
-                                    <?php } ?>
-                                    <?php for ($j = $i; $j <= 5; $j++) { ?>
-                                        <span class="rating-star-unmarked"></span>
-                                    <?php } ?>
+                                    <span class="rating-star" style="--rating:<?php echo $data->COURSE_AVERAGE_RATING; ?>" aria-label="the rating is xxx out of xxx"></span>
                                 </div>
                                 <span class="rating-numbers">(<?php echo number_format($data->COURSE_RATING); ?>)</span>
                             </div>
@@ -343,7 +360,7 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center d-flex align-items-center">
+        <div class="row justify-content-center d-flex align-items-top">
             <?php foreach ($topTrainer->result() as $trainer) { ?>
                 <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
                     <div class="thumb d-flex justify-content-sm-center">
@@ -351,8 +368,8 @@
                     </div>
                     <div class="meta-text text-sm-center meta-text text-sm-center pl-0 pr-0">
                         <h4 class="text-capitalize"><?php echo $trainer->TRAINER_NAME; ?></h4>
-                        <p class="designation p-color text-capitalize"><?php echo $trainer->TRAINER_TITLE; ?></p>
-                        <div class="mb-4" style="min-height: 100px;">
+                        <p class="designation p-color text-capitalize px-1"><?php echo $trainer->TRAINER_TITLE; ?></p>
+                        <div class="mb-4" style="min-height: 75px;">
                             <p class="p-color">
                                 <?php echo $trainer->TRAINER_BIO; ?>
                             </p>
