@@ -22,14 +22,6 @@
             color: #fff;
         }
 
-            {
-            color: #fff;
-        }
-
-            {
-            color: #fff;
-        }
-
         #header-shopping-cart>a {
             color: #fff;
             border-left: white solid 1px;
@@ -97,7 +89,7 @@
                                 <div class="input-group pt-4">
                                     <input type="text" class="form-control" id="query" name="query" placeholder="Mau bisa apa Anda hari ini?" aria-describedby="searchBox">
                                     <div class="input-group-append">
-                                        <button class="btn" type="submit" id="query" style="    border: 1px solid #d4d4d4;">
+                                        <button class="btn" type="submit" style="border: 1px solid #d4d4d4;">
                                             <i class="ti-search"></i>
                                         </button>
                                     </div>

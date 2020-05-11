@@ -6,7 +6,7 @@ class Courses extends CI_Controller
     function __construct()
     {
         parent::__construct(true);
-        // $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(TRUE);
         $this->load->model('M_courses', 'courses');
     }
 
@@ -14,7 +14,9 @@ class Courses extends CI_Controller
     {
         $courseID = $this->uri->segment(3, 0);
 
-        $data['courseDetail'] = $this->courses->getSingleCourse($courseID);
+        $data['courseDetail']  = $this->courses->getSingleCourse($courseID);
+        $data['courseContent'] = $this->courses->getCourseContentTitle($courseID);
+        $data['courseData']    = $this->courses->getCourseContentTotal($courseID);
 
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');

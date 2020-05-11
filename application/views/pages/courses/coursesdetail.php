@@ -4,7 +4,81 @@
         border-color: #008ab1;
         color: white;
     }
+
+    .content-title {
+        min-width: 60%;
+        max-width: 60%;
+    }
+
+    .content-total {
+        width: 20%;
+        font-weight: 500;
+    }
+
+    .content-duration {
+        width: 20%;
+        font-weight: 500;
+    }
+
+    .child_course_title {
+        max-width: 70%;
+        min-width: 70%;
+    }
+
+    .child_course_preview {
+        width: 15%;
+    }
+
+    .child_course_duration {
+        width: 15%;
+    }
+
+    .content_expand {
+        width: 5%;
+        height: 5%;
+        font-size: 20px;
+    }
+
+    .plus,
+    .minus {
+        color: #000;
+        padding: 10px;
+        width: 70px;
+        height: 70px;
+        line-height: 50px;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        box-sizing: border-box;
+        transition: .5s all ease-out;
+    }
+
+    .plus {
+        opacity: 0.7;
+        transform: rotate(0deg);
+    }
+
+    .content_expand.active .plus {
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+
+    .minus {
+        opacity: 0;
+        transform: rotate(-90deg);
+    }
+
+    .content_expand.active .minus {
+        opacity: 0.7;
+        transform: rotate(0deg);
+    }
 </style>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
 
 
 <?php foreach ($courseDetail->result() as $course); ?>
@@ -92,46 +166,63 @@
                         </video>
                     </div>
 
-                    <h4 class="title">Course Outline</h4>
+                    <?php foreach ($courseData->result() as $data); ?>
+
+                    <h4 class="title">Kontent Kursus <?php echo $courseData->num_rows(); ?></h4>
                     <div class="content">
-                        <ul class="course_list">
-                            <li class="justify-content-between d-flex">
-                                <p>Introduction Lesson</p>
-                                <a class="primary-btn text-uppercase" href="#">View Details</a>
-                            </li>
-                            <li class="justify-content-between d-flex">
-                                <p>Basics of HTML</p>
-                                <a class="primary-btn text-uppercase" href="#">View Details</a>
-                            </li>
-                            <li class="justify-content-between d-flex">
-                                <p>Getting Know about HTML</p>
-                                <a class="primary-btn text-uppercase" href="#">View Details</a>
-                            </li>
-                            <li class="justify-content-between d-flex">
-                                <p>Tags and Attributes</p>
-                                <a class="primary-btn text-uppercase" href="#">View Details</a>
-                            </li>
-                            <li class="justify-content-between d-flex">
-                                <p>Basics of CSS</p>
-                                <a class="primary-btn text-uppercase" href="#">View Details</a>
-                            </li>
-                            <li class="justify-content-between d-flex">
-                                <p>Getting Familiar with CSS</p>
-                                <a class="primary-btn text-uppercase" href="#">View Details</a>
-                            </li>
-                            <li class="justify-content-between d-flex">
-                                <p>Introduction to Bootstrap</p>
-                                <a class="primary-btn text-uppercase" href="#">View Details</a>
-                            </li>
-                            <li class="justify-content-between d-flex">
-                                <p>Responsive Design</p>
-                                <a class="primary-btn text-uppercase" href="#">View Details</a>
-                            </li>
-                            <li class="justify-content-between d-flex">
-                                <p>Canvas in HTML 5</p>
-                                <a class="primary-btn text-uppercase" href="#">View Details</a>
-                            </li>
-                        </ul>
+                        <div class="accordion" id="course-content-accordion">
+
+                            <?php foreach ($courseContent->result() as $result) { ?>
+                                <?php $childQuery = $this->courses->getChildCourseContent($result->REC_ID); ?>
+                                <div class="card">
+                                    <div class="card-header" id="content_title_<?php echo $result->REC_ID; ?>">
+                                        <a class="content_title_card font-weight-bold" data-toggle="collapse" data-target="#course_section_<?php echo $result->REC_ID; ?>" aria-expanded="false" aria-controls="course_section_<?php echo $result->REC_ID; ?>">
+                                            <div class="d-flex">
+                                                <div class="content_expand">
+                                                    <span class="plus"><i class="ti-plus"></i></span>
+                                                    <span class="minus"><i class="ti-minus"></i></span>
+                                                </div>
+                                                <div class="p-2 content-title text-wrap">
+                                                    <?php echo $result->COURSE_SECTION_CATEGORY; ?>
+                                                </div>
+                                                <div class="p-2 content-total text-right">
+                                                    <p class="mb-0">
+                                                        <?php echo ($childQuery->num_rows() == 0 ? '' : $childQuery->num_rows() . ' Pelajaran'); ?>
+                                                    </p>
+                                                </div>
+                                                <div class="p-2 content-duration text-right">
+                                                    <?php echo $result->COURSE_SECTION_DURATION; ?>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div id="course_section_<?php echo $result->REC_ID; ?>" class="collapse" aria-labelledby="content_title_<?php echo $result->REC_ID; ?>" data-parent="#course-content-accordion">
+                                        <div class="card-body p-0">
+                                            <ul class="course_list pl-0">
+                                                <?php foreach ($childQuery->result() as $child) { ?>
+                                                    <li class="course_child d-flex mb-0">
+                                                        <a class="child_course_title pl-3 pt-2 pb-2 pr-3" href="#">
+                                                            <?php echo $child->COURSE_SECTION_CATEGORY; ?>
+                                                        </a>
+                                                        <a class="child_course_preview pt-2 pb-2" href="#">
+                                                            Pratinjau
+                                                        </a>
+                                                        <div class="child_course_duration pt-2 pb-2 pr-2 text-right">
+                                                            <?php echo $child->COURSE_SECTION_DURATION; ?>
+                                                        </div>
+                                                    </li>
+                                                    <hr class="mt-0 mb-0">
+                                                <?php } ?>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            <?php } ?>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -289,3 +380,12 @@
         </div>
     </div>
 </section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<script>
+    $('.content_title_card').on('click', function() {
+        $(this).children().find('.content_expand').toggleClass('active');
+        $(this).children().find('.content-total').toggleClass('d-none');
+        $(this).children().find('.content-duration').toggleClass('d-none');
+    });
+</script>

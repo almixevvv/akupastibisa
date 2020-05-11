@@ -60,38 +60,6 @@
         padding-top: 0.3rem;
     }
 
-    /* .rating-star:before {
-        content: "\2605";
-        color: #f4c150;
-    }
-
-    .rating-star-unmarked:before {
-        content: "\2605";
-        color: #d6d6d6;
-    } */
-    :root {
-        --star-size: 25px;
-        --star-color: #c8c8c8;
-        --star-background: #fc0;
-    }
-
-    .rating-star {
-        --percent: calc(var(--rating) / 5 * 100%);
-
-        display: inline-block;
-        font-size: var(--star-size);
-        font-family: Times;
-        line-height: 1;
-    }
-
-    .rating-star::before {
-        content: '★★★★★';
-        letter-spacing: 3px;
-        background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
     .rating-text,
     .rating-text>b {
         color: #4a4a4a;
@@ -251,7 +219,7 @@
                             <div class="d-flex">
                                 <span class="rating-text"><b><?php echo $data->COURSE_AVERAGE_RATING; ?></b></span>
                                 <div class="d-flex flex-row">
-                                    <span class="rating-star" style="--rating:<?php echo $data->COURSE_AVERAGE_RATING; ?>" aria-label="the rating is xxx out of xxx"></span>
+                                    <span class="rating-star pt-1" style="--rating:<?php echo $data->COURSE_AVERAGE_RATING; ?>" aria-label="the rating is <?php echo $data->COURSE_AVERAGE_RATING; ?> out of 5"></span>
                                 </div>
                                 <span class="rating-numbers">(<?php echo number_format($data->COURSE_RATING); ?>)</span>
                             </div>

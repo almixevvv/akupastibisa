@@ -12,16 +12,6 @@
         padding-top: 35px;
     }
 
-    .rating-star:before {
-        content: "\2605";
-        color: #f4c150;
-    }
-
-    .rating-star-unmarked:before {
-        content: "\2605";
-        color: #d6d6d6;
-    }
-
     .rating-numbers {
         padding-left: 0.5rem;
         color: #4a4a4a;
@@ -75,14 +65,6 @@
         padding-top: 3px;
     }
 
-    a {
-        color: inherit;
-    }
-
-    a:hover {
-        color: inherit;
-    }
-
     .card-img-top {
         height: 150px;
         object-fit: cover;
@@ -101,13 +83,6 @@
     .input-harga-right {
         text-align: right;
         border-left: none;
-    }
-
-    .form-control:focus {
-        border-color: #CCC;
-        outline: 0;
-        -webkit-box-shadow: none;
-        box-shadow: none;
     }
 
     .sort_by_filter {
@@ -307,48 +282,28 @@
                                     <span class="filter_child_item pl-4">
                                         <input class="form-check-input" type="checkbox" value="" id="rating1">
                                         <label class="form-check-label" for="rating1">
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star-unmarked"></span>
+                                            <span class="rating-star" style="--rating: 5" aria-label="rating is 5 out of 5"></span>
                                             <span>5 bintang</span>
                                         </label>
                                     </span>
                                     <span class="filter_child_item pl-4">
                                         <input class="form-check-input" type="checkbox" value="" id="rating2">
                                         <label class="form-check-label" for="rating2">
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star-unmarked"></span>
-                                            <span class="rating-star-unmarked"></span>
+                                            <span class="rating-star" style="--rating: 4" aria-label="rating is 4 out of 5"></span>
                                             <span>4 bintang</span>
                                         </label>
                                     </span>
                                     <span class="filter_child_item pl-4">
                                         <input class="form-check-input" type="checkbox" value="" id="rating3">
                                         <label class="form-check-label" for="rating3">
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star-unmarked"></span>
-                                            <span class="rating-star-unmarked"></span>
-                                            <span class="rating-star-unmarked"></span>
+                                            <span class="rating-star" style="--rating: 3" aria-label="rating is 3 out of 5"></span>
                                             <span>3 bintang</span>
                                         </label>
                                     </span>
                                     <span class="filter_child_item pl-4">
                                         <input class="form-check-input" type="checkbox" value="" id="rating4">
                                         <label class="form-check-label" for="rating4">
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star"></span>
-                                            <span class="rating-star-unmarked"></span>
-                                            <span class="rating-star-unmarked"></span>
-                                            <span class="rating-star-unmarked"></span>
-                                            <span class="rating-star-unmarked"></span>
+                                            <span class="rating-star" style="--rating: 2" aria-label="rating is 2 out of 5"></span>
                                             <span>2 bintang</span>
                                         </label>
                                     </span>
@@ -398,12 +353,7 @@
                                         <div class="pl-2 mb-2">
                                             <div class="d-flex">
                                                 <span class="pr-1"> <b><?php echo number_format($list->COURSE_AVERAGE_RATING); ?></b></span>
-                                                <?php for ($i = 0; $i < $list->COURSE_AVERAGE_RATING; $i++) { ?>
-                                                    <span class="rating-star"></span>
-                                                <?php } ?>
-                                                <?php for ($j = $i; $j <= 5; $j++) { ?>
-                                                    <span class="rating-star-unmarked"></span>
-                                                <?php } ?>
+                                                <span class="rating-star pt-1 pl-1" style="--rating: <?php echo $list->COURSE_AVERAGE_RATING; ?>" aria-label="rating is <?php echo $list->COURSE_AVERAGE_RATING; ?> out of 5"></span>
                                                 <span class="pl-2" style="font-size: 14px;"> (<?php echo number_format($list->COURSE_RATING); ?> rating) </span>
                                             </div>
                                         </div>

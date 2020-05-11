@@ -1,4 +1,43 @@
 @import "https://fonts.googleapis.com/css?family=Roboto:400, 400i, 500|Rubik:500, %20600";
+
+:root {
+	--star-size: 18px;
+	--star-color: #c8c8c8;
+	--star-background: #fc0;
+}
+
+.rating-star {
+	--percent: calc(var(--rating) / 5 * 100%);
+
+	display: inline-block;
+	font-size: var(--star-size);
+	font-family: Times;
+	line-height: 1;
+}
+
+.rating-star::before {
+	content: '★★★★★';
+	letter-spacing: 0;
+	background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.form-control:focus {
+	border-color: #ccc;
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+a {
+	color: inherit;
+}
+
+a:hover {
+	color: inherit;
+}
+
 body {
 	line-height: 25px;
 	font-size: 16px;
@@ -15,10 +54,6 @@ h6 {
 	font-family: rubik, sans-serif;
 	font-weight: 500;
 	color: #464646;
-}
-
-a {
-	color: #00c5dd;
 }
 
 .page_title h2 {

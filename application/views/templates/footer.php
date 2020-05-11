@@ -35,7 +35,7 @@
 
         <div class="row">
 
-            <div class="col-lg-2 pl-0">
+            <div class="col-lg-2 pl-0 mb-4">
 
                 <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Akupastibisa Logo" />
 

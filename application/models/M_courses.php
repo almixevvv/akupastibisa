@@ -13,6 +13,41 @@ class M_courses extends CI_Model
         return $query;
     }
 
+    function getCourseContentTitle($id)
+    {
+        $this->db->select('*');
+        $this->db->from('g_course_content');
+        $this->db->where('COURSE_ID', $id);
+        $this->db->where('COURSE_SECTION_PARENT', '0');
+        $this->db->where('COURSE_TYPE', 'TITLE');
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
+    function getCourseContentTotal($id)
+    {
+        $this->db->select('*');
+        $this->db->from('g_course_content');
+        $this->db->where('COURSE_ID', $id);
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
+    function getChildCourseContent($id)
+    {
+        $this->db->select('*');
+        $this->db->from('g_course_content');
+        $this->db->where('COURSE_SECTION_PARENT', $id);
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
     function getCoursesList($url)
     {
         $this->db->select('*');
