@@ -36,7 +36,7 @@
         }
 
         #header-search-box {
-            width: 44%;
+            width: 35%;
         }
 
         #header-signup>a {
@@ -79,14 +79,14 @@
         </div>
         <div class="main_menu">
             <nav class="akb-navbar navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand logo_h mr-0" href="<?php echo base_url(); ?>">
+                <a class="navbar-brand logo_h mr-3" href="<?php echo base_url(); ?>">
                     <img id="navbar-images" src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Akupastibisa Logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse offset pl-3" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav w-100">
                         <li class="nav-item" id="header-search-box">
                             <form action="<?php echo base_url('courses/search'); ?>" type="GET">
@@ -123,6 +123,9 @@
                         </li>
                         <li class="nav-item mr-4" id="header-articles">
                             <a class="nav-link text-uppercase" href="<?php echo base_url('home'); ?>">Artikel</a>
+                        </li>
+                        <li class="nav-item mr-4" id="header-articles">
+                            <a class="nav-link text-uppercase" href="<?php echo base_url('instruktur'); ?>">Instuktur</a>
                         </li>
                         <li class="nav-item" id="header-shopping-cart">
                             <a href="#" id="shopping-cart-separator">
