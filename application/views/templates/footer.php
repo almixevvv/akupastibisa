@@ -204,8 +204,6 @@
 
 <script src="<?php echo base_url('assets/js/theme.js'); ?>" type="4063bac1d4ccabf8fe6073bb-text/javascript"></script>
 
-
-
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="4063bac1d4ccabf8fe6073bb-text/javascript"></script>
 
 <script type="4063bac1d4ccabf8fe6073bb-text/javascript">

@@ -76,6 +76,29 @@
         opacity: 0.7;
         transform: rotate(0deg);
     }
+
+    .course_content_headers,
+    .course_content_expand,
+    .course_content_lessons,
+    .course_content_duration>p {
+        font-size: 1rem;
+    }
+
+    .course_content_headers {
+        width: 65%;
+    }
+
+    .course_content_expand {
+        width: 10%;
+    }
+
+    .course_content_lessons {
+        width: 20%;
+    }
+
+    .course_content_duration {
+        width: 15%;
+    }
 </style>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
@@ -124,20 +147,27 @@
                     <div class="content">
                         <?php echo $course->COURSE_DESCRIPTION; ?>
                     </div>
-                    <h4 class="title">Materi Pembelajaran</h4>
-                    <div class="content">
 
-                        <?php echo $course->COURSE_WHAT_YOU_GET; ?>
+                    <?php $duration = $this->courses->countCourseDuration($course->COURSE_ID); ?>
+                    <?php foreach ($duration->result() as $duration); ?>
+
+                    <div class="d-flex flex-row title">
+                        <h4 class="course_content_headers">Konten Kursus</h4>
+                        <span class="course_content_expand">
+                            <p class="mb-0">Perluas</p>
+                        </span>
+                        <span class="course_content_lessons">
+                            <p class="mb-0 text-right">
+                                <b><?php echo $duration->COURSE_AMOUNT; ?></b> Pelajaran
+                            </p>
+                        </span>
+                        <span class="course_content_duration">
+                            <p class="mb-0 text-right">
+                                <?php echo $duration->COURSE_DURATION; ?>
+                            </p>
+                        </span>
                     </div>
 
-                    <h4 class="title">Persyaratan</h4>
-                    <div class="content">
-                        <?php echo $course->COURSE_REQUIREMENT; ?>
-                    </div>
-
-                    <?php foreach ($courseData->result() as $data); ?>
-
-                    <h4 class="title">Kontent Kursus <?php echo $courseData->num_rows(); ?></h4>
                     <div class="content">
                         <div class="accordion" id="course-content-accordion">
 
@@ -217,6 +247,34 @@
                     </li>
                 </ul>
                 <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Daftar Sekarang</a>
+
+                <div class="course_requirement">
+                    <h4 class="title">Apa yang akan Anda dapat</h4>
+                    <div class="content">
+                        <div class="d-flex flex-column">
+                            <?php foreach ($courseWYG->result() as $dataWYG) { ?>
+                                <span class="text-capitalize mb-2">
+                                    <?php if ($dataWYG->TAG_ICON == 'ti-timer') {
+                                        $timestamp = strtotime($course->COURSE_DURATION);
+                                    ?>
+                                        <i class="<?php echo $dataWYG->TAG_ICON ?> pl-2 pr-2"></i> <?php echo $dataWYG->NAME . ' ' . date("g", $timestamp) . ' Jam'; ?>
+                                    <?php } else { ?>
+                                        <i class="<?php echo $dataWYG->TAG_ICON ?> pl-2 pr-2"></i> <?php echo $dataWYG->NAME; ?>
+                                    <?php } ?>
+
+                                </span>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course_requirement">
+                    <h4 class="title">Persyaratan</h4>
+                    <div class="content">
+                        <span class="text-capitalize"><?php echo $course->COURSE_REQUIREMENT; ?></span>
+                    </div>
+                </div>
+
                 <h4 class="title">Reviews</h4>
                 <div class="content">
                     <div class="review-top row pt-40">
@@ -343,12 +401,4 @@
         </div>
     </div>
 </section>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-<script>
-    $('.content_title_card').on('click', function() {
-        $(this).children().find('.content_expand').toggleClass('active');
-        $(this).children().find('.content-total').toggleClass('d-none');
-        $(this).children().find('.content-duration').toggleClass('d-none');
-    });
-</script>
+<script src="<?php echo base_url('assets/js/courseDetail.js'); ?>"></script>

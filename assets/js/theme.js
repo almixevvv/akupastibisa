@@ -1,7 +1,5 @@
-//GET ORDER ID
 var getUrl = window.location;
 var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split('/')[1];
-
 (function($) {
 	'use strict';
 	var nav_offset_top = $('header').height() + 50;
@@ -19,19 +17,14 @@ var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split
 					$('#shopping-cart-separator').css('color', 'black');
 					$('#categoryDropdown').css('color', 'rgb(95, 95, 95)');
 					$('#header-categories').css('padding-top', '0.5rem');
-
 					$('#header-articles').css('padding-top', '0.5rem');
 					$('#header-articles a').css('color', 'rgb(95, 95, 95)');
-
 					$('#header-signup').css('padding-top', '0.5rem');
 					$('#navbar-signup a').css('color', ' rgb(95, 95, 95)');
-
 					$('#header-prakerja').css('padding-top', '0.5rem');
 					$('#header-prakerja a').css('color', 'rgb(95, 95, 95)');
-
 					$('#header-instruktur').css('padding-top', '0.5rem');
 					$('#header-instruktur a').css('color', 'rgb(95, 95, 95)');
-
 					$('.main_menu').css({ 'padding-top': '15px', 'padding-bottom': '15px' });
 				} else {
 					$('.header_area').removeClass('navbar_fixed');
@@ -43,19 +36,14 @@ var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split
 					$('#categoryDropdown').css('color', 'white');
 					$('#shopping-cart-separator').css('border-left', 'white solid 1px');
 					$('#header-categories').css('padding-top', '0rem');
-
 					$('#header-articles').css('padding-top', '0rem');
 					$('#header-articles a').css('color', 'white');
-
 					$('#header-signup').css('padding-top', '0rem');
 					$('#navbar-signup a').css('color', '#00c5dd');
-
 					$('#header-prakerja').css('padding-top', '0rem');
 					$('#header-prakerja a').css('color', 'white');
-
 					$('#header-instruktur').css('padding-top', '0rem');
 					$('#header-instruktur a').css('color', 'white');
-
 					$('.main_menu').css({ 'padding-top': '0', 'padding-bottom': '0' });
 				}
 			});
@@ -73,7 +61,6 @@ var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split
 	function active_course() {
 		let prevUrl = baseUrl + '/assets/img/prev.png';
 		let nextUrl = baseUrl + '/assets/img/next.png';
-
 		if ($('.active_course').length) {
 			$('.active_course').owlCarousel({
 				loop: true,

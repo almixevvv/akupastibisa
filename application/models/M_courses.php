@@ -26,6 +26,30 @@ class M_courses extends CI_Model
         return $query;
     }
 
+    function countCourseDuration($id)
+    {
+        $this->db->select('SEC_TO_TIME(SUM(TIME_TO_SEC(COURSE_SECTION_DURATION))) AS "COURSE_DURATION", COUNT(*) AS "COURSE_AMOUNT"');
+        $this->db->from('g_course_content');
+        $this->db->where('COURSE_ID', $id);
+        $this->db->where('COURSE_SECTION_PARENT', '0');
+        $this->db->where('COURSE_TYPE', 'TITLE');
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
+    function getCourseWYG($id)
+    {
+        $this->db->select('*');
+        $this->db->from('v_g_course_wyg');
+        $this->db->where('COURSE_ID', $id);
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
     function getCourseContentTotal($id)
     {
         $this->db->select('*');
