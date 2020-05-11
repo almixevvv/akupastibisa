@@ -1,12 +1,42 @@
 <style>
-    .banner_area {
-        min-height: 275px;
+    .course_banner_area {
+        z-index: 1;
+        position: relative;
+        background: url(../../assets/img/banner/course-banner.jpg) no-repeat center;
+        background-size: cover;
+        height: 350px;
+        background-position: 50% 20%;
     }
 
-    .banner_area .banner_inner {
-        height: 275px;
-        min-height: 275px;
+    .course_banner_area .banner_inner {
+        position: absolute;
+        top: 60%;
+        -webkit-transform: translateY(-70%);
+        -moz-transform: translateY(-70%);
+        -ms-transform: translateY(-70%);
+        -o-transform: translateY(-70%);
+        transform: translateY(-70%);
+        z-index: 10;
+        width: 100%;
     }
+
+    @media (max-width: 991px) {
+        .course_banner_area .banner_inner {
+            top: 50%;
+        }
+    }
+
+    .course_banner_area .banner_inner .banner_content h2 {
+        font-size: 48px;
+        font-weight: 500;
+    }
+
+    .course_banner_area .banner_inner .banner_content p {
+        font-size: 20px;
+        color: #002347;
+        font-weight: 500;
+    }
+
 
     .section_gap_top {
         padding-top: 35px;
@@ -100,16 +130,16 @@
 
 <?php foreach ($courseDetail->result() as $detail); ?>
 
-<section class="banner_area">
+<section class="course_banner_area">
     <div class="banner_inner d-flex align-items-center">
         <div class="overlay"></div>
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="banner_content text-center">
-                        <h2><?php echo $detail->CATEGORY_NAME;
-                            ?></h2>
-                        <div class="page_link">
+                        <h2 class="text-white"><?php echo $detail->CATEGORY_NAME;
+                                                ?></h2>
+                        <div class="page_link  text-white">
                             <a href="<?php echo base_url(); ?>">Home</a>
                             <a href="<?php echo base_url('courses/' . $detail->CATEGORY_URL); ?>"><?php echo $detail->CATEGORY_NAME; ?></a>
                         </div>
@@ -139,7 +169,8 @@
                         <div class="row">
                             <?php foreach ($topCourse->result() as $bestCourse) { ?>
                                 <div class="col-4">
-                                    <img class="img-fluid" src="<?php echo base_url($bestCourse->COURSE_IMAGE); ?> " alt="" />
+                                    <!-- <img class="img-fluid" src="<?php echo base_url($bestCourse->COURSE_IMAGE); ?> " alt="" /> -->
+                                    <img class="img-fluid" src="<?php echo base_url('assets/img/courses/2Panduan Cepat Mendapatkan Kerja Untuk Milenial.png'); ?> " alt="" />
                                 </div>
                                 <div class="col-8">
                                     <div class="d-flex flex-column">
@@ -336,7 +367,8 @@
                         <div class="custom_course_list">
                             <div class="card single_course_list">
                                 <a href="<?php echo base_url('courses/' . $detail->CATEGORY_URL . '/' . $list->COURSE_ID); ?>" class="h-100">
-                                    <img src="<?php echo base_url($list->COURSE_IMAGE); ?>" alt="<?php echo $list->COURSE_NAME; ?>" class="card-img-top">
+                                    <img src="<?php echo base_url('assets/img/courses/2Panduan Cepat Mendapatkan Kerja Untuk Milenial.png'); ?>" alt="<?php echo $list->COURSE_NAME; ?>" class="card-img-top">
+                                    <!-- <img src="<?php echo base_url($list->COURSE_IMAGE); ?>" alt="<?php echo $list->COURSE_NAME; ?>" class="card-img-top"> -->
                                     <div class="card-body p-0">
                                         <div class="card-course-title pl-2 pt-1 mb-3">
                                             <strong><?php echo strlen($list->COURSE_NAME) >= 45 ? substr($list->COURSE_NAME, 0, 45) . "..." : $list->COURSE_NAME; ?></strong>
