@@ -62,6 +62,13 @@
         #categoryDropdown {
             color: white;
         }
+
+        .form-control:focus {
+            border-color: #CCC;
+            outline: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
     </style>
 
     <header class="header_area">
@@ -86,9 +93,9 @@
                                 <div class="input-group pt-4">
                                     <input type="text" class="form-control" id="query" name="query" placeholder="Mau bisa apa Anda hari ini?" aria-describedby="searchBox">
                                     <div class="input-group-append">
-                                        <span class="input-group-text" id="query">
+                                        <button class="btn" type="submit" id="query">
                                             <i class="ti-search"></i>
-                                        </span>
+                                        </button>
                                     </div>
                                 </div>
                             </form>
