@@ -35,23 +35,30 @@
         <div class="row">
             <div class="col-lg-8 course_details_left">
                 <div class="main_image">
-                    <img class="img-fluid" src="<?php echo base_url($course->COURSE_IMAGE); ?>" alt="<?php echo $course->COURSE_NAME; ?>">
+                    <video width="400" controls>
+                        <source src="<?php echo base_url($course->COURSE_IMAGE); ?>" type="video/mp4">
+                        <source src="<?php echo base_url($course->COURSE_IMAGE); ?>" type="video/ogg">
+                        Your browser does not support HTML video.
+                    </video>
+                    <!-- <img class="img-fluid" src="<?php echo base_url($course->COURSE_IMAGE); ?>" alt="<?php echo $course->COURSE_NAME; ?>"> -->
                 </div>
+
+
 
                 <div class="content_wrapper">
                     <h4 class="title">Penjelasan Kursus</h4>
                     <div class="content">
-                        <?php echo $course->COURSE_DESCRIPTION;?>
+                        <?php echo $course->COURSE_DESCRIPTION; ?>
                     </div>
                     <h4 class="title">Materi Pembelajaran</h4>
                     <div class="content">
-                        
-                        <?php echo $course->COURSE_WHAT_YOU_GET;?>
+
+                        <?php echo $course->COURSE_WHAT_YOU_GET; ?>
                     </div>
 
                     <h4 class="title">Persyaratan</h4>
                     <div class="content">
-                        <?php echo $course->COURSE_REQUIREMENT;?>
+                        <?php echo $course->COURSE_REQUIREMENT; ?>
                     </div>
 
                     <h4 class="title">Course Outline</h4>
