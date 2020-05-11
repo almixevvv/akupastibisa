@@ -207,7 +207,7 @@
                 <div class="d-flex flex-column mx-auto p-1">
                     <a class="course-link" href="<?php echo base_url('courses/' . $data->COURSE_URL . '/' . $data->COURSE_ID); ?>">
                         <div class="course_head">
-                            <img class="img-fluid" src="<?php echo base_url($data->COURSE_IMAGE); ?>" alt="<?php echo $data->COURSE_NAME; ?>" />
+                            <img class="img-fluid" src="<?php echo base_url($data->COURSE_IMAGE); ?>" alt="<?php echo $data->COURSE_NAME; ?>" onerror="this.onerror=null;this.src='<?php echo base_url('assets/img/courses/2Panduan Cepat Mendapatkan Kerja Untuk Milenial.png'); ?>';" />
                         </div>
                         <div class="popular-title">
                             <h5 class="text-capitalize"><?php echo $data->COURSE_NAME; ?></h5>

@@ -398,8 +398,7 @@
                         <div class="custom_course_list">
                             <div class="card single_course_list">
                                 <a href="<?php echo base_url('courses/' . $list->COURSE_URL . '/' . $list->COURSE_ID); ?>" class="h-100">
-                                    <img src="<?php echo base_url('assets/img/courses/2Panduan Cepat Mendapatkan Kerja Untuk Milenial.png'); ?>" alt="<?php echo $list->COURSE_NAME; ?>" class="card-img-top">
-                                    <!-- <img src="<?php echo base_url($list->COURSE_IMAGE); ?>" alt="<?php echo $list->COURSE_NAME; ?>" class="card-img-top"> -->
+                                    <img src="<?php echo base_url($list->COURSE_IMAGE); ?>" alt="<?php echo $list->COURSE_NAME; ?>" class="card-img-top" onerror="this.onerror=null;this.src='<?php echo base_url('assets/img/courses/2Panduan Cepat Mendapatkan Kerja Untuk Milenial.png'); ?>';">
                                     <div class="card-body p-0">
                                         <div class="card-course-title pl-2 pt-1 mb-3">
                                             <strong><?php echo strlen($list->COURSE_NAME) >= 45 ? substr($list->COURSE_NAME, 0, 45) . "..." : $list->COURSE_NAME; ?></strong>
