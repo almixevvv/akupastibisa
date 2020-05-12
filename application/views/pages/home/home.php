@@ -147,7 +147,7 @@
                         </h2>
                         <div>
                             <a href="<?php echo base_url('courses/list/prakerja') ?>" class="primary-btn2 mb-3 mb-sm-0" style="color: #ffff;">Lihat Info</a>
-                            <a href="#" class="primary-btn ml-sm-3 ml-0" style="color: #ffff;">Lihat Kategori</a>
+                            <a href="<?php echo base_url('courses/search/query=')?>" class="primary-btn ml-sm-3 ml-0" style="color: #ffff;">Lihat Kategori</a>
                         </div>
                     </div>
                 </div>
