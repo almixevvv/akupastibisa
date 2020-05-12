@@ -241,23 +241,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="pl-2 mb-2">
-                                            <div class="d-flex">
+                                        <li>
+                                            <a class="justify-content-between d-flex" href="#" >
+                                                <p>Rating</p>
                                                 <span class="pr-1"> <b><?php echo number_format($course->COURSE_AVERAGE_RATING); ?></b></span>
+                                                <p><span>Rating</span><b><?php echo number_format($course->COURSE_AVERAGE_RATING); ?>
+                                                <span class="rating-star pt-1 pl-1" style="--rating: <?php echo $course->COURSE_AVERAGE_RATING; ?>" aria-label="rating is <?php echo $course->COURSE_AVERAGE_RATING; ?> out of 5"></span></b>&nbsp&nbsp(<?php echo number_format($course->COURSE_RATING); ?> rating)</p>
+                                                <!-- <span class="pr-1"> <b><?php echo number_format($course->COURSE_AVERAGE_RATING); ?></b></span>
                                                 <span class="rating-star pt-1 pl-1" style="--rating: <?php echo $course->COURSE_AVERAGE_RATING; ?>" aria-label="rating is <?php echo $course->COURSE_AVERAGE_RATING; ?> out of 5"></span>
-                                                <span class="pl-2" style="font-size: 14px;"> (<?php echo number_format($course->COURSE_RATING); ?> rating) </span>
-                                            </div>
-                                        </div>
-                    <!-- <li>   
-                        <a class="justify-content-between d-flex" href="#">
-                            <p>Nama Instruktur</p>
-                            <span class="or"><?php echo $course->TRAINER_NAME; ?></span>
-                        </a>
-                    </li> -->
+                                                <span class="pl-2" style="font-size: 14px;"> (<?php echo number_format($course->COURSE_RATING); ?> rating) </span> -->
+                                            </a>
+                                        </li>
                     <li>
                         <a class="justify-content-between d-flex" href="#">
                             <p>Biaya Kursus </p>
-                            <span style="color: black; font-size: 16px;">IDR<span style="color: #30b29e; font-size: 16px;"> <?php echo number_format($course->COURSE_PRICE); ?></span>
+                            <span style="color: black; font-size: 16px;">IDR<span style="color: #30b29e; font-size: 20px; font-weight: bold;"> <?php echo number_format($course->COURSE_PRICE); ?></span>
                         </a>
                     </li>
                 </ul>
