@@ -74,20 +74,18 @@
                     <!-- SELECT ALL FOOTER ITEMS FROM DATABASE -->
                     <?php
                     $this->db->select('*');
-                    $this->db->from('g_course_categories');
-                    // $this->db->where('PARENT', 'MORE INFO');
+                    $this->db->from('m_course_categories');
+                    $this->db->where('CATEGORY_PARENT_ID', '0');
                     $this->db->order_by('REC_ID', 'ASC');
 
                     $query = $this->db->get();
+
                     ?>
                     <?php foreach ($query->result() as $data) : ?>
-                        <a href="<?php echo base_url() . $data->CATEGORY_NAME; ?>">
+                        <a href="<?php echo base_url('courses/list/') . $data->CATEGORY_URL; ?>">
                             <p style="margin-bottom: 0!important; font-size: 0.85em; color: white"><?php echo $data->CATEGORY_NAME; ?></p>
                         </a>
                     <?php endforeach; ?>
-                    <!-- <a href="<?php echo base_url('contact'); ?>">-->
-                    <!--    <p style="margin-bottom: 0!important; font-size: 0.85em; color: white">Contact Us</p>-->
-                    <!--</a>-->
                 </div>
             </div>
 
@@ -108,20 +106,8 @@
                             <p style="margin-bottom: 0!important; font-size: 0.85em; color: white"><?php echo $data->TITLE; ?></p>
                         </a>
                     <?php endforeach; ?>
-                    <!-- <a href="<?php echo base_url('contact'); ?>">-->
-                    <!--    <p style="margin-bottom: 0!important; font-size: 0.85em; color: white">Contact Us</p>-->
-                    <!--</a>-->
                 </div>
             </div>
-
-            <!-- <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4>Instruktur</h4>
-                <div>
-                    <a href="<?php echo base_url('home/instruktur'); ?>">
-                        <p style="margin-bottom: 0!important; font-size: 0.85em; color: white">Daftar Sekarang</p>
-                    </a>
-                </div>
-            </div> -->
 
             <div class="col-lg-2 col-md-6 single-footer-widget">
                 <h4>Info Lain</h4>
@@ -173,8 +159,6 @@
                 <a href="<?php echo ('https://www.facebook.com/akupastibisa.akupastibisa.3388'); ?>"><i class="ti-facebook"></i></a>
                 <a href="<?php echo ('https://www.instagram.com/akupastibisa.id/'); ?>"><i class="ti-instagram"></i></a>
                 <a href="<?php echo ('https://www.gmail.com/'); ?>"><i class="ti-email"></i></a>
-                <!-- <a href="#"><i class="ti-dribbble"></i></a>
-                <a href="#"><i class="ti-linkedin"></i></a> -->
             </div>
         </div>
     </div>
@@ -195,8 +179,6 @@
 <script src="<?php echo base_url('assets/js/jquery.ajaxchimp.min.js'); ?>" type="4063bac1d4ccabf8fe6073bb-text/javascript"></script>
 
 <script src="<?php echo base_url('assets/js/mail-script.js'); ?>" type="4063bac1d4ccabf8fe6073bb-text/javascript"></script>
-
-
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE" type="4063bac1d4ccabf8fe6073bb-text/javascript"></script>
 
