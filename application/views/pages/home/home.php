@@ -353,7 +353,7 @@
             <?php } ?>
         </div>
         <div class="row justify-content-center d-flex align-items-center">
-            <h4 class="p-color">Ayo, jadi <a href="<?php echo base_url('instruktur'); ?>">instruktur</a> sekarang! </h4>
+            <h4 class="p-color">Ayo, jadi <a class="colored-link" href="<?php echo base_url('instruktur'); ?>">instruktur</a> sekarang! </h4>
         </div>
     </div>
 </section>

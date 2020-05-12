@@ -1,5 +1,5 @@
 var getUrl = window.location;
-var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split('/')[0];
+var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split('/')[1];
 (function($) {
 	'use strict';
 	var nav_offset_top = $('header').height() + 50;

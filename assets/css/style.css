@@ -34,6 +34,10 @@ a {
 	color: inherit;
 }
 
+.colored-link {
+	color: #00c5dd;
+}
+
 a:hover {
 	color: inherit;
 }

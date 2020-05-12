@@ -8,7 +8,6 @@
     .content-title {
         min-width: 60%;
         max-width: 60%;
-        color: #242424;
     }
 
     .content-total {
@@ -25,7 +24,8 @@
         max-width: 80%;
         min-width: 80%;
         font-size: 14px;
-        padding-left: 3rem;
+        padding-left: 3.8rem;
+        color: #242424;
     }
 
     .child_course_preview {
