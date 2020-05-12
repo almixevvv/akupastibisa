@@ -249,7 +249,7 @@
     </div>
 </section>
 
-<section class="events_area">
+<!-- <section class="events_area">
     <div class="container">
         <div class="d-flex mb-4">
             <div class="mr-auto">
@@ -314,7 +314,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="trainer_area section_gap_top">
     <div class="container">
