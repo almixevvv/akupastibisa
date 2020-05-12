@@ -23,118 +23,6 @@
         color: #FFF;
     }
 
-
-    .feature-title>b,
-    p {
-        color: #fff;
-    }
-
-    #popular_separator {
-        border-bottom: 1px solid #0000001f;
-        padding-left: 0;
-        margin-left: 1rem;
-    }
-
-    .course_head>img {
-        border: solid 2px #b1b1b1;
-        border-radius: 5px;
-        object-fit: cover;
-        /* height: 8rem; */
-        height: 130px;
-        width: 500px;
-    }
-
-    .trainer_image {
-        border-radius: 5px;
-        object-fit: cover;
-        height: 60vh;
-        width: 500px;
-    }
-
-    .course-link {
-        text-decoration: none;
-        color: black;
-    }
-
-    .popular-title>h5 {
-        padding-top: 0.5rem;
-        color: #434242;
-        margin-bottom: 0;
-    }
-
-    .popular-lecturer>p {
-        padding-top: 0.1rem;
-        color: #43424278;
-        margin-bottom: 0;
-    }
-
-    .popular-rating {
-        padding-top: 0.3rem;
-    }
-
-    .rating-star:before {
-        content: "\2605";
-        color: #f4c150;
-    }
-
-    .rating-star-unmarked:before {
-        content: "\2605";
-        color: #d6d6d6;
-    }
-
-    .rating-text,
-    .rating-text>b {
-        color: #4a4a4a;
-        padding-right: 0.2rem;
-    }
-
-    .rating-numbers {
-        padding-left: 0.5rem;
-        color: #4a4a4a;
-    }
-
-    .price-regular {
-        padding-left: 0.8rem;
-        color: #aeaeae;
-        font-size: 0.8rem;
-    }
-
-    .price-promo>b {
-        color: #4a4a4a;
-    }
-
-    .popular-price {
-        padding-top: 0.5rem;
-    }
-
-    .popular-tag {
-        background-color: #fdc632;
-        color: black;
-        padding-left: 0.4rem;
-        padding-top: 0.2rem;
-        padding-right: 0.4rem;
-        padding-bottom: 0.2rem;
-    }
-
-    .popular-tag>b {
-        color: #535353;
-        font-size: 0.8rem;
-    }
-
-    .p-color {
-        color: #4a4a4a;
-    }
-
-    .main-title {
-        margin-bottom: 30px;
-    }
-
-    .events_area {
-        background: #d1d1d1;
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
-    }
-
     .home_quotes {
         padding-top: 3rem;
         padding-bottom: 3rem;
@@ -151,11 +39,139 @@
         color: white;
     }
 
+    .section_gap_top {
+        padding-top: 35px;
+    }
+
     .single-trainer .meta-text .designation {
         font-size: 14px;
         margin-bottom: 9px;
         padding-top: 10px;
         line-height: 17px;
+    }
+
+    .inner_container {
+        margin-left: 5rem;
+        margin-right: 5rem;
+        margin-top: 3.7rem;
+    }
+
+    .login_left {
+        width: 50%;
+        height: 88vh;
+        box-sizing: border-box;
+        min-height: 1px;
+        position: relative;
+        padding-left: 0px;
+        padding-right: 0px;
+        background-image: url(<?php echo base_url('assets/img/login-left.jpg'); ?>);
+        background-size: cover;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+    }
+
+    .login_right {
+        width: 50%;
+        background: #fff;
+    }
+
+    .login-title>p {
+        color: #fff;
+        font-family: "Arial";
+        font-size: 16px;
+    }
+
+    .white-color {
+        color: #fff;
+    }
+
+    #material-login {
+        background-color: #3b7a8f;
+        margin-left: 8rem;
+        margin-right: 8rem;
+        border: 1px solid #3b7a8f;
+        border-radius: 10px;
+    }
+
+    #instruktur-login {
+        background-color: #3b7a8f;
+        margin-left: 8rem;
+        margin-right: 8rem;
+        border: 1px solid #3b7a8f;
+        border-radius: 10px;
+    }
+
+    #certificate-login {
+        background-color: #3b7a8f;
+        margin-left: 8rem;
+        margin-right: 8rem;
+        border: 1px solid #3b7a8f;
+        border-radius: 10px;
+    }
+
+    .tab_container {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top: 2.3rem;
+        overflow-y: scroll;
+        height: 78vh;
+    }
+
+    .register-form {
+        width: 100%;
+        padding-left: 4rem;
+        padding-right: 3rem;
+        padding-top: 1.5rem;
+    }
+
+    .tab_separator {
+        border-top: 1px solid #00000021;
+        margin-top: 1rem;
+    }
+
+    a {
+        color: #017e91;
+        text-decoration: none;
+    }
+
+    .nav-tabs .nav-item.show .nav-link,
+    .nav-tabs .nav-link.active {
+        color: #017e91;
+        font-weight: 600;
+        background-color: none;
+        border-bottom: 2px solid #008ab1;
+        border-left: none;
+        border-right: none;
+    }
+
+    .btn-custom {
+        background-color: #008ab1;
+        border-color: #008ab1;
+        color: white;
+    }
+
+    .custom-anchor {
+        color: #008ab1;
+    }
+
+    .social-btn .btn {
+        margin: 10px 0;
+        font-size: 15px;
+        text-align: left;
+        line-height: 24px;
+    }
+
+    .social-btn .btn i {
+        float: left;
+        margin: 4px 15px 0 5px;
+        min-width: 15px;
+    }
+
+    .form-control:focus {
+        border-color: #CCC;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
     }
 </style>
 
@@ -190,27 +206,14 @@
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="main_title">
-                    <h2 class="mb-3">List Instruktur</h2>
+                    <h2 class="mb-3">Ayo daftar menjadi instruktur</h2>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center d-flex align-items-center">
-            <?php foreach ($topTrainer->result() as $trainer) { ?>
-                <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
-                    <div class="thumb d-flex justify-content-sm-center">
-                        <img class="img-fluid trainer_image" src="<?php echo base_url($trainer->TRAINER_IMAGE); ?>" alt="<?php echo $trainer->TRAINER_NAME; ?>" />
-                    </div>
-                    <div class="meta-text text-sm-center pl-0 pr-0">
-                        <h4 class="text-capitalize"><?php echo $trainer->TRAINER_NAME; ?></h4>
-                        <p class="designation p-color text-capitalize"><?php echo $trainer->TRAINER_TITLE; ?></p>
-                        <div class="mb-4 px-2" style="min-height: 100px;">
-                            <p class="p-color">
-                                <?php echo $trainer->TRAINER_BIO; ?>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
+            <div class="col-12">
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio commodi odio voluptate quas repellat delectus aspernatur, ad laboriosam enim soluta mollitia, laborum ea quasi quibusdam beatae totam facere. Voluptates, in?</span>
+            </div>
         </div>
     </div>
 </section>
@@ -223,81 +226,170 @@
 </section>
 <section class="trainer_area section_gap_top" style="background-color:#e5e5e5;">
     <div class="container">
-        <div class="form-row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8" style="background-color:#fff; padding:50px; font-size: 90%; ">
-                <?php echo form_open_multipart('Instructor/addInstruktur') ?>
-                <div class="row">
-                    <div class="form-group col-md-12">
-                        <h3>Form Pendaftaran Instruktur</h3>
-                    </div>
+        <div class="d-flex">
+            <div class="login_left">
+
+                <div style="margin-left:60px;">
+                    <img class="mt-5 mx-auto" src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Akupastibisa Logo" />
+                    <span class="login-title">
+                        <h3 style="color:#FFF;margin-top:100px;">JOIN NOW !</h3>
+                        <p>
+                            Membantu Anda mencapai <span class="font-weight-bold" style="color:#44bcd8;">Tujuan</span> serta<br />
+                            mengejar <span class="font-weight-bold" style="color:#44bcd8;">Impian</span> Anda <br /><br />Perbesar kesempatan Anda dalam hidup<br />
+                            dengan meningkatkan <span class="font-weight-bold" style="color:#44bcd8;">Kemampuan</span> Anda dengan<br />belajar dimanapun - kapanpun besama <strong>AkuPastiBisa</strong>
+                        </p>
+                    </span>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Nama Lengkap*</label>
-                        <input type="text" name="instruktur_name" class="form-control" id="inputEmail4" placeholder="Nama Lengkap" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">No. Handphone*</label>
-                        <input type="text" name="instruktur_hp" class="form-control" id="inputPassword4" placeholder="No. Handphone">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email*</label>
-                        <input type="email" name="instruktur_email" class="form-control" id="inputEmail4" placeholder="Email">
-                    </div>
-                </div>
-                <hr />
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <h5 for="inputEmail4">Kelengkapan Dokumen</h5>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="exampleFormControlFile1">Curriculum Vitae*</label>
-                        <label style="font-size: 12px;">(Harap Upload File dalam Bentuk PDF atau PNG)</label>
-                        <input type="file" name="instruktur_cv" class="form-control-file" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Topik yang Ingin Diajukan</label>
-                        <input type="text" name="instruktur_topik" class="form-control" id="inputPassword4" placeholder="Judul Topik">
-                    </div>
-                </div>
-                <hr />
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <h5 for="inputEmail4">Akun Media Sosial</h5>
-                        <label style="font-size: 12px;" for="inputEmail4">Cantumkan Link Media Sosial Anda</label>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Youtube</label>
-                        <input type="text" name="instruktur_youtube" class="form-control" id="inputEmail4" placeholder="Link Akun Youtube">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Instagram</label>
-                        <input type="text" name="instruktur_instagram" class="form-control" id="inputPassword4" placeholder="Link Akun Instagram">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">LinkedIn</label>
-                        <input type="text" name="instruktur_linkedin" class="form-control" id="inputEmail4" placeholder="Link Akun LinkedIn">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Facebook</label>
-                        <input type="text" name="instruktur_facebook" class="form-control" id="inputPassword4" placeholder="Link Akun Facebook">
-                    </div>
-                </div>
-                <div class="g-recaptcha" data-sitekey="6Ld2qPIUAAAAACBW438Lt3L5DJJhSQoOCm4GkUli"></div>
-                <br>
-                <button type="submit" class="btn primary-btn2" style="color: white;">Daftar</button>
-                <?php echo form_close(); ?>
             </div>
-            <div class="col-lg-2"></div>
+            <div class="login_right">
+                <ul class="nav nav-tabs d-flex justify-content-around" id="myTab" role="tablist">
+                    <li class="nav-item" style="width: 25%;">
+                        <a class="nav-link pb-3 pt-3 w-100 text-center active show" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Masuk</a>
+                    </li>
+                    <li class="nav-item" style="width: 25%;">
+                        <a class="nav-link pb-3 pt-3 w-100 text-center" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Daftar</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                        <div class="tab_container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-center">
+                                        <h4>Masuk ke akun Akupastibisa kamu</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <form id="loginForm" class="register-form needs-validation" novalidate action="<?php echo base_url('login/loginProcess'); ?>" method="POST">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="emailAddress">Alamat Email</label>
+                                            <input required type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder="Alamat email">
+                                            <div class="invalid-feedback">
+                                                Email tidak boleh kosong
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="loginPassword">Password</label>
+                                            <input required type="password" class="form-control" id="loginPassword" name="loginPassword" placeholder="Password">
+                                            <div class="invalid-feedback">
+                                                Password tidak boleh kosong
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-2">
+                                        <div class="d-flex justify-content-end">
+                                            <a href="#" class="custom-anchor">
+                                                <small>Lupa password</small>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-flex justify-content-center">
+                                            <div id="loginWidget" class="g-recaptcha" data-callback="loginCaptcha" data-sitekey="6Ld2qPIUAAAAACBW438Lt3L5DJJhSQoOCm4GkUli"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 pt-3">
+                                        <button type="submit" class="btn btn-custom w-100"><strong>MASUK</strong></button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                        <div class="tab_container">
+
+                            <form id="registerForm" class="register-form pt-0 pb-3 needs-validation" enctype="multipart/form-data" novalidate action="<?php echo base_url('Instructor/addInstruktur'); ?>" method="POST">
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Nama Lengkap*</label>
+                                        <input type="text" name="instruktur_name" class="form-control" id="inputEmail4" placeholder="Nama Lengkap" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">No. Handphone*</label>
+                                        <input type="text" name="instruktur_hp" class="form-control" id="inputPassword4" placeholder="No. Handphone">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Email*</label>
+                                        <input type="email" name="instruktur_email" class="form-control" id="inputEmail4" placeholder="Email">
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <h5 for="inputEmail4">Kelengkapan Dokumen</h5>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleFormControlFile1">Curriculum Vitae*</label>
+                                        <label style="font-size: 12px;">(Harap Upload File dalam Bentuk PDF atau PNG)</label>
+                                        <input type="file" name="instruktur_cv" class="form-control-file" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Topik yang Ingin Diajukan</label>
+                                        <input type="text" name="instruktur_topik" class="form-control" id="inputPassword4" placeholder="Judul Topik">
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <h5 for="inputEmail4">Akun Media Sosial</h5>
+                                        <label style="font-size: 12px;" for="inputEmail4">Cantumkan Link Media Sosial Anda</label>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Youtube</label>
+                                        <input type="text" name="instruktur_youtube" class="form-control" id="inputEmail4" placeholder="Link Akun Youtube">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Instagram</label>
+                                        <input type="text" name="instruktur_instagram" class="form-control" id="inputPassword4" placeholder="Link Akun Instagram">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">LinkedIn</label>
+                                        <input type="text" name="instruktur_linkedin" class="form-control" id="inputEmail4" placeholder="Link Akun LinkedIn">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Facebook</label>
+                                        <input type="text" name="instruktur_facebook" class="form-control" id="inputPassword4" placeholder="Link Akun Facebook">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-center">
+                                        <p class="text-center">Dengan mendaftar, Anda menyetujui <a class="custom-anchor" href="#">Ketentuan Penggunaaan</a> dan <a class="custom-anchor" href="#">Kebijakan Privasi</a>.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-2 mb-4">
+                                    <div class="d-flex justify-content-center">
+                                        <div id="registerWidget" class="g-recaptcha" data-sitekey="6Ld2qPIUAAAAACBW438Lt3L5DJJhSQoOCm4GkUli" data-callback="registerCaptcha"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-custom w-100">DAFTAR</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
