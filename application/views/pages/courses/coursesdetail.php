@@ -156,9 +156,6 @@
 
                     <div class="d-flex flex-row title">
                         <h4 class="course_content_headers">Konten Kursus</h4>
-                        <span class="course_content_expand">
-                            <p class="mb-0">Perluas</p>
-                        </span>
                         <span class="course_content_lessons">
                             <p class="mb-0 text-right">
                                 <b><?php echo $duration->COURSE_AMOUNT; ?></b> Pelajaran
