@@ -102,6 +102,14 @@
     .course_content_duration {
         width: 15%;
     }
+    .trainer-image {
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        width: 50px;
+        object-position: top;
+        border: #b9b9b961 solid 1px;
+    }
 </style>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
@@ -226,7 +234,7 @@
                 <ul>
                     <div class="pl-2 mb-2">
                                             <div class="d-flex">
-                                                <img class="trainer-image" src="<?php echo base_url($course->TRAINER_IMAGE); ?>" alt="Instruktur <?php echo $list->TRAINER_NAME; ?>">
+                                                <img class="trainer-image" src="<?php echo base_url($course->TRAINER_IMAGE); ?>" alt="Instruktur <?php echo $course->TRAINER_NAME; ?>">
                                                 <div class="d-flex flex-column pt-1 pl-3">
                                                     <span class="card-trainer-name"><?php echo $course->TRAINER_NAME; ?></span>
                                                     <span class="card-trainer-title"><?php echo $course->TRAINER_TITLE; ?></span>
