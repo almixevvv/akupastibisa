@@ -135,7 +135,7 @@
         <div class="row ml-3">
             <div class="col-lg-8 course_details_left">
                 <div class="main_image">
-                    <video width="100%" controls>
+                    <video class="w-100" controls>
                         <source src="<?php echo base_url($course->COURSE_IMAGE); ?>" type="video/mp4">
                         <source src="<?php echo base_url($course->COURSE_IMAGE); ?>" type="video/ogg">
                         Your browser does not support HTML video.
