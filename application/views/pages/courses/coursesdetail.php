@@ -239,12 +239,6 @@
                             <span>Rp. <?php echo number_format($course->COURSE_PRICE); ?></span>
                         </a>
                     </li>
-                    <li>
-                        <a class="justify-content-between d-flex" href="#">
-                            <p>Jadwal </p>
-                            <span>2.00 pm to 4.00 pm</span>
-                        </a>
-                    </li>
                 </ul>
                 <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Daftar Sekarang</a>
 
