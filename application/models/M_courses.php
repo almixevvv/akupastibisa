@@ -75,7 +75,7 @@ class M_courses extends CI_Model
     function getCoursesList($url)
     {
         $this->db->select('*');
-        $this->db->from('g_course_categories');
+        $this->db->from('m_course_categories');
         $this->db->where('CATEGORY_URL', $url);
 
         $query = $this->db->get();
@@ -135,7 +135,7 @@ class M_courses extends CI_Model
     function navbarCategory()
     {
         $this->db->select('*');
-        $this->db->from('g_course_categories');
+        $this->db->from('m_course_categories');
         $this->db->order_by('REC_ID', 'ASC');
         $this->db->where('CATEGORY_PARENT_ID', '0');
 

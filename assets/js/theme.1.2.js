@@ -1,5 +1,5 @@
 var getUrl = window.location;
-var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split('/')[1];
+var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split('/')[0];
 (function($) {
 	'use strict';
 	var nav_offset_top = $('header').height() + 50;
@@ -8,7 +8,7 @@ var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split
 			$(window).scroll(function() {
 				var scroll = $(window).scrollTop();
 				if (scroll >= nav_offset_top) {
-					console.log(getUrl.protocol);
+					console.log('berubah dong');
 					$('.header_area').addClass('navbar_fixed');
 					$('#navbar-images').attr('src', baseUrl + '/assets/img/logo_dark.png');
 					$('#category-image').attr('src', baseUrl + '/assets/img/ico-resiet_dark.png');
