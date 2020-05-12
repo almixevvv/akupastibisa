@@ -8,6 +8,7 @@
     .content-title {
         min-width: 60%;
         max-width: 60%;
+        color: #242424;
     }
 
     .content-total {
@@ -21,8 +22,10 @@
     }
 
     .child_course_title {
-        max-width: 70%;
-        min-width: 70%;
+        max-width: 80%;
+        min-width: 80%;
+        font-size: 14px;
+        padding-left: 3rem;
     }
 
     .child_course_preview {
@@ -30,7 +33,7 @@
     }
 
     .child_course_duration {
-        width: 15%;
+        width: 18%;
     }
 
     .content_expand {
@@ -129,7 +132,7 @@
 
 <section class="course_details_area section_gap">
     <div class="container">
-        <div class="row">
+        <div class="row ml-3">
             <div class="col-lg-8 course_details_left">
                 <div class="main_image">
                     <video width="400" controls>
@@ -201,11 +204,8 @@
                                             <ul class="course_list pl-0">
                                                 <?php foreach ($childQuery->result() as $child) { ?>
                                                     <li class="course_child d-flex mb-0">
-                                                        <a class="child_course_title pl-3 pt-2 pb-2 pr-3" href="#">
+                                                        <a class="child_course_title pt-2 pb-2 pr-3" href="#">
                                                             <?php echo $child->COURSE_SECTION_CATEGORY; ?>
-                                                        </a>
-                                                        <a class="child_course_preview pt-2 pb-2" href="#">
-                                                            Pratinjau
                                                         </a>
                                                         <div class="child_course_duration pt-2 pb-2 pr-2 text-right">
                                                             <?php echo $child->COURSE_SECTION_DURATION; ?>
@@ -313,13 +313,6 @@
                                 </div>
                                 <span>Outstanding</span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="feedeback">
-                        <h6>Your Feedback</h6>
-                        <textarea name="feedback" class="form-control" cols="10" rows="10"></textarea>
-                        <div class="mt-10 text-right">
-                            <a href="#" class="primary-btn2 text-right rounded-0 text-white">Submit</a>
                         </div>
                     </div>
                     <div class="comments-area mb-30">
