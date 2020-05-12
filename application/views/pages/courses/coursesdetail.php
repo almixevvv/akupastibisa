@@ -226,14 +226,14 @@
                 <ul>
                     <div class="pl-2 mb-2">
                                             <div class="d-flex">
-                                                <img class="trainer-image" src="<?php echo base_url($list->TRAINER_IMAGE); ?>" alt="Instruktur <?php echo $list->TRAINER_NAME; ?>">
+                                                <img class="trainer-image" src="<?php echo base_url($course->TRAINER_IMAGE); ?>" alt="Instruktur <?php echo $list->TRAINER_NAME; ?>">
                                                 <div class="d-flex flex-column pt-1 pl-3">
-                                                    <span class="card-trainer-name"><?php echo $list->TRAINER_NAME; ?></span>
-                                                    <span class="card-trainer-title"><?php echo $list->TRAINER_TITLE; ?></span>
+                                                    <span class="card-trainer-name"><?php echo $course->TRAINER_NAME; ?></span>
+                                                    <span class="card-trainer-title"><?php echo $course->TRAINER_TITLE; ?></span>
                                                 </div>
                                             </div>
                                         </div>
-                    <!-- <li>
+                    <!-- <li>   
                         <a class="justify-content-between d-flex" href="#">
                             <p>Nama Instruktur</p>
                             <span class="or"><?php echo $course->TRAINER_NAME; ?></span>
