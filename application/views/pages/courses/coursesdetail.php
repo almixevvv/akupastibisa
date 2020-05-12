@@ -268,44 +268,6 @@
 
                 <h4 class="title">Reviews</h4>
                 <div class="content">
-                    <div class="review-top row pt-40">
-                        <div class="col-lg-12">
-                            <h6 class="mb-15">Provide Your Rating</h6>
-                            <div class="d-flex flex-row reviews justify-content-between">
-                                <span>Quality</span>
-                                <div class="star">
-                                    <i class="ti-star checked"></i>
-                                    <i class="ti-star checked"></i>
-                                    <i class="ti-star checked"></i>
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                </div>
-                                <span>Outstanding</span>
-                            </div>
-                            <div class="d-flex flex-row reviews justify-content-between">
-                                <span>Puncuality</span>
-                                <div class="star">
-                                    <i class="ti-star checked"></i>
-                                    <i class="ti-star checked"></i>
-                                    <i class="ti-star checked"></i>
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                </div>
-                                <span>Outstanding</span>
-                            </div>
-                            <div class="d-flex flex-row reviews justify-content-between">
-                                <span>Quality</span>
-                                <div class="star">
-                                    <i class="ti-star checked"></i>
-                                    <i class="ti-star checked"></i>
-                                    <i class="ti-star checked"></i>
-                                    <i class="ti-star"></i>
-                                    <i class="ti-star"></i>
-                                </div>
-                                <span>Outstanding</span>
-                            </div>
-                        </div>
-                    </div>
                     <div class="comments-area mb-30">
                         <div class="comment-list">
                             <div class="single-comment single-reviews justify-content-between d-flex">
