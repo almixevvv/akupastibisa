@@ -40,6 +40,11 @@ class Courses extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    function allCourse()
+    {
+        redirect(base_url('courses/search?query='));
+    }
+
     function searchCourses()
     {
 
