@@ -102,6 +102,7 @@
     .course_content_duration {
         width: 15%;
     }
+
     .trainer-image {
         height: 100px;
         border-radius: 75%;
@@ -123,7 +124,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div class="banner_content text-center" >
+                    <div class="banner_content text-center">
                         <h2 style="margin-top: 2em;"><?php echo $course->COURSE_NAME; ?></h2>
                         <div class="page_link">
                             <a href="<?php echo base_url(); ?>">Home</a>
@@ -233,33 +234,29 @@
             <div class="col-lg-4 right-contents">
                 <ul>
                     <div class="pl-2 mb-2">
-                                            <div class="d-flex">
-                                                <img class="trainer-image"  src="<?php echo base_url($course->TRAINER_IMAGE); ?>" alt="Instruktur <?php echo $course->TRAINER_NAME; ?>">
-                                                <div class="d-flex flex-column pt-1 pl-3">
-                                                    <span class="card-trainer-name" style="font-weight: bold; color: #30b29e;"><?php echo $course->TRAINER_NAME; ?></span>
-                                                    <span class="card-trainer-title" style="font-weight: bold; color: black"><?php echo $course->TRAINER_TITLE; ?></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <li>
-                                            <a class="justify-content-between d-flex" href="#" >
-                                                <p>Rating</p>
-                                                <span class="pr-1"> <b><?php echo number_format($course->COURSE_AVERAGE_RATING); ?></b></span>
-                                                <p><span>Rating</span><b><?php echo number_format($course->COURSE_AVERAGE_RATING); ?>
-                                                <span class="rating-star pt-1 pl-1" style="--rating: <?php echo $course->COURSE_AVERAGE_RATING; ?>" aria-label="rating is <?php echo $course->COURSE_AVERAGE_RATING; ?> out of 5"></span></b>&nbsp&nbsp(<?php echo number_format($course->COURSE_RATING); ?> rating)</p>
-                                                <!-- <span class="pr-1"> <b><?php echo number_format($course->COURSE_AVERAGE_RATING); ?></b></span>
-                                                <span class="rating-star pt-1 pl-1" style="--rating: <?php echo $course->COURSE_AVERAGE_RATING; ?>" aria-label="rating is <?php echo $course->COURSE_AVERAGE_RATING; ?> out of 5"></span>
-                                                <span class="pl-2" style="font-size: 14px;"> (<?php echo number_format($course->COURSE_RATING); ?> rating) </span> -->
-                                            </a>
-                                        </li>
+                        <div class="d-flex">
+                            <img class="trainer-image" src="<?php echo base_url($course->TRAINER_IMAGE); ?>" alt="Instruktur <?php echo $course->TRAINER_NAME; ?>">
+                            <div class="d-flex flex-column pt-1 pl-3">
+                                <span class="card-trainer-name" style="font-weight: bold; color: #30b29e;"><?php echo $course->TRAINER_NAME; ?></span>
+                                <span class="card-trainer-title" style="font-size:80%; color: black"><?php echo $course->TRAINER_TITLE; ?></span>
+                            </div>
+                        </div>
+                    </div>
+                    <li>
+                        <a class="justify-content-between d-flex" href="#">
+                            <p>Rating</p>
+                            <div><?php echo number_format($course->COURSE_AVERAGE_RATING); ?>
+                                <span class="rating-star pt-1 pl-1" style="--rating: <?php echo $course->COURSE_AVERAGE_RATING; ?>" aria-label="rating is <?php echo $course->COURSE_AVERAGE_RATING; ?> out of 5"></span></b>&nbsp&nbsp(<?php echo number_format($course->COURSE_RATING); ?> rating)</div>
+                        </a>
+                    </li>
                     <li>
                         <a class="justify-content-between d-flex" href="#">
                             <p>Biaya Kursus </p>
-                            <span style="color: black; font-size: 16px;">IDR<span style="color: #30b29e; font-size: 20px; font-weight: bold;"> <?php echo number_format($course->COURSE_PRICE); ?></span>
+                            <span style="color: black; font-size: 16px;">IDR<span style="color: #30b29e; font-size: 28px; font-weight: bold;"> <?php echo number_format($course->COURSE_PRICE); ?></span>
                         </a>
                     </li>
                 </ul>
-                <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Daftar Sekarang</a>
+                <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Beli Kelas</a>
 
                 <div class="course_requirement">
                     <h4 class="title">Apa yang akan Anda dapat</h4>
