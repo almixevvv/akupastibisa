@@ -194,7 +194,7 @@
                             <div class="row">
                                 <?php foreach ($topCourse->result() as $bestCourse) { ?>
                                     <div class="col-4">
-                                        <img class="img-fluid" src="<?php echo base_url('assets/img/courses/2Panduan Cepat Mendapatkan Kerja Untuk Milenial.png'); ?> " alt="" />
+                                        <img src="<?php echo base_url($bestCourse->COURSE_IMAGE); ?>" alt="<?php echo $bestCourse->COURSE_NAME; ?>" class="card-img-top" onerror="this.onerror=null;this.src='<?php echo base_url('assets/img/courses/2Panduan Cepat Mendapatkan Kerja Untuk Milenial.png'); ?>';">
                                     </div>
                                     <div class="col-8">
                                         <div class="d-flex flex-column">

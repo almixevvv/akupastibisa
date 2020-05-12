@@ -103,10 +103,10 @@
         width: 15%;
     }
     .trainer-image {
-        height: 50px;
-        border-radius: 50%;
+        height: 100px;
+        border-radius: 75%;
         object-fit: cover;
-        width: 50px;
+        width: 100px;
         object-position: top;
         border: #b9b9b961 solid 1px;
     }
@@ -234,11 +234,18 @@
                 <ul>
                     <div class="pl-2 mb-2">
                                             <div class="d-flex">
-                                                <img class="trainer-image" src="<?php echo base_url($course->TRAINER_IMAGE); ?>" alt="Instruktur <?php echo $course->TRAINER_NAME; ?>">
+                                                <img class="trainer-image"  src="<?php echo base_url($course->TRAINER_IMAGE); ?>" alt="Instruktur <?php echo $course->TRAINER_NAME; ?>">
                                                 <div class="d-flex flex-column pt-1 pl-3">
-                                                    <span class="card-trainer-name"><?php echo $course->TRAINER_NAME; ?></span>
-                                                    <span class="card-trainer-title"><?php echo $course->TRAINER_TITLE; ?></span>
+                                                    <span class="card-trainer-name" style="font-weight: bold; color: #30b29e;"><?php echo $course->TRAINER_NAME; ?></span>
+                                                    <span class="card-trainer-title" style="font-weight: bold; color: black"><?php echo $course->TRAINER_TITLE; ?></span>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-2 mb-2">
+                                            <div class="d-flex">
+                                                <span class="pr-1"> <b><?php echo number_format($course->COURSE_AVERAGE_RATING); ?></b></span>
+                                                <span class="rating-star pt-1 pl-1" style="--rating: <?php echo $course->COURSE_AVERAGE_RATING; ?>" aria-label="rating is <?php echo $course->COURSE_AVERAGE_RATING; ?> out of 5"></span>
+                                                <span class="pl-2" style="font-size: 14px;"> (<?php echo number_format($course->COURSE_RATING); ?> rating) </span>
                                             </div>
                                         </div>
                     <!-- <li>   
@@ -250,7 +257,7 @@
                     <li>
                         <a class="justify-content-between d-flex" href="#">
                             <p>Biaya Kursus </p>
-                            <span>Rp. <?php echo number_format($course->COURSE_PRICE); ?></span>
+                            <span style="color: black; font-size: 16px;">IDR<span style="color: #30b29e; font-size: 16px;"> <?php echo number_format($course->COURSE_PRICE); ?></span>
                         </a>
                     </li>
                 </ul>
