@@ -115,7 +115,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div class="banner_content text-center">
+                    <div class="banner_content text-center" style="margin-top: 2em;">
                         <h2><?php echo $course->COURSE_NAME; ?></h2>
                         <div class="page_link">
                             <a href="<?php echo base_url(); ?>">Home</a>
