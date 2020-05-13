@@ -58,7 +58,6 @@
     }
 
     .subcategory_filter,
-    .skill_filter,
     .rating_filter,
     .price_filter {
         border-top: solid 1px #3d3d3d2b;
@@ -250,35 +249,77 @@
             <div class="col-3">
                 <div class="filter_container">
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <span class="filter_header">Filter Kursus</span>
-                        </li>
-                        <li class="list-group-item">
-                            <span class="filter_child">
-                                <div class="topic_filter d-flex flex-column">
-                                    <span class="filter_child_header font-weight-bold mb-2 pt-1">Topik</span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="topic1">
-                                        <label class="form-check-label" for="topic1">
-                                            Keahlian Manajemen
+                        <form action="<?php echo base_url('courses/search'); ?>" type="GET">
+                            <li class="list-group-item">
+                                <span class="filter_header">Filter Kursus</span>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="skill_filter mt-2 d-flex flex-column">
+                                    <span class="filter_child_header font-weight-bold mb-2 pt-1">Tingkat</span>
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="all" name="grd" id="tingkat1" <?php echo ($this->input->get('grd') == 'all' ? 'checked="checked"' : ''); ?>>
+                                        <label class="form-check-label" for="tingkat1">
+                                            Semua Tingkat
                                         </label>
                                     </span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="topic2">
-                                        <label class="form-check-label" for="topic2">
-                                            Kepemimpinan
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="pemula" name="grd" id="tingkat2" <?php echo ($this->input->get('grd') == 'pemula' ? 'checked="checked"' : ''); ?>>
+                                        <label class="form-check-label" for="tingkat2">
+                                            Pemula
                                         </label>
                                     </span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="topic3">
-                                        <label class="form-check-label" for="topic3">
-                                            Strategi Bisnis
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="menengah" name="grd" id="tingkat3" <?php echo ($this->input->get('grd') == 'menengah' ? 'checked="checked"' : ''); ?>>
+                                        <label class="form-check-label" for="tingkat3">
+                                            Menengah
                                         </label>
                                     </span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="topic4">
-                                        <label class="form-check-label" for="topic4">
-                                            Pelatihan Manajer
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="ahli" name="grd" id="tingkat4" <?php echo ($this->input->get('grd') == 'ahli' ? 'checked="checked"' : ''); ?>>
+                                        <label class="form-check-label" for="tingkat4">
+                                            Ahli
+                                        </label>
+                                    </span>
+                                </div>
+                                <div class="price_filter mt-2 d-flex flex-column">
+                                    <span class="filter_child_header font-weight-bold mb-2 pt-1">Fitur</span>
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="1" name="ftr" id="fitur1" <?php echo ($this->input->get('ftr') == '1' ? 'checked="checked"' : ''); ?>>
+                                        <label class="form-check-label" for="fitur1">
+                                            Video Pembelajaran
+                                        </label>
+                                    </span>
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="6" name="ftr" id="fitur2" <?php echo ($this->input->get('ftr') == '6' ? 'checked="checked"' : ''); ?>>
+                                        <label class="form-check-label" for="fitur2">
+                                            Tes Online
+                                        </label>
+                                    </span>
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value=7 name="ftr" id="fitur3" <?php echo ($this->input->get('ftr') == '7' ? 'checked="checked"' : ''); ?>>
+                                        <label class="form-check-label" for="fitur3">
+                                            Artikel
+                                        </label>
+                                    </span>
+                                </div>
+                                <div class="price_filter mt-2 d-flex flex-column">
+                                    <span class="filter_child_header font-weight-bold mb-2 pt-1">Durasi</span>
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="2,4" name="drt" id="durasi1" <?php echo ($this->input->get('drt') == '2,4' ? 'checked="checked"' : ''); ?>>
+                                        <label class="form-check-label" for="durasi1">
+                                            2 - 4 Jam
+                                        </label>
+                                    </span>
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="5,7" name="drt" id="durasi2" <?php echo ($this->input->get('drt') == '5,7' ? 'checked="checked"' : ''); ?>>
+                                        <label class="form-check-label" for="durasi2">
+                                            5 - 7 Jam
+                                        </label>
+                                    </span>
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="8" name="drt" id="durasi3" <?php echo ($this->input->get('drt') == '8' ? 'checked="checked"' : ''); ?>>
+                                        <label class="form-check-label" for="durasi3">
+                                            Diatas 8 Jam
                                         </label>
                                     </span>
                                 </div>
@@ -289,7 +330,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-harga-left input-group-text" id="minimal-rp"><strong>Rp.</strong></span>
                                             </div>
-                                            <input type="text" class="input-harga-right form-control" placeholder="Minimal" aria-label="Harga minimal" aria-describedby="minimal-rp">
+                                            <input type="text" class="input-harga-right form-control" placeholder="Minimal" aria-label="Harga minimal" aria-describedby="minimal-rp" name="mnm_price">
                                         </div>
                                     </span>
                                     <span class="filter_child_item pl-1">
@@ -297,70 +338,43 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-harga-left input-group-text" id="maksimal-rp"><strong>Rp.</strong></span>
                                             </div>
-                                            <input type="text" class="input-harga-right form-control" placeholder="Maksimal" aria-label="Harga maksimal" aria-describedby="maksimal-rp">
+                                            <input type="text" class="input-harga-right form-control" placeholder="Maksimal" aria-label="Harga maksimal" aria-describedby="maksimal-rp" name="mxm_price">
                                         </div>
-                                    </span>
-                                </div>
-                                <div class="skill_filter mt-2 d-flex flex-column">
-                                    <span class="filter_child_header font-weight-bold mb-2 pt-1">Tingkat</span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="tingkat1">
-                                        <label class="form-check-label" for="tingkat1">
-                                            Semua Tingkat
-                                        </label>
-                                    </span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="tingkat2">
-                                        <label class="form-check-label" for="tingkat2">
-                                            Pemula
-                                        </label>
-                                    </span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="tingkat3">
-                                        <label class="form-check-label" for="tingkat3">
-                                            Menengah
-                                        </label>
-                                    </span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="tingkat4">
-                                        <label class="form-check-label" for="tingkat4">
-                                            Ahli
-                                        </label>
                                     </span>
                                 </div>
                                 <div class="rating_filter mt-2 d-flex flex-column">
                                     <span class="filter_child_header font-weight-bold mb-2 pt-1">Rating</span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="rating1">
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="5" name="rate" id="rating1">
                                         <label class="form-check-label" for="rating1">
                                             <span class="rating-star" style="--rating: 5" aria-label="rating is 5 out of 5"></span>
                                             <span>5 bintang</span>
                                         </label>
                                     </span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="rating2">
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="4" name="rate" id="rating2">
                                         <label class="form-check-label" for="rating2">
                                             <span class="rating-star" style="--rating: 4" aria-label="rating is 4 out of 5"></span>
                                             <span>4 bintang</span>
                                         </label>
                                     </span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="rating3">
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="3" name="rate" id="rating3">
                                         <label class="form-check-label" for="rating3">
                                             <span class="rating-star" style="--rating: 3" aria-label="rating is 3 out of 5"></span>
                                             <span>3 bintang</span>
                                         </label>
                                     </span>
-                                    <span class="filter_child_item pl-4">
-                                        <input class="form-check-input" type="checkbox" value="" id="rating4">
+                                    <span class="filter_child_item">
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="2" name="rate" id="rating4">
                                         <label class="form-check-label" for="rating4">
                                             <span class="rating-star" style="--rating: 2" aria-label="rating is 2 out of 5"></span>
                                             <span>2 bintang</span>
                                         </label>
                                     </span>
                                 </div>
-                            </span>
-                        </li>
+                            </li>
+                        </form>
                     </ul>
                 </div>
             </div>
@@ -458,3 +472,9 @@
     <!-- END OF MAIN SECTION -->
 </div>
 </div>
+
+<script>
+    $('form input').change(function() {
+        $(this).closest('form').submit();
+    });
+</script>

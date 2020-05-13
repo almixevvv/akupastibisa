@@ -70,13 +70,6 @@
     </div>
 </section>
 
-<!-- <section class="home_quotes">
-    <div class="container-fluid">
-        <div class="d-flex justify-content-center">
-            <h4 class="quotes_text">"Tell me and I forget, teach me and I may remember, Involve me and I learn." - Benjamin Franklin</h4>
-        </div>
-    </div>
-</section> -->
 <section class="home_quotes">
     <div class="container-fluid">
         <div class="d-flex justify-content-center">

@@ -144,6 +144,18 @@ class M_courses extends CI_Model
         return $query;
     }
 
+    function navbarChild($id)
+    {
+        $this->db->select('*');
+        $this->db->from('m_course_categories');
+        $this->db->order_by('REC_ID', 'ASC');
+        $this->db->where('CATEGORY_PARENT_ID', $id);
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
     function topTrainer()
     {
         $this->db->select('*');
