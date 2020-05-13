@@ -14,6 +14,7 @@ $route['blog'] = 'home/blog';
 $route['blogdetail'] = 'home/blogdetail';
 $route['elements'] = 'home/elements';
 $route['kartu_prakerja'] = 'home/kartu_prakerja';
+$route['artikel'] = 'home/artikel';
 $route['instruktur'] = 'Instructor';
 
 

@@ -244,7 +244,9 @@
 <section class="home_quotes">
     <div class="container-fluid">
         <div class="d-flex justify-content-center">
-            <h4 class="quotes_text">"Tell me and I forget, teach me and I may remember, Involve me and I learn." - Benjamin Franklin</h4>
+            <?php foreach ($randomQuotes->result() as $result) { ?>
+            <h4 class="quotes_text"><?php echo $result->CONTENT;?></h4>
+            <?php } ?>
         </div>
     </div>
 </section>
@@ -342,12 +344,12 @@
                                 <?php echo $trainer->TRAINER_BIO; ?>
                             </p>
                         </div>
-                        <div class="align-items-center justify-content-center d-flex">
+                        <!-- <div class="align-items-center justify-content-center d-flex">
                             <a href="#"><i class="ti-facebook"></i></a>
                             <a href="#"><i class="ti-twitter"></i></a>
                             <a href="#"><i class="ti-linkedin"></i></a>
                             <a href="#"><i class="ti-pinterest"></i></a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             <?php } ?>
@@ -361,7 +363,9 @@
 <section class="home_quotes">
     <div class="container-fluid">
         <div class="d-flex justify-content-center">
-            <h4 class="quotes_text">"Tell me and I forget, teach me and I may remember, Involve me and I learn." - Benjamin Franklin</h4>
+            <?php foreach ($randomQuotes->result() as $result) { ?>
+            <h4 class="quotes_text"><?php echo $result->CONTENT;?></h4>
+            <?php } ?>
         </div>
     </div>
 </section>

@@ -8,6 +8,8 @@ class Home extends CI_Controller
         parent::__construct(true);
         // $this->output->enable_profiler(TRUE);
         $this->load->model('M_courses', 'courses');
+        $this->load->model('M_quotes', 'quotes');
+        $this->load->model('M_artikel', 'artikel');
     }
 
 
@@ -15,6 +17,7 @@ class Home extends CI_Controller
     {
         $data['topCourses'] = $this->courses->topCourse();
         $data['topTrainer'] = $this->courses->topTrainer();
+        $data['randomQuotes'] = $this->quotes->randomQuotes();
 
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');
@@ -67,6 +70,16 @@ class Home extends CI_Controller
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');
         $this->load->view('pages/kartu_prakerja');
+        $this->load->view('templates/footer');
+    }
+
+    public function artikel()
+    {
+        $data['artikel'] = $this->artikel->artikel();
+        $data['artikel_all'] = $this->artikel->artikel_all();
+        $this->load->view('templates/header');
+        $this->load->view('templates/home-navbar');
+        $this->load->view('pages/artikel',$data);
         $this->load->view('templates/footer');
     }
 

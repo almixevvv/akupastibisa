@@ -115,10 +115,10 @@
                             </div>
                         </li>
                         <li class="nav-item mr-4" id="header-prakerja">
-                            <a class="nav-link text-uppercase" href="<?php echo base_url('home/kartu_prakerja'); ?>">Kartu Prakerja</a>
+                            <a class="nav-link text-uppercase" href="<?php echo base_url('kartu_prakerja'); ?>">Kartu Prakerja</a>
                         </li>
                         <li class="nav-item mr-4" id="header-articles">
-                            <a class="nav-link text-uppercase" href="<?php echo base_url('home'); ?>">Artikel</a>
+                            <a class="nav-link text-uppercase" href="<?php echo base_url('artikel'); ?>"><i class="far fa-clock"></i>Artikel</a>
                         </li>
                         <li class="nav-item mr-4" id="header-instruktur">
                             <a class="nav-link text-uppercase" href="<?php echo base_url('instruktur'); ?>">Instruktur</a>

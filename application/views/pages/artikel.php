@@ -1,0 +1,139 @@
+<style>
+    .prakerja_banner_area {
+    	z-index: 1;
+    	position: relative;
+    	background: url(../../assets/img/banner/prakerja-banner.jpg) no-repeat center;
+    	background-size: cover;
+    	height: 350px;
+    	background-position: 50% 20%;
+    }
+    .prakerja_banner_area .banner_inner {
+    	position: absolute;
+    	top: 60%;
+    	-webkit-transform: translateY(-70%);
+    	-moz-transform: translateY(-70%);
+    	-ms-transform: translateY(-70%);
+    	-o-transform: translateY(-70%);
+    	transform: translateY(-70%);
+    	z-index: 10;
+    	width: 100%;
+    }
+    @media (max-width: 991px) {
+    	.prakerja_banner_area .banner_inner {
+    		top: 50%;
+    	}
+    }
+    .prakerja_banner_area .banner_inner .banner_content h2 {
+    	font-size: 48px;
+    	font-weight: 500;
+    }
+    .prakerja_banner_area .banner_inner .banner_content p {
+    	font-size: 20px;
+    	color: #002347;
+    	font-weight: 500;
+    }
+    .about_area {
+        background-image: url(<?php echo base_url('assets/img/polygonlineart.png'); ?>);
+    }
+
+    .pages_feature_area {
+        background: rgb(0, 138, 177);
+        background: -moz-linear-gradient(90deg, rgba(0, 138, 177, 1) 30%, rgba(0, 181, 198, 1) 100%);
+        background: -webkit-linear-gradient(90deg, rgba(0, 138, 177, 1) 30%, rgba(0, 181, 198, 1) 100%);
+        background: linear-gradient(90deg, rgba(0, 138, 177, 1) 30%, rgba(0, 181, 198, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#008ab1", endColorstr="#00b5c6", GradientType=1);
+        font-size: 18px;
+        font-family: "Arial";
+        font-weight: thin;
+        line-height: 1.2 em;
+        color: #FFF;
+    }
+
+    .home_quotes {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        margin-top: 2.3rem;
+        background: rgb(0, 138, 177);
+        background: -moz-linear-gradient(90deg, rgba(0, 138, 177, 1) 30%, rgba(0, 181, 198, 1) 100%);
+        background: -webkit-linear-gradient(90deg, rgba(0, 138, 177, 1) 30%, rgba(0, 181, 198, 1) 100%);
+        background: linear-gradient(90deg, rgba(0, 138, 177, 1) 30%, rgba(0, 181, 198, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#008ab1", endColorstr="#00b5c6", GradientType=1);
+        background-image: url(<?php echo base_url('assets/img/polygonbg.jpg'); ?>);
+    }
+
+    .quotes_text {
+        color: white;
+    }
+
+</style>
+
+<section class="prakerja_banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="banner_content text-center">
+                        <h2 class="text-white">Kartu Prakerja</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home_quotes mt-0">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+            <h4 class="quotes_text">Tempat Belajar Online yang Lengkap dan Terpercaya</h4>
+        </div>
+    </div>
+</section>
+
+
+<div class="container">
+    <h1>kumpulan artikel</h1>
+    <hr>
+    <?php foreach ($artikel->result() as $result) { ?>
+    <div class="row">
+        <div class="col-md-8" style="border: 2px solid red">
+                <div class="col-md-12">
+                    <h2 style="color: #30b29e;"><?php echo $result->JUDUL;?></h3>
+                    <p style="font-size: 12px;"><?php echo $result->ARTIKEL_CREATED;?></p>
+                    <p style="font-size: 12px;"><?php echo $result->USER_ID;?></p>
+                </div>
+                <div class="col-md-12" >
+                    <img src="assets/img/no-image.png" style="width: 650px; height: 400px;">
+                </div>
+                <hr>
+                <div class="col-md-12">
+                    <?php echo $result->CONTENT;?>
+                </div>
+                <?php } ?>
+                <button type="submit" class="btn btn-primary" style="color: white; float: right;">read more..</button>
+
+        </div>
+        <div class="col-md-4" style="border: 2px solid blue">
+            <h3 style="background-color: yellow;">Berita Terbaru</h3>
+            <?php foreach ($artikel_all->result() as $result) { ?>
+            <div class="row">
+                <div class="col-md-4" style="margin-bottom: 1em;">
+                    <img src="assets/img/no-image.png" style="width: 100px; height: 100px;">
+                </div>
+                <div class="col-md-8">
+                    <p style="color: #30b29e;"><?php echo $result->JUDUL;?></p>
+                </div>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
+</div>
+
+
+<section class="home_quotes">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+            <h4 class="quotes_text">"Another text goes here, Another text goes here, Another text goes here"</h4>
+        </div>
+    </div>
+</section>
