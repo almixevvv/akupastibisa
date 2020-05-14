@@ -75,12 +75,14 @@ class Home extends CI_Controller
 
     public function artikel()
     {
-        $data['artikel'] = $this->artikel->artikel();
-        $data['artikel_all'] = $this->artikel->artikel_all();
+        $artikelID = $this->uri->segment(3, 0);
+        $data['artikel'] = $this->artikel->artikel($artikelID);
+        $data['artikel_all'] = $this->artikel->artikel_all($artikelID);
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');
         $this->load->view('pages/artikel',$data);
         $this->load->view('templates/footer');
+        // echo "masuk";
     }
 
     /* Footer Section */

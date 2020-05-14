@@ -74,7 +74,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="banner_content text-center">
-                        <h2 class="text-white">Kartu Prakerja</h2>
+                        <h2 class="text-white">Kumpulan Artikel</h2>
                     </div>
                 </div>
             </div>
@@ -92,15 +92,16 @@
 
 
 <div class="container">
-    <h1>kumpulan artikel</h1>
     <hr>
-    <?php foreach ($artikel->result() as $result) { ?>
+    <?php foreach ($artikel->result() as $result) { 
+        $date = date_create($result->ARTIKEL_CREATED);
+        ?>
     <div class="row">
         <div class="col-md-8" style="border: 2px solid red">
                 <div class="col-md-12">
                     <h2 style="color: #30b29e;"><?php echo $result->JUDUL;?></h3>
-                    <p style="font-size: 12px;"><?php echo $result->ARTIKEL_CREATED;?></p>
-                    <p style="font-size: 12px;"><?php echo $result->USER_ID;?></p>
+                    <p style="font-size: 12px;"><?php echo date_format($date,'d M Y');?></p>
+                    <!-- <p style="font-size: 12px;"><?php echo $result->USER_ID;?></p> -->
                 </div>
                 <div class="col-md-12" >
                     <img src="assets/img/no-image.png" style="width: 650px; height: 400px;">
@@ -110,18 +111,19 @@
                     <?php echo $result->CONTENT;?>
                 </div>
                 <?php } ?>
-                <button type="submit" class="btn btn-primary" style="color: white; float: right;">read more..</button>
-
         </div>
         <div class="col-md-4" style="border: 2px solid blue">
-            <h3 style="background-color: yellow;">Berita Terbaru</h3>
+            <h3 style="background-color: yellow;">Artikel Lainnya</h3>
+            <hr>
             <?php foreach ($artikel_all->result() as $result) { ?>
             <div class="row">
                 <div class="col-md-4" style="margin-bottom: 1em;">
                     <img src="assets/img/no-image.png" style="width: 100px; height: 100px;">
                 </div>
                 <div class="col-md-8">
-                    <p style="color: #30b29e;"><?php echo $result->JUDUL;?></p>
+                    <!-- <a class="course-link" href="<?php echo base_url('courses/' . $data->COURSE_URL . '/' . $data->COURSE_ID); ?>"> -->
+                        <a class="course-link" href="<?php echo base_url('artikel/' . $result->ARTIKEL_ID); ?>"><?php echo $result->JUDUL;?></a>
+                    <!-- <a href="<?php echo base_url("<?php echo base_url('artikel'.)?>");?>" style="color: #30b29e;"><?php echo $result->JUDUL;?></a> -->
                 </div>
             </div>
             <?php } ?>

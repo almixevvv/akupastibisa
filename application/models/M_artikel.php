@@ -6,6 +6,7 @@ class M_artikel extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('g_artikel');
+        $this->db->order_by('REC_ID','DESC');
         $this->db->limit(1);
 
         $query = $this->db->get();
