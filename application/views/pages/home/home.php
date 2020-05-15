@@ -244,7 +244,7 @@
 <section class="home_quotes">
     <div class="container-fluid">
         <div class="d-flex justify-content-center">
-            <?php foreach ($randomQuotes->result() as $result) { ?>
+            <?php foreach ($randomQuotes1->result() as $result) { ?>
             <h4 class="quotes_text"><?php echo $result->CONTENT;?></h4>
             <?php } ?>
         </div>
