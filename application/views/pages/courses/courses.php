@@ -249,7 +249,7 @@
             <div class="col-3">
                 <div class="filter_container">
                     <ul class="list-group">
-                        <form action="<?php echo base_url('courses/search'); ?>" type="GET">
+                        <form id="formFilter" type="GET">
                             <li class="list-group-item">
                                 <span class="filter_header">Filter Kursus</span>
                             </li>
@@ -257,25 +257,25 @@
                                 <div class="skill_filter mt-2 d-flex flex-column">
                                     <span class="filter_child_header font-weight-bold mb-2 pt-1">Tingkat</span>
                                     <span class="filter_child_item">
-                                        <input class="form-check-input custom-checkbox" type="checkbox" value="all" name="grd" id="tingkat1" <?php echo ($this->input->get('grd') == 'all' ? 'checked="checked"' : ''); ?>>
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="all" name="level" id="tingkat1" <?php echo ($this->input->get('grd') == 'all' ? 'checked="checked"' : ''); ?>>
                                         <label class="form-check-label" for="tingkat1">
                                             Semua Tingkat
                                         </label>
                                     </span>
                                     <span class="filter_child_item">
-                                        <input class="form-check-input custom-checkbox" type="checkbox" value="pemula" name="grd" id="tingkat2" <?php echo ($this->input->get('grd') == 'pemula' ? 'checked="checked"' : ''); ?>>
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="beginner" name="level" id="tingkat2" <?php echo ($this->input->get('grd') == 'pemula' ? 'checked="checked"' : ''); ?>>
                                         <label class="form-check-label" for="tingkat2">
                                             Pemula
                                         </label>
                                     </span>
                                     <span class="filter_child_item">
-                                        <input class="form-check-input custom-checkbox" type="checkbox" value="menengah" name="grd" id="tingkat3" <?php echo ($this->input->get('grd') == 'menengah' ? 'checked="checked"' : ''); ?>>
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="medium" name="level" id="tingkat3" <?php echo ($this->input->get('grd') == 'menengah' ? 'checked="checked"' : ''); ?>>
                                         <label class="form-check-label" for="tingkat3">
                                             Menengah
                                         </label>
                                     </span>
                                     <span class="filter_child_item">
-                                        <input class="form-check-input custom-checkbox" type="checkbox" value="ahli" name="grd" id="tingkat4" <?php echo ($this->input->get('grd') == 'ahli' ? 'checked="checked"' : ''); ?>>
+                                        <input class="form-check-input custom-checkbox" type="checkbox" value="expert" name="level" id="tingkat4" <?php echo ($this->input->get('grd') == 'ahli' ? 'checked="checked"' : ''); ?>>
                                         <label class="form-check-label" for="tingkat4">
                                             Ahli
                                         </label>
@@ -299,27 +299,6 @@
                                         <input class="form-check-input custom-checkbox" type="checkbox" value=7 name="ftr" id="fitur3" <?php echo ($this->input->get('ftr') == '7' ? 'checked="checked"' : ''); ?>>
                                         <label class="form-check-label" for="fitur3">
                                             Artikel
-                                        </label>
-                                    </span>
-                                </div>
-                                <div class="price_filter mt-2 d-flex flex-column">
-                                    <span class="filter_child_header font-weight-bold mb-2 pt-1">Durasi</span>
-                                    <span class="filter_child_item">
-                                        <input class="form-check-input custom-checkbox" type="checkbox" value="2,4" name="drt" id="durasi1" <?php echo ($this->input->get('drt') == '2,4' ? 'checked="checked"' : ''); ?>>
-                                        <label class="form-check-label" for="durasi1">
-                                            2 - 4 Jam
-                                        </label>
-                                    </span>
-                                    <span class="filter_child_item">
-                                        <input class="form-check-input custom-checkbox" type="checkbox" value="5,7" name="drt" id="durasi2" <?php echo ($this->input->get('drt') == '5,7' ? 'checked="checked"' : ''); ?>>
-                                        <label class="form-check-label" for="durasi2">
-                                            5 - 7 Jam
-                                        </label>
-                                    </span>
-                                    <span class="filter_child_item">
-                                        <input class="form-check-input custom-checkbox" type="checkbox" value="8" name="drt" id="durasi3" <?php echo ($this->input->get('drt') == '8' ? 'checked="checked"' : ''); ?>>
-                                        <label class="form-check-label" for="durasi3">
-                                            Diatas 8 Jam
                                         </label>
                                     </span>
                                 </div>
@@ -374,6 +353,7 @@
                                     </span>
                                 </div>
                             </li>
+                            <input type="hidden" name="ctg" id="courseCategory">
                         </form>
                     </ul>
                 </div>
@@ -428,7 +408,7 @@
                                         </div>
                                         <div class="pl-2 mb-2">
                                             <div class="d-flex">
-                                                <span class="pr-1"> <b><?php echo number_format($list->COURSE_AVERAGE_RATING); ?></b></span>
+                                                <span class="pr-1"> <b><?php echo $list->COURSE_AVERAGE_RATING; ?></b></span>
                                                 <span class="rating-star pt-1 pl-1" style="--rating: <?php echo $list->COURSE_AVERAGE_RATING; ?>" aria-label="rating is <?php echo $list->COURSE_AVERAGE_RATING; ?> out of 5"></span>
                                                 <span class="pl-2" style="font-size: 14px;"> (<?php echo number_format($list->COURSE_RATING); ?> rating) </span>
                                             </div>
@@ -474,7 +454,30 @@
 </div>
 
 <script>
-    $('form input').change(function() {
-        $(this).closest('form').submit();
+    var categoryUrl = window.location.href.split('/');
+    var getUrl = window.location;
+    var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split('/')[1];
+    let buildUrl = getUrl;
+
+    $('#courseCategory').val(categoryUrl[6]);
+    $('#formFilter input').change(function() {
+
+        let filterName = $(this).attr('name');
+        let filterValue = $(this).val();
+
+        console.log(filterValue);
+        console.log($(this).attr('name'));
+
+        var t = window.location.href.indexOf(filterName);
+        buildUrl = baseUrl + '/courses/search?ctg=' + categoryUrl[6] + '&' + filterName + '=' + filterValue;
+        console.log(buildUrl);
+
+        // if (t < 0) {
+        // } else {
+        //     buildUrl = baseUrl + '/courses/search?ctg=' + categoryUrl[6] + '&' + filterName + '=' + filterValue;
+        // }
+
+        // console.log(buildUrl);
+        window.location.href = buildUrl;
     });
 </script>
