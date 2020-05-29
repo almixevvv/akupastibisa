@@ -10,21 +10,12 @@ class M_cms extends CI_Model
 
     {
 
-
-
         $this->db->select('*');
-
         $this->db->where('id', $username);
-
         $this->db->where('pass', $password);
-
         $this->db->from('s_user');
 
-
-
         $query = $this->db->get();
-
-
 
         return $query;
     }
@@ -35,19 +26,11 @@ class M_cms extends CI_Model
 
     {
 
-
-
         $this->db->select('*');
-
         $this->db->from('s_user');
-
         $this->db->where('id', $username);
 
-
-
         $query = $this->db->get();
-
-
 
         return $query;
     }
@@ -59,16 +42,9 @@ class M_cms extends CI_Model
     function select_member()
 
     {
-
         $this->db->select('*');
-
         $this->db->from('g_member');
-
-
-
         $query = $this->db->get();
-
-
 
         return $query;
     }
@@ -76,11 +52,7 @@ class M_cms extends CI_Model
 
 
     function delete_member($id, $email)
-
     {
-
-
-
         $this->db->where('ID', $id);
 
         $this->db->delete($email);
@@ -1288,13 +1260,6 @@ class M_cms extends CI_Model
     public function insert_contact($data)
     {
         $insert = $this->db->insert('g_contactus', $data);
-
-        return $insert;
-    }
-
-    public function insert_instruktur($data)
-    {
-        $insert = $this->db->insert('g_trainer', $data);
 
         return $insert;
     }

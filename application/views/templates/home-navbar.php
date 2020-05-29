@@ -34,7 +34,8 @@
             width: 35%;
         }
 
-        #header-signup>a {
+        #header-signup>a,
+        #account-toggle {
             color: #00c5dd;
         }
 
@@ -55,7 +56,8 @@
         }
 
 
-        #categoryDropdown {
+        #categoryDropdown,
+        #profileDropdown {
             color: white;
         }
 
@@ -64,6 +66,15 @@
             outline: 0;
             -webkit-box-shadow: none;
             box-shadow: none;
+        }
+
+        #dropdown-category-position {
+            top: 75%;
+        }
+
+        #dropdown-signup-position {
+            top: 75%;
+            left: -6rem;
         }
     </style>
 
@@ -74,7 +85,7 @@
             </div>
         </div>
         <div class="main_menu">
-            <nav class="akb-navbar navbar navbar-expand-lg navbar-light">
+            <nav class="akb-navbar navbar navbar-expand-lg navbar-light" role="navigation">
                 <a class="navbar-brand logo_h mr-3" href="<?php echo base_url(); ?>">
                     <img id="navbar-images" src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Akupastibisa Logo" />
                 </a>
@@ -102,7 +113,7 @@
                                     <img id="category-image" src="<?php echo base_url('assets/img/ico-resiet.png'); ?>" alt="Category Icon">
                                     Kategori
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="categoryDropdown">
+                                <div class="dropdown-menu" id="dropdown-category-position" aria-labelledby="categoryDropdown">
                                     <?php
                                     $categoryQuery = $this->courses->navbarCategory();
                                     foreach ($categoryQuery->result() as $categories) {
@@ -135,7 +146,25 @@
                         ?>
                         <?php if ($loginStatus['logged_in'] == true) { ?>
                             <li class="nav-item" id="header-signup">
-                                <a class="nav-link text-uppercase" href="#">Hi, <?php echo $firstName[0]; ?></a>
+                                <div class="dropdown">
+                                    <a class="nav-link text-uppercase dropdown-toggle" id="account-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi, <?php echo $firstName[0]; ?></a>
+                                    <div class="dropdown-menu" id="dropdown-signup-position" aria-labelledby="profileDropdown">
+                                        <a class="dropdown-item" href="<?php echo base_url('profile/user-profile'); ?>">
+                                            <div class="d-flex justify-content-between">Edit Profil</div>
+                                        </a>
+                                        <?php if ($loginStatus['role'] == 'INSTRUCTOR') { ?>
+                                            <a class="dropdown-item" href="<?php echo base_url('profile/user-class'); ?>">
+                                                <div class="d-flex justify-content-between">Edit Kelas</div>
+                                            </a>
+                                        <?php } ?>
+                                        <a class="dropdown-item" href="<?php echo base_url('profile/help'); ?>">
+                                            <div class="d-flex justify-content-between">Bantuan</div>
+                                        </a>
+                                        <a class="dropdown-item" href="<?php echo base_url('Login/logoutProcess'); ?>">
+                                            <div class="d-flex justify-content-between">Logout</div>
+                                        </a>
+                                    </div>
+                                </div>
                             </li>
                         <?php } else { ?>
                             <li class="nav-item" id="header-signup">

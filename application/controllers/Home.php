@@ -72,7 +72,7 @@ class Home extends CI_Controller
         $data['randomQuotes'] = $this->quotes->randomQuotes();
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');
-        $this->load->view('pages/kartu_prakerja',$data);
+        $this->load->view('pages/kartu_prakerja', $data);
         $this->load->view('templates/footer');
     }
 
@@ -84,7 +84,7 @@ class Home extends CI_Controller
         $data['randomQuotes'] = $this->quotes->randomQuotes();
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');
-        $this->load->view('pages/artikel',$data);
+        $this->load->view('pages/artikel', $data);
         $this->load->view('templates/footer');
         // echo "masuk";
     }

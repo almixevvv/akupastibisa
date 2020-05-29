@@ -18,6 +18,10 @@ $route['kartu_prakerja'] = 'home/kartu_prakerja';
 $route['artikel'] = 'home/artikel';
 $route['instruktur'] = 'Instructor';
 
+//Profile Section
+$route['profile/user-profile'] = 'Profile/editProfile';
+$route['profile/user-class'] = 'Profile/editClass';
+$route['profile/help'] = 'Profile/helpDesk';
 
 // $route['policy'] = "Home/policy";
 $route['terms'] = "Home/terms";

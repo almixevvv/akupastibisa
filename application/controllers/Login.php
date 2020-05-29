@@ -6,7 +6,7 @@ class Login extends CI_Controller
     function __construct()
     {
         parent::__construct(true);
-        // $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(TRUE);
         $this->load->model('M_profile', 'profile');
     }
 
@@ -19,66 +19,76 @@ class Login extends CI_Controller
     function loginProcess()
     {
         //VERIFY CAPTCHA
-        $curlx = curl_init();
+        // $curlx = curl_init();
 
-        curl_setopt($curlx, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
-        curl_setopt($curlx, CURLOPT_HEADER, 0);
-        curl_setopt($curlx, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curlx, CURLOPT_POST, 1);
+        // curl_setopt($curlx, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+        // curl_setopt($curlx, CURLOPT_HEADER, 0);
+        // curl_setopt($curlx, CURLOPT_RETURNTRANSFER, 1);
+        // curl_setopt($curlx, CURLOPT_POST, 1);
 
-        $post_data =
-            [
-                'secret' => '6Ld2qPIUAAAAAF60gKbsB5rWZ7ztCD_2kWRiN6Gc', //<--- your reCaptcha secret key
-                'response' => $this->input->post('g-recaptcha-response')
-            ];
+        // $post_data =
+        //     [
+        //         'secret' => '6Ld2qPIUAAAAAF60gKbsB5rWZ7ztCD_2kWRiN6Gc', //<--- your reCaptcha secret key
+        //         'response' => $this->input->post('g-recaptcha-response')
+        //     ];
 
-        curl_setopt($curlx, CURLOPT_POSTFIELDS, $post_data);
+        // curl_setopt($curlx, CURLOPT_POSTFIELDS, $post_data);
 
-        $resp = json_decode(curl_exec($curlx));
+        // $resp = json_decode(curl_exec($curlx));
 
-        curl_close($curlx);
+        // curl_close($curlx);
 
-        //Validate captcha first
-        if (!$resp->success) {
-            $this->session->set_flashdata('error', 'captcha');
-            redirect(base_url('login'));
-        }
+        // //Validate captcha first
+        // if (!$resp->success) {
+        //     $this->session->set_flashdata('error', 'captcha');
+        //     redirect(base_url('login'));
+        // }
 
         $email     = $this->input->post('loginEmail');
         $password  = $this->input->post('loginPassword');
+        $querySalt = $this->profile->getSalt('g_member', 'HASH', 'EMAIL', $email);
 
-        $hashPassword = sha1($password);
+        if ($querySalt->num_rows() < 1) {
+            //Ga ada email
+            $this->session->set_flashdata('error', 'email');
+            redirect('login');
+        } else {
+            foreach ($querySalt->result() as $salt);
 
-        $queryEmail = $this->profile->loginEmail($email);
+            $hashPassword = hash("sha256", $password . $salt->HASH);
 
-        if ($queryEmail->num_rows() > 0) {
-            $queryPassword = $this->profile->loginPassword($hashPassword);
+            $queryLogin = $this->profile->getLoginDetail('g_member', 'EMAIL', 'PASSWORD', $email, $hashPassword);
 
-            if ($queryPassword->num_rows() > 0) {
-
-                foreach ($queryPassword->result() as $data) {
+            if ($queryLogin->num_rows() > 0) {
+                //Bener semuanya
+                foreach ($queryLogin->result() as $data) {
                     $newdata = array(
                         'name'      => $data->NAME,
                         'email'     => $data->EMAIL,
+                        'role'      => 'MEMBER',
                         'logged_in' => TRUE
                     );
 
                     $this->session->set_userdata('user_data', $newdata);
-                    redirect(base_url());
                 }
+                redirect('home');
             } else {
+                //Salah password
                 $this->session->set_flashdata('error', 'password');
-                redirect(base_url('login'));
+                redirect('login');
             }
-        } else {
-            $this->session->set_flashdata('error', 'email');
-            redirect(base_url('login'));
         }
+    }
+
+    function logoutProcess()
+    {
+        $this->session->unset_userdata('user_data');
+
+        redirect('home');
     }
 
     function registerProcess()
     {
-
         $name = $this->input->post('registerNama');
         $email = $this->input->post('registerEmail');
         $phone = $this->input->post('registerPhone');
@@ -90,28 +100,29 @@ class Login extends CI_Controller
 
         $hashPassword = hash('sha256', $password . $salt);
 
-        // $dataInsert = array(
-        //     'NAME'          => $name,
-        //     'PHONE'         => $phone,
-        //     'EMAIL'         => $email,
-        //     'PASSWORD'      => $hashPassword,
-        //     'DATE_JOINNED'  => $date
-        // );
+        $dataInsert = array(
+            'NAME'          => $name,
+            'PHONE'         => $phone,
+            'EMAIL'         => $email,
+            'PASSWORD'      => $hashPassword,
+            'DATE_JOINED'  => $date,
+            'HASH'          => $salt
+        );
 
-        // $query = $this->profile->accountRegister($dataInsert);
+        $query = $this->profile->registerAccount('g_member', $dataInsert);
 
-        // if ($query) {
-        //     $newdata = array(
-        //         'name'      => $name,
-        //         'email'     => $email,
-        //         'logged_in' => TRUE
-        //     );
+        if ($query) {
+            $newdata = array(
+                'name'      => $name,
+                'email'     => $email,
+                'role'      => 'MEMBER',
+                'logged_in' => TRUE
+            );
 
-        //     $this->session->set_userdata('user_data', $newdata);
-
-        //     redirect(base_url());
-        // } else {
-        //     redirect('login');
-        // }
+            // $this->session->set_userdata('user_data', $newdata);
+            redirect(base_url());
+        } else {
+            // redirect('login');
+        }
     }
 }

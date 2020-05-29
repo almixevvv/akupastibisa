@@ -200,23 +200,26 @@
 </section>
 
 
-
-<section class="trainer_area section_gap_top" style="font-size: 14px;">
+<section class="about_area section_gap">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <div class="main_title">
-                    <h2 class="mb-3">Ayo daftar menjadi instruktur</h2>
+
+        <div class="row">
+            <div class="col-lg-5">
+                <img src="<?php echo base_url('assets/img/trainer-woman1.png'); ?>" />
+            </div>
+            <div class="col-lg-7">
+                <div class="page_title">
+                    <h2>Jadi Mitra Penyedia Kelas Tatap Muka <br />dan Kelas Online</h2>
+                </div>
+                <div class="page_content mt-8">
+                    <p style="text-align:left;">Temui ribuan pengguna <strong>akupastibisa.com</strong> yang ingin meningkatkan kompetensi diri.<br /><br />Buat kursus video online dan hasilkan uang dengan mengajar pengguna-pengguna di Indonesia.<br /><br />Bantu orang mempelajari keahlian baru, memajukan kariernya, dan menjelajahi hobinya dengan cara membagikan pengetahuan Anda.</p>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center d-flex align-items-center">
-            <div class="col-12">
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio commodi odio voluptate quas repellat delectus aspernatur, ad laboriosam enim soluta mollitia, laborum ea quasi quibusdam beatae totam facere. Voluptates, in?</span>
-            </div>
-        </div>
+
     </div>
 </section>
+
 <section class="home_quotes">
     <div class="container-fluid">
         <div class="d-flex justify-content-center">
@@ -227,8 +230,8 @@
 <section class="trainer_area section_gap_top" style="background-color:#e5e5e5;">
     <div class="container">
         <div class="d-flex">
+            <!--
             <div class="login_left">
-
                 <div style="margin-left:60px;">
                     <img class="mt-5 mx-auto" src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Akupastibisa Logo" />
                     <span class="login-title">
@@ -240,14 +243,14 @@
                         </p>
                     </span>
                 </div>
-            </div>
-            <div class="login_right">
+            </div>-->
+            <div class="login_right" style="width:80%; margin-left:60px;">
                 <ul class="nav nav-tabs d-flex justify-content-around" id="myTab" role="tablist">
-                    <li class="nav-item" style="width: 25%;">
-                        <a class="nav-link pb-3 pt-3 w-100 text-center active show" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Masuk</a>
+                    <li class="nav-item" style="width: 50%;">
+                        <a class="nav-link pb-3 pt-3 w-100 text-center active show" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login Instruktur</a>
                     </li>
-                    <li class="nav-item" style="width: 25%;">
-                        <a class="nav-link pb-3 pt-3 w-100 text-center" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Daftar</a>
+                    <li class="nav-item" style="width: 50%;">
+                        <a class="nav-link pb-3 pt-3 w-100 text-center" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Daftar Sebagai Instruktur</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
@@ -256,12 +259,12 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="d-flex justify-content-center">
-                                        <h4>Masuk ke akun Akupastibisa kamu</h4>
+                                        <h4>Masuk ke akun Instruktur kamu</h4>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <form id="loginForm" class="register-form needs-validation" novalidate action="<?php echo base_url('login/loginProcess'); ?>" method="POST">
+                                <form id="loginForm" class="register-form needs-validation" novalidate action="<?php echo base_url('Instructor/loginInstruktur'); ?>" method="POST">
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="emailAddress">Alamat Email</label>
@@ -393,3 +396,29 @@
         </div>
     </div>
 </section>
+
+<?php if ($this->session->userdata('error') == 'email') { ?>
+    <script>
+        Swal.fire({
+            title: 'Login gagal',
+            text: "Email tidak terdaftar. Mohon periksa kembali",
+            type: 'error',
+            timer: 4000,
+            showCloseButton: true,
+            showCancelButton: false
+        });
+    </script>
+<?php } ?>
+
+<?php if ($this->session->userdata('error') == 'password') { ?>
+    <script>
+        Swal.fire({
+            type: 'error',
+            title: '<h4>Login gagal</h4>',
+            text: 'Password salah. Mohon periksa kembali',
+            showCloseButton: true,
+            showCancelButton: false,
+            timer: 4000,
+        });
+    </script>
+<?php } ?>
