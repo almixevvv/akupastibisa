@@ -229,6 +229,52 @@
                         </div>
 
                     </div>
+                    <div class="d-flex flex-row title">
+                        <h4 class="course_content_headers">Kelas Lainnya</h4>
+                    </div>
+
+
+
+                    <div class="content">
+                        <div class="card-group">
+                            <?php
+                            $this->db->select('*');
+                            $this->db->from('v_g_courses');
+                            $this->db->where('COURSE_TRAINER_ID', $course->COURSE_TRAINER_ID);
+                            $this->db->limit(4);
+
+                            $query = $this->db->get();
+                            ?>
+
+                            <?php foreach ($query->result() as $data) : ?>
+                                <div class="card" style="width: 18rem;">
+                                    <img src="<?php echo base_url($data->COURSE_IMAGE); ?>" alt="<?php echo $data->COURSE_NAME; ?>" class="card-img-top" onerror="this.onerror=null;this.src='<?php echo base_url('assets/img/courses/2Panduan Cepat Mendapatkan Kerja Untuk Milenial.png'); ?>';">
+                                    <div class="card-body">
+                                        <strong><?php echo strlen($data->COURSE_NAME) >= 45 ? substr($data->COURSE_NAME, 0, 45) . "..." : $data->COURSE_NAME; ?></strong>
+                                        <div class="pl-2 mb-2">
+                                            <div class="d-flex">
+                                                <img class="trainer-image" src="<?php echo base_url($data->TRAINER_IMAGE); ?>" alt="Instruktur <?php echo $data->TRAINER_NAME; ?>">
+                                                <div class="d-flex flex-column pt-1 pl-3">
+                                                    <span class="card-trainer-name" style="font-weight: bold; color: #30b29e;"><?php echo $course->TRAINER_NAME; ?></span>
+                                                    <span class="card-trainer-title"><?php echo $data->TRAINER_TITLE; ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pl-2 mb-2">
+                                            <div class="d-flex">
+                                                <span class="pr-1"> <b><?php echo $data->COURSE_AVERAGE_RATING; ?></b></span>
+                                                <span class="rating-star pt-1 pl-1" style="--rating: <?php echo $data->COURSE_AVERAGE_RATING; ?>" aria-label="rating is <?php echo $data->COURSE_AVERAGE_RATING; ?> out of 5"></span>
+                                                <span class="pl-2" style="font-size: 14px;"> (<?php echo number_format($data->COURSE_RATING); ?> rating) </span>
+                                            </div>
+                                        </div>
+                                        <a href="<?php echo base_url('courses/' . $data->COURSE_URL . '/' . $data->COURSE_ID); ?>" class="btn btn-primary">Lihat Detail</a>
+                                    </div>
+                                </div>
+                            <?php
+                            endforeach;
+                            ?>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 right-contents">

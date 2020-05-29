@@ -13,11 +13,15 @@ class Courses extends CI_Controller
     function index()
     {
         $courseID = $this->uri->segment(3, 0);
+        // $trainerID = $this->uri->segment(4, 0);
 
         $data['courseDetail']   = $this->courses->getSingleCourse($courseID);
+        // $data['courseAll']      = $this->courses->courseAll($trainerID);
         $data['courseContent']  = $this->courses->getCourseContentTitle($courseID);
         $data['courseData']     = $this->courses->getCourseContentTotal($courseID);
         $data['courseWYG']      = $this->courses->getCourseWYG($courseID);
+        $data['courseList'] = $this->courses->getCourseFromUrl($courseID);
+        
 
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');

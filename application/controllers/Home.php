@@ -78,10 +78,13 @@ class Home extends CI_Controller
 
     public function artikel()
     {
-        $artikelID = $this->uri->segment(3, 0);
+        // $this->output->enable_profiler(TRUE);
+        $artikelID = $this->uri->segment(2, 0);
         $data['artikel'] = $this->artikel->artikel($artikelID);
         $data['artikel_all'] = $this->artikel->artikel_all($artikelID);
         $data['randomQuotes'] = $this->quotes->randomQuotes();
+
+        // echo $artikelID;
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');
         $this->load->view('pages/artikel', $data);

@@ -161,6 +161,7 @@ class M_courses extends CI_Model
         $this->db->select('*');
         $this->db->from('g_trainer');
         $this->db->order_by('RAND()');
+        $this->db->where('TRAINER_STATUS !=', 'NEW');
         $this->db->limit(4);
 
         $query = $this->db->get();
@@ -174,6 +175,17 @@ class M_courses extends CI_Model
         $this->db->from('g_trainer');
         $this->db->order_by('TRAINER_NAME', 'ASC');
         $this->db->where('TRAINER_STATUS !=', 'NEW');
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
+    function courseAll($trainer_id)
+    {
+        $this->db->select('*');
+        $this->db->from('g_courses');
+        $this->db->where('COURSE_TRAINER_ID', $trainer_id);
 
         $query = $this->db->get();
 

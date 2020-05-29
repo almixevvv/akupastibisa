@@ -97,7 +97,7 @@
         $date = date_create($result->ARTIKEL_CREATED);
         ?>
     <div class="row">
-        <div class="col-md-8" style="border: 2px solid red">
+        <div class="col-md-8">
                 <div class="col-md-12">
                     <h2 style="color: #30b29e;"><?php echo $result->JUDUL;?></h3>
                     <p style="font-size: 12px;"><?php echo date_format($date,'d M Y');?></p>
@@ -112,8 +112,8 @@
                 </div>
                 <?php } ?>
         </div>
-        <div class="col-md-4" style="border: 2px solid blue">
-            <h3 style="background-color: yellow;">Artikel Lainnya</h3>
+        <div class="col-md-4">
+            <h3 style="background-color: yellow; height: 2em; padding-left: 1em; padding-top: 0.5em;">Artikel Lainnya</h3>
             <hr>
             <?php foreach ($artikel_all->result() as $result) { ?>
             <div class="row">
@@ -135,7 +135,9 @@
 <section class="home_quotes">
     <div class="container-fluid">
         <div class="d-flex justify-content-center">
-            <h4 class="quotes_text">"Another text goes here, Another text goes here, Another text goes here"</h4>
+            <?php foreach ($randomQuotes->result() as $result) { ?>
+            <h4 class="quotes_text"><?php echo $result->CONTENT;?></h4>
+            <?php } ?>
         </div>
     </div>
 </section>
