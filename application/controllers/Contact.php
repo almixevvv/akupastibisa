@@ -7,13 +7,15 @@ class Contact extends CI_Controller
         parent::__construct(true);
         // $this->output->enable_profiler(TRUE);
         $this->load->model('M_cms', 'cms');
+        $this->load->model('M_quotes', 'quotes');
     }
 
     public function index()
     {
+        $data['randomQuotes'] = $this->quotes->randomQuotes();
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');
-        $this->load->view('pages/contact');
+        $this->load->view('pages/contact',$data);
         $this->load->view('templates/footer');
     }
 
@@ -54,7 +56,7 @@ class Contact extends CI_Controller
             // redirect(base_url('register/verification'));
         }
 
-        $this->cms->insert_contact($data);
+        // $this->cms->insert_contact($data);
 
 
         redirect('contact');

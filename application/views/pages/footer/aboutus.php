@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="feature-title text-center">
-                    <p style="font-size: 14px;">Tempat Belajar Online yang Lengkap dan Terpercaya</p>
+                    <p style="font-size: 14px;">Tempat Belajar Online yang Lengkap dan Terpercaya.</p>
                 </div>
             </div>
 
@@ -64,7 +64,7 @@
 <section class="about_area ">
     <div class="container">
         <div class="page_title">
-            <h2>Marketplace untuk belajar dan<br />mengembangkan diri secara online
+            <h2>Marketplace untuk belajar dan<br />mengembangkan diri secara online..
             </h2>
         </div>
     </div>

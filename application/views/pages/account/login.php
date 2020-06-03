@@ -121,6 +121,10 @@
         min-width: 15px;
     }
 
+    .swal2-select {
+        display: none !important;
+    }
+
     .form-control:focus {
         border-color: #CCC;
         outline: 0;
@@ -381,7 +385,7 @@
             Swal.fire({
                 type: 'error',
                 title: '<h4>Login gagal</h4>',
-                text: 'Password salah. Mohon periksa kembali',
+                text: '<p>Password salah. Mohon periksa kembali</p>',
                 showCloseButton: true,
                 showCancelButton: false,
                 timer: 4000,
@@ -390,66 +394,66 @@
     <?php } ?>
 
     <script>
-        // (function() {
-        //     'use strict';
-        //     window.addEventListener('load', function() {
-        //         // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        //         var forms = document.getElementsByClassName('needs-validation');
-        //         // Loop over them and prevent submission
-        //         var validation = Array.prototype.filter.call(forms, function(form) {
-        //             form.addEventListener('submit', function(event) {
-        //                 if (form.checkValidity() === false) {
-        //                     event.preventDefault();
-        //                     event.stopPropagation();
-        //                 }
-        //                 form.classList.add('was-validated');
-        //             }, false);
-        //         });
-        //     }, false);
-        // })();
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
 
-        // $('#registerPassword, #registerConfirmPassword').on('keyup', function() {
+        $('#registerPassword, #registerConfirmPassword').on('keyup', function() {
 
-        //     var password = $('#registerPassword').val();
-        //     var confirmPassword = $('#registerConfirmPassword').val();
+            var password = $('#registerPassword').val();
+            var confirmPassword = $('#registerConfirmPassword').val();
 
-        //     if (password == confirmPassword) {
-        //         $('#registerConfirmPassword').removeClass('is-invalid').addClass('is-valid');
-        //     } else {
-        //         $('#registerForm').removeClass('was-validated');
-        //         $('#registerConfirmPassword').removeClass('is-valid').addClass('is-invalid');
-        //     }
-        // });
+            if (password == confirmPassword) {
+                $('#registerConfirmPassword').removeClass('is-invalid').addClass('is-valid');
+            } else {
+                $('#registerForm').removeClass('was-validated');
+                $('#registerConfirmPassword').removeClass('is-valid').addClass('is-invalid');
+            }
+        });
 
-        // $('#loginForm').on('submit', function(e) {
+        $('#loginForm').on('submit', function(e) {
 
-        //     var response = grecaptcha.getResponse(loginWidget);
+            var response = grecaptcha.getResponse(loginWidget);
 
-        //     if (response.length === 0) {
-        //         e.preventDefault();
-        //         console.log('kosong');
-        //     } else {
-        //         console.log('masukin');
-        //     }
+            if (response.length === 0) {
+                e.preventDefault();
+                console.log('kosong');
+            } else {
+                console.log('masukin');
+            }
 
-        // });
+        });
 
-        // $('#registerForm').on('submit', function(e) {
-        //     e.preventDefault();
+        $('#registerForm').on('submit', function(e) {
+            e.preventDefault();
 
-        //     console.log(registerWidget);
-        //     var response = grecaptcha.getResponse(registerWidget);
-        //     console.log(response);
+            console.log(registerWidget);
+            var response = grecaptcha.getResponse(registerWidget);
+            console.log(response);
 
-        //     console.log(grecaptcha);
+            console.log(grecaptcha);
 
-        //     // if (response.length === 0) {
-        //     //     e.preventDefault();
-        //     //     console.log('kosong');
-        //     // } else {
-        //     //     console.log('masukin');
-        //     // }
-        // });
+            // if (response.length === 0) {
+            //     e.preventDefault();
+            //     console.log('kosong');
+            // } else {
+            //     console.log('masukin');
+            // }
+        });
     </script>
 
 </body>

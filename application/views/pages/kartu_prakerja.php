@@ -1,4 +1,37 @@
 <style>
+    .prakerja_banner_area {
+    	z-index: 1;
+    	position: relative;
+    	background: url(../../assets/img/banner/prakerja-banner.jpg) no-repeat center;
+    	background-size: cover;
+    	height: 350px;
+    	background-position: 50% 20%;
+    }
+    .prakerja_banner_area .banner_inner {
+    	position: absolute;
+    	top: 60%;
+    	-webkit-transform: translateY(-70%);
+    	-moz-transform: translateY(-70%);
+    	-ms-transform: translateY(-70%);
+    	-o-transform: translateY(-70%);
+    	transform: translateY(-70%);
+    	z-index: 10;
+    	width: 100%;
+    }
+    @media (max-width: 991px) {
+    	.prakerja_banner_area .banner_inner {
+    		top: 50%;
+    	}
+    }
+    .prakerja_banner_area .banner_inner .banner_content h2 {
+    	font-size: 48px;
+    	font-weight: 500;
+    }
+    .prakerja_banner_area .banner_inner .banner_content p {
+    	font-size: 20px;
+    	color: #002347;
+    	font-weight: 500;
+    }
     .about_area {
         background-image: url(<?php echo base_url('assets/img/polygonlineart.png'); ?>);
     }
@@ -33,14 +66,14 @@
     }
 </style>
 
-<section class="banner_area">
+<section class="prakerja_banner_area">
     <div class="banner_inner d-flex align-items-center">
         <div class="overlay"></div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="banner_content text-center">
-                        <h2>Kartu Prakerja</h2>
+                        <h2 class="text-white">Kartu Prakerja</h2>
                     </div>
                 </div>
             </div>

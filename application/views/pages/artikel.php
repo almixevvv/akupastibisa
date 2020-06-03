@@ -113,7 +113,7 @@
                 <?php } ?>
         </div>
         <div class="col-md-4">
-            <h3 style="background-color: yellow; height: 2em; padding-left: 1em; padding-top: 0.5em;">Artikel Lainnya</h3>
+            <h3 style="background-color: #00c5dd; height: 2em; padding-left: 1em; padding-top: 0.5em; color: white;">Artikel Lainnya</h3>
             <hr>
             <?php foreach ($artikel_all->result() as $result) { ?>
             <div class="row">
@@ -122,7 +122,7 @@
                 </div>
                 <div class="col-md-8">
                     <!-- <a class="course-link" href="<?php echo base_url('courses/' . $data->COURSE_URL . '/' . $data->COURSE_ID); ?>"> -->
-                        <a class="course-link" href="<?php echo base_url('artikel/' . $result->ARTIKEL_ID); ?>"><?php echo $result->JUDUL;?></a>
+                        <a style="color: #30b29e;" class="course-link" href="<?php echo base_url('artikel/' . $result->ARTIKEL_ID); ?>"><?php echo $result->JUDUL;?></a>
                     <!-- <a href="<?php echo base_url("<?php echo base_url('artikel'.)?>");?>" style="color: #30b29e;"><?php echo $result->JUDUL;?></a> -->
                 </div>
             </div>

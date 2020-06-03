@@ -5,7 +5,7 @@ class Instructor extends CI_Controller
 	function __construct()
 	{
 		parent::__construct(true);
-		$this->output->enable_profiler(TRUE);
+		// $this->output->enable_profiler(TRUE);
 		$this->load->model('M_profile', 'profile');
 		$this->load->model('M_cms', 'cms');
 	}
@@ -57,6 +57,11 @@ class Instructor extends CI_Controller
 				redirect('instruktur');
 			}
 		}
+	}
+
+	function loginCMS()
+	{
+		$this->load->view('pages-instructor/login');
 	}
 
 	function addInstruktur()
