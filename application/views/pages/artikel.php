@@ -65,6 +65,18 @@
         color: white;
     }
 
+    .sansserif {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .tahoma {
+      font-family: Tahoma, Geneva, sans-serif;
+    }
+
+    .text_content{
+        text-indent: 20px;
+    }
+
 </style>
 
 <section class="prakerja_banner_area">
@@ -99,12 +111,12 @@
     <div class="row">
         <div class="col-md-8">
                 <div class="col-md-12">
-                    <h2 style="color: #30b29e;"><?php echo $result->JUDUL;?></h3>
+                    <h2 style="color: #30b29e;" class="tahoma"><?php echo $result->JUDUL;?></h3>
                     <p style="font-size: 12px;"><?php echo date_format($date,'d M Y');?></p>
                     <!-- <p style="font-size: 12px;"><?php echo $result->USER_ID;?></p> -->
                 </div>
                 <div class="col-md-12" >
-                    <img src="assets/img/no-image.png" style="width: 650px; height: 400px;">
+                    <img src="<?php echo base_url($result->IMAGE); ?>" alt="<?php echo $result->IMAGE; ?>" class="card-img-top" onerror="this.onerror=null;this.src='<?php echo base_url('assets/img/no-image.png'); ?>';">
                 </div>
                 <hr>
                 <div class="col-md-12">
@@ -118,12 +130,11 @@
             <?php foreach ($artikel_all->result() as $result) { ?>
             <div class="row">
                 <div class="col-md-4" style="margin-bottom: 1em;">
-                    <img src="assets/img/no-image.png" style="width: 100px; height: 100px;">
+                    <img src="<?php echo base_url($result->IMAGE); ?>" alt="<?php echo $result->IMAGE; ?>" class="card-img-top" onerror="this.onerror=null;this.src='<?php echo base_url('assets/img/no-image.png'); ?>';">
                 </div>
                 <div class="col-md-8">
-                    <!-- <a class="course-link" href="<?php echo base_url('courses/' . $data->COURSE_URL . '/' . $data->COURSE_ID); ?>"> -->
-                        <a style="color: #30b29e;" class="course-link" href="<?php echo base_url('artikel/' . $result->ARTIKEL_ID); ?>"><?php echo $result->JUDUL;?></a>
-                    <!-- <a href="<?php echo base_url("<?php echo base_url('artikel'.)?>");?>" style="color: #30b29e;"><?php echo $result->JUDUL;?></a> -->
+                    <a style="color: #30b29e;" class="course-link" href="<?php echo base_url('artikel/' . $result->ARTIKEL_ID); ?>"><?php echo $result->JUDUL;?>
+                    </a>
                 </div>
             </div>
             <?php } ?>
