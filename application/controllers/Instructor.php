@@ -7,6 +7,7 @@ class Instructor extends CI_Controller
 		parent::__construct(true);
 		// $this->output->enable_profiler(TRUE);
 		$this->load->model('M_profile', 'profile');
+		$this->load->model('M_quotes', 'quotes');
 		$this->load->model('M_cms', 'cms');
 	}
 
@@ -14,6 +15,8 @@ class Instructor extends CI_Controller
 	{
 		$data['topCourses'] = $this->courses->topCourse();
 		$data['topTrainer'] = $this->courses->topTrainer_all();
+		$data['randomQuotes'] = $this->quotes->randomQuotes();
+        $data['randomQuotes1'] = $this->quotes->randomQuotes();
 
 		$this->load->view('templates/header');
 		$this->load->view('templates/home-navbar');
