@@ -262,7 +262,7 @@
                                         </div>
                                         <div class="pl-2 mb-2">
                                             <div class="d-flex">
-                                                <span class="pr-1"> <b><?php echo $data->COURSE_AVERAGE_RATING; ?></b></span>
+                                                <span class="pr-1"> <b><?php echo number_format($data->COURSE_AVERAGE_RATING); ?></b></span>
                                                 <span class="rating-star pt-1 pl-1" style="--rating: <?php echo $data->COURSE_AVERAGE_RATING; ?>" aria-label="rating is <?php echo $data->COURSE_AVERAGE_RATING; ?> out of 5"></span>
                                                 <span class="pl-2" style="font-size: 14px;"> (<?php echo number_format($data->COURSE_RATING); ?> rating) </span>
                                             </div>
