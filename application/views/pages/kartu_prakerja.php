@@ -105,7 +105,9 @@
 <section class="home_quotes">
     <div class="container-fluid">
         <div class="d-flex justify-content-center">
-            <h4 class="quotes_text">"Another text goes here, Another text goes here, Another text goes here"</h4>
+            <?php foreach ($randomQuotes->result() as $result) { ?>
+            <h4 class="quotes_text"><?php echo $result->CONTENT;?></h4>
+            <?php } ?>
         </div>
     </div>
 </section>
