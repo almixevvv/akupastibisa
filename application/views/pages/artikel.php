@@ -103,7 +103,7 @@
 </section>
 
 
-<div class="container">
+<div class="container about_area">
     <hr>
     <?php foreach ($artikel->result() as $result) { 
         $date = date_create($result->ARTIKEL_CREATED);
