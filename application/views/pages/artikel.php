@@ -1,3 +1,16 @@
+<head>
+  <!-- <title>Your Website Title</title> -->
+    <!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+    <?php foreach ($artikel->result() as $result) { ?>
+  <meta property="og:url"           content="<?php echo base_url('artikel/' . $result->ARTIKEL_ID)?>" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Akupastibisa.com" />
+  <meta property="og:description"   content="Akupastibisa.com" />
+  <meta property="og:image"         content="<?php echo base_url($result->IMAGE); ?>" />
+   <?php } ?>
+</head>
+
 <style>
     .prakerja_banner_area {
     	z-index: 1;
@@ -77,6 +90,19 @@
         text-indent: 20px;
     }
 
+    ul#menu li {
+      display:inline;
+    }
+
+    .rcorners2 {
+      border-radius: 15px;
+      border: 2px solid #17a2b8;
+      padding: 10px; 
+      width: 200px;
+
+      /*height: 150px;  */
+    }
+
 </style>
 
 <section class="prakerja_banner_area">
@@ -111,8 +137,9 @@
     <div class="row">
         <div class="col-md-8">
                 <div class="col-md-12">
-                    <h2 style="color: #30b29e;" class="tahoma"><?php echo $result->JUDUL;?></h3>
-                    <p style="font-size: 12px;"><?php echo date_format($date,'d M Y');?></p>
+                    <h2 style="color: #30b29e;" class="tahoma"><?php echo $result->JUDUL;?></h2>
+                        <label style="font-size: 12px;">Era Modernisasi terus berkembang begitu juga pada bidan teknologi dan informasi</label>
+                    <p style="font-size: 12px;"><?php echo date_format($date,'d M Y H:i:s');?> - <?php echo $result->USER_ID;?></p>
                     <!-- <p style="font-size: 12px;"><?php echo $result->USER_ID;?></p> -->
                 </div>
                 <div class="col-md-12" >
@@ -129,19 +156,55 @@
             <hr>
             <?php foreach ($artikel_all->result() as $result) { ?>
             <div class="row">
-                <div class="col-md-4" style="margin-bottom: 1em;">
-                    <img src="<?php echo base_url($result->IMAGE); ?>" alt="<?php echo $result->IMAGE; ?>" class="card-img-top" onerror="this.onerror=null;this.src='<?php echo base_url('assets/img/no-image.png'); ?>';">
+                <div class="col-md-4">
+                    <img style="height: 100px" src="<?php echo base_url($result->IMAGE); ?>" alt="<?php echo $result->IMAGE; ?>" class="card-img-top" onerror="this.onerror=null;this.src='<?php echo base_url('assets/img/no-image.png'); ?>';">
                 </div>
                 <div class="col-md-8">
                     <a style="color: #30b29e;" class="course-link" href="<?php echo base_url('artikel/' . $result->ARTIKEL_ID); ?>"><?php echo $result->JUDUL;?>
                     </a>
+                    <label style="font-size: 12px"><?php echo date_format($date,'d M Y H:i:s');?></label>
                 </div>
             </div>
+            <hr>
             <?php } ?>
         </div>
     </div>
 </div>
 
+<div class="container">
+    <h3>Topik Terkait</h3>
+    <ul id="menu" style="margin-top: 2em;">
+       <li class="rcorners2">Teknologi</li> 
+       <li class="rcorners2">SDM</li> 
+       <li class="rcorners2">Informasi</li> 
+    </ul>
+</div>
+
+<!-- Load Facebook SDK for JavaScript -->
+<div class="container">
+    <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <!-- Your share button code -->
+  <?php foreach ($artikel->result() as $result) { 
+        $date = date_create($result->ARTIKEL_CREATED);
+        ?>
+  <div class="fb-share-button fa fa-facebook" 
+    data-href="<?php echo base_url('artikel/' . $result->ARTIKEL_ID)?>" 
+    data-layout="button_count">
+  </div>
+  <?php } ?>
+
+  <a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?url=[<?php echo base_url('artikel/' . $result->ARTIKEL_ID)?>]">
+Tweet</a>
+</div>
 
 <section class="home_quotes">
     <div class="container-fluid">
