@@ -1,28 +1,4 @@
 <style>
-    .home_feature_area {
-        background: rgb(0, 138, 177);
-        background: -moz-linear-gradient(90deg, rgba(0, 138, 177, 1) 30%, rgba(0, 181, 198, 1) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(0, 138, 177, 1) 30%, rgba(0, 181, 198, 1) 100%);
-        background: linear-gradient(90deg, rgba(0, 138, 177, 1) 30%, rgba(0, 181, 198, 1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#008ab1", endColorstr="#00b5c6", GradientType=1);
-        font-size: 14px;
-        font-family: "Arial";
-        line-height: 1.5 em;
-    }
-
-    .pages_feature_area {
-        background: rgb(0, 138, 177);
-        background: -moz-linear-gradient(90deg, rgba(0, 138, 177, 1) 30%, rgba(0, 181, 198, 1) 100%);
-        background: -webkit-linear-gradient(90deg, rgba(0, 138, 177, 1) 30%, rgba(0, 181, 198, 1) 100%);
-        background: linear-gradient(90deg, rgba(0, 138, 177, 1) 30%, rgba(0, 181, 198, 1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#008ab1", endColorstr="#00b5c6", GradientType=1);
-        font-size: 18px;
-        font-family: "Arial";
-        font-weight: thin;
-        line-height: 1.2 em;
-        color: #FFF;
-    }
-
     .home_quotes {
         padding-top: 3rem;
         padding-bottom: 3rem;
@@ -43,70 +19,9 @@
         padding-top: 35px;
     }
 
-    .single-trainer .meta-text .designation {
-        font-size: 14px;
-        margin-bottom: 9px;
-        padding-top: 10px;
-        line-height: 17px;
-    }
-
-    .inner_container {
-        margin-left: 5rem;
-        margin-right: 5rem;
-        margin-top: 3.7rem;
-    }
-
-    .login_left {
-        width: 50%;
-        height: 88vh;
-        box-sizing: border-box;
-        min-height: 1px;
-        position: relative;
-        padding-left: 0px;
-        padding-right: 0px;
-        background-image: url(<?php echo base_url('assets/img/login-left.jpg'); ?>);
-        background-size: cover;
-        border-top-left-radius: 2rem;
-        border-bottom-left-radius: 2rem;
-    }
-
     .login_right {
         width: 50%;
         background: #fff;
-    }
-
-    .login-title>p {
-        color: #fff;
-        font-family: "Arial";
-        font-size: 16px;
-    }
-
-    .white-color {
-        color: #fff;
-    }
-
-    #material-login {
-        background-color: #3b7a8f;
-        margin-left: 8rem;
-        margin-right: 8rem;
-        border: 1px solid #3b7a8f;
-        border-radius: 10px;
-    }
-
-    #instruktur-login {
-        background-color: #3b7a8f;
-        margin-left: 8rem;
-        margin-right: 8rem;
-        border: 1px solid #3b7a8f;
-        border-radius: 10px;
-    }
-
-    #certificate-login {
-        background-color: #3b7a8f;
-        margin-left: 8rem;
-        margin-right: 8rem;
-        border: 1px solid #3b7a8f;
-        border-radius: 10px;
     }
 
     .tab_container {
@@ -115,6 +30,16 @@
         padding-top: 2.3rem;
         overflow-y: scroll;
         height: 78vh;
+    }
+
+    #loginForm {
+        padding-left: 15rem;
+        padding-right: 15rem;
+    }
+
+    #registerForm {
+        padding-left: 4rem;
+        padding-right: 3rem;
     }
 
     .register-form {
@@ -229,22 +154,8 @@
 </section>
 <section class="trainer_area section_gap_top" style="background-color:#e5e5e5;">
     <div class="container">
-        <div class="d-flex">
-            <!--
-            <div class="login_left">
-                <div style="margin-left:60px;">
-                    <img class="mt-5 mx-auto" src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Akupastibisa Logo" />
-                    <span class="login-title">
-                        <h3 style="color:#FFF;margin-top:100px;">JOIN NOW !</h3>
-                        <p>
-                            Membantu Anda mencapai <span class="font-weight-bold" style="color:#44bcd8;">Tujuan</span> serta<br />
-                            mengejar <span class="font-weight-bold" style="color:#44bcd8;">Impian</span> Anda <br /><br />Perbesar kesempatan Anda dalam hidup<br />
-                            dengan meningkatkan <span class="font-weight-bold" style="color:#44bcd8;">Kemampuan</span> Anda dengan<br />belajar dimanapun - kapanpun besama <strong>AkuPastiBisa</strong>
-                        </p>
-                    </span>
-                </div>
-            </div>-->
-            <div class="login_right" style="width:80%; margin-left:60px;">
+        <div class="d-flex justify-content-center">
+            <div class="login_right w-100 mx-5">
                 <ul class="nav nav-tabs d-flex justify-content-around" id="myTab" role="tablist">
                     <li class="nav-item" style="width: 50%;">
                         <a class="nav-link pb-3 pt-3 w-100 text-center active show" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login Instruktur</a>
@@ -295,8 +206,8 @@
                                             <div id="loginWidget" class="g-recaptcha" data-callback="loginCaptcha" data-sitekey="6Ld2qPIUAAAAACBW438Lt3L5DJJhSQoOCm4GkUli"></div>
                                         </div>
                                     </div>
-                                    <div class="col-12 pt-3">
-                                        <button type="submit" class="btn btn-custom w-100"><strong>MASUK</strong></button>
+                                    <div class="col-12 pt-3 d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-custom w-50"><strong>MASUK</strong></button>
                                     </div>
 
                                 </form>
@@ -310,35 +221,53 @@
 
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Nama Lengkap*</label>
-                                        <input type="text" name="instruktur_name" class="form-control" id="inputEmail4" placeholder="Nama Lengkap" required>
+                                        <label for="insName">Nama Lengkap*</label>
+                                        <input type="text" name="instruktur_name" class="form-control" id="insName" placeholder="Nama Lengkap" required>
+                                        <div class="invalid-feedback">
+                                            Nama tidak boleh kosong
+                                        </div>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="inputPassword4">No. Handphone*</label>
-                                        <input type="text" name="instruktur_hp" class="form-control" id="inputPassword4" placeholder="No. Handphone">
+                                        <label for="insPhone">No. Handphone*</label>
+                                        <input type="text" name="instruktur_hp" class="form-control" id="insPhone" placeholder="No. Handphone" onkeypress="return isNumber(event)" required>
+                                        <div class="invalid-feedback">
+                                            Nomor telepon tidak boleh kosong
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Email*</label>
-                                        <input type="email" name="instruktur_email" class="form-control" id="inputEmail4" placeholder="Email">
+                                        <label for="insEmail">Email*</label>
+                                        <input type="email" name="instruktur_email" class="form-control" id="insEmail" placeholder="Email" required>
+                                        <div class="invalid-feedback">
+                                            Email tidak boleh kosong
+                                        </div>
+                                        <div class="invalid-feedback" id="email-exist">
+                                            Email telah terdaftar
+                                        </div>
+                                        <div class="valid-feedback" id="email-available">
+                                            Email tersedia
+                                        </div>
                                     </div>
                                 </div>
                                 <hr />
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <h5 for="inputEmail4">Kelengkapan Dokumen</h5>
+                                        <h5 for="insCV">Kelengkapan Dokumen</h5>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="exampleFormControlFile1">Curriculum Vitae*</label>
+                                        <label for="insCV">Curriculum Vitae*</label>
                                         <label style="font-size: 12px;">(Harap Upload File dalam Bentuk PDF atau PNG)</label>
-                                        <input type="file" name="instruktur_cv" class="form-control-file" required>
+                                        <input type="file" name="instruktur_cv" id="insCV" class="form-control-file" required accept=".pdf,.png">
+                                        <div class="invalid-feedback">
+                                            CV tidak boleh kosong
+                                        </div>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="inputPassword4">Topik yang Ingin Diajukan</label>
-                                        <input type="text" name="instruktur_topik" class="form-control" id="inputPassword4" placeholder="Judul Topik">
+                                        <label for="insTopic">Topik yang Ingin Diajukan*</label>
+                                        <input type="text" name="instruktur_topik" class="form-control" id="insTopic" placeholder="Judul Topik" required>
                                     </div>
                                 </div>
                                 <hr />
@@ -350,22 +279,22 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="inputEmail4">Youtube</label>
-                                        <input type="text" name="instruktur_youtube" class="form-control" id="inputEmail4" placeholder="Link Akun Youtube">
+                                        <label for="youtubeUrl">Youtube</label>
+                                        <input type="text" name="instruktur_youtube" class="form-control" id="youtubeUrl" placeholder="Link Akun Youtube">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="inputPassword4">Instagram</label>
-                                        <input type="text" name="instruktur_instagram" class="form-control" id="inputPassword4" placeholder="Link Akun Instagram">
+                                        <label for="instagramUrl">Instagram</label>
+                                        <input type="text" name="instruktur_instagram" class="form-control" id="instagramUrl" placeholder="Link Akun Instagram">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="inputEmail4">LinkedIn</label>
-                                        <input type="text" name="instruktur_linkedin" class="form-control" id="inputEmail4" placeholder="Link Akun LinkedIn">
+                                        <label for="linkedinUrl">LinkedIn</label>
+                                        <input type="text" name="instruktur_linkedin" class="form-control" id="linkedinUrl" placeholder="Link Akun LinkedIn">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="inputPassword4">Facebook</label>
-                                        <input type="text" name="instruktur_facebook" class="form-control" id="inputPassword4" placeholder="Link Akun Facebook">
+                                        <label for="facebookUrl">Facebook</label>
+                                        <input type="text" name="instruktur_facebook" class="form-control" id="facebookUrl" placeholder="Link Akun Facebook">
                                     </div>
                                 </div>
 
@@ -383,8 +312,8 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-custom w-100">DAFTAR</button>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-custom w-50">DAFTAR</button>
                                 </div>
 
                             </form>
@@ -422,3 +351,137 @@
         });
     </script>
 <?php } ?>
+
+<?php if ($this->session->userdata('success')) { ?>
+    <script>
+        Swal.fire({
+            type: 'success',
+            title: '<h4>Registrasi Berhasil</h4>',
+            text: 'Mohon periksa email Anda untuk melengkapi data diri',
+            showCloseButton: true,
+            showCancelButton: false,
+            timer: 4000,
+        });
+    </script>
+<?php } ?>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+
+    function validateEmail(email) {
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
+
+    var getUrl = window.location;
+    var baseUrl =
+        getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split("/")[0];
+
+    let nameVal = false;
+    let phoneVal = false;
+    let emailVal = false;
+    let cvVal = false;
+
+    $('#insName').blur(function() {
+        let curValue = $(this).val();
+        let curObject = $(this);
+
+        if ($.trim(curValue).length == 0) {
+            // console.log('input kosong');
+            nameVal = false;
+            curObject.css('border-color', '#dc3545');
+            curObject.closest('div').find('.invalid-feedback').show();
+        } else {
+            nameVal = true;
+            // console.log('input isi');
+            curObject.css('border-color', '#28a745');
+            curObject.closest('div').find('.invalid-feedback').hide();
+        }
+    });
+
+    $('#insPhone').blur(function() {
+        let curValue = $(this).val();
+        let curObject = $(this);
+
+        if ($.trim(curValue).length == 0) {
+            // console.log('input kosong');
+            phoneVal = false;
+            curObject.css('border-color', '#dc3545');
+            curObject.closest('div').find('.invalid-feedback').show();
+        } else {
+            phoneVal = true;
+            // console.log('input isi');
+            curObject.css('border-color', '#28a745');
+            curObject.closest('div').find('.invalid-feedback').hide();
+        }
+    });
+
+    $('#insEmail').blur(function() {
+
+        let curValue = $(this).val();
+        let curObject = $(this);
+
+        if (validateEmail(curValue)) {
+            // console.log('ini email, cek');
+            $.get(baseUrl + 'API/checkEmail', {
+                email: curValue
+            }, function(data) {
+                if (data.code == 404) {
+                    emailVal = true;
+                    // console.log(curObject);
+                    curObject.css('border-color', '#28a745');
+                    $('#email-available').show();
+                    $('#email-exist').hide();
+                    // console.log('ok daftar');
+                } else {
+                    emailVal = false;
+                    curObject.css('border-color', '#dc3545');
+                    $('#email-available').hide();
+                    $('#email-exist').show();
+                    // console.log('jangan daftar');
+                }
+            });
+        } else {
+            // console.log('bukan email, jangan cek');
+        }
+    });
+
+    $('#registerForm').submit(function(e) {
+
+        if (!nameVal && !phoneVal & !emailVal & !cvVal) {
+            // console.log('jangan submit');
+            e.preventDefault();
+        } else {
+            // console.log('ok boleh');
+            $(this).submit();
+        }
+    });
+</script>

@@ -24,6 +24,28 @@ class M_profile extends CI_Model
         return $query;
     }
 
+    function checkMemberEmail($email)
+    {
+        $this->db->select('EMAIL');
+        $this->db->from('g_member');
+        $this->db->where('EMAIL', $email);
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
+    function checkTrainerEmail($email)
+    {
+        $this->db->select('TRAINER_EMAIL');
+        $this->db->from('g_trainer');
+        $this->db->where('TRAINER_EMAIL', $email);
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
     function registerAccount($table, $data)
     {
         if ($this->db->insert($table, $data)) {

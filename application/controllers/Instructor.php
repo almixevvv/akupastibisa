@@ -5,7 +5,7 @@ class Instructor extends CI_Controller
 	function __construct()
 	{
 		parent::__construct(true);
-		// $this->output->enable_profiler(TRUE);
+		$this->output->enable_profiler(TRUE);
 		$this->load->model('M_profile', 'profile');
 		$this->load->model('M_cms', 'cms');
 	}
@@ -50,7 +50,7 @@ class Instructor extends CI_Controller
 
 					$this->session->set_userdata('user_data', $newdata);
 				}
-				redirect('home');
+				redirect('instruktur/cms');
 			} else {
 				//Salah password
 				$this->session->set_flashdata('error', 'password');
@@ -69,21 +69,16 @@ class Instructor extends CI_Controller
 
 		$this->load->library('upload');
 
-		$name = $this->input->post('instruktur_name');
-		$hp = $this->input->post('instruktur_hp');
-		$email = $this->input->post('instruktur_email');
-		$topik = $this->input->post('instruktur_topik');
-		$youtube = $this->input->post('instruktur_youtube');
-		$instagram = $this->input->post('instruktur_instagram');
-		$linkedin = $this->input->post('instruktur_linkedin');
-		$facebook = $this->input->post('instruktur_facebook');
-		$updated = date('Y-m-d H:i:s');
-		$created = date('Y-m-d H:i:s');
-
-		$defaultPath = '/assets/img/cv/' . $_FILES['instruktur_cv']['name'];
-		$ext = end((explode(".", $_FILES['instruktur_cv']['name'])));
-		// echo $defaultPath;
-
+		$name 		= $this->input->post('instruktur_name');
+		$hp 		= $this->input->post('instruktur_hp');
+		$email 		= $this->input->post('instruktur_email');
+		$topik 		= $this->input->post('instruktur_topik');
+		$youtube 	= $this->input->post('instruktur_youtube');
+		$instagram 	= $this->input->post('instruktur_instagram');
+		$linkedin 	= $this->input->post('instruktur_linkedin');
+		$facebook 	= $this->input->post('instruktur_facebook');
+		$updated 	= date('Y-m-d H:i:s');
+		$created 	= date('Y-m-d H:i:s');
 
 		$config['upload_path']   = './assets/img/cv/';
 		$config['allowed_types'] = 'jpeg|png|pdf|jpg';
@@ -91,42 +86,42 @@ class Instructor extends CI_Controller
 		$config['file_name']	 = $name . '_CV';
 		$config['overwrite']	 = TRUE;
 
-		$tmpFilename = $config['file_name'];
-
 		$this->upload->initialize($config);
 
 		if (!$this->upload->do_upload('instruktur_cv')) {
-			// echo $this->upload->display_errors();
 			//upload error
-		} else {
-			$this->upload->data();
+			echo $this->upload->display_errors();
+		} else {;
+
+			$dataUpload = $this->upload->data();
+
+			$intermediateSalt = md5(uniqid(rand(), true));
+			$salt = substr($intermediateSalt, 0, 8);
+			$tmpPassword = 'abc123';
+
+			$password = hash("sha256", $tmpPassword . $salt);
+
+			$data = array(
+				'TRAINER_NAME' 			=> $name,
+				'TRAINER_HP' 			=> $hp,
+				'TRAINER_EMAIL'  		=> $email,
+				'TRAINER_PASSWORD'		=> $password,
+				'TRAINER_HASH'			=> $salt,
+				'TRAINER_CV'  			=> '/assets/img/cv/' . $dataUpload['orig_name'],
+				'TRAINER_TOPIK'  		=> $topik,
+				'TRAINER_YOUTUBE'  		=> $youtube,
+				'TRAINER_INSTAGRAM'  	=> $instagram,
+				'TRAINER_LINKEDIN_URL'  => $linkedin,
+				'TRAINER_FACEBOOK_URL'  => $facebook,
+				'TRAINER_STATUS'		=> 'NEW',
+				'TRAINER_JOIN_DATE'		=> $created,
+				'TRAINER_UPDATED'		=> $updated
+			);
+
+			$this->profile->registerAccount('g_trainer', $data);
+			$this->session->set_flashdata('success', true);
+
+			redirect('instructor');
 		}
-
-		$intermediateSalt = md5(uniqid(rand(), true));
-		$salt = substr($intermediateSalt, 0, 8);
-		$tmpPassword = 'abc123';
-
-		$password = hash("sha256", $tmpPassword . $salt);
-
-		$data = array(
-			'TRAINER_NAME' 			=> $name,
-			'TRAINER_HP' 			=> $hp,
-			'TRAINER_EMAIL'  		=> $email,
-			'TRAINER_PASSWORD'		=> $password,
-			'TRAINER_HASH'			=> $salt,
-			'TRAINER_CV'  			=> $tmpFilename . '.' . $ext,
-			'TRAINER_TOPIK'  		=> $topik,
-			'TRAINER_YOUTUBE'  		=> $youtube,
-			'TRAINER_INSTAGRAM'  	=> $instagram,
-			'TRAINER_LINKEDIN_URL'  => $linkedin,
-			'TRAINER_FACEBOOK_URL'  => $facebook,
-			'TRAINER_STATUS'		=> 'NEW',
-			'TRAINER_CREATED'		=> $created,
-			'TRAINER_UPDATED'		=> $updated
-		);
-
-		$this->profile->registerAccount('g_trainer', $data);
-
-		redirect('Instructor');
 	}
 }

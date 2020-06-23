@@ -30,7 +30,7 @@ class Home extends CI_Controller
     public function courses()
     {
         $this->load->view('templates/header');
-        $this->load->view('templates/main-navbar');
+        $this->load->view('templates/home-navbar');
         $this->load->view('pages/courses');
         $this->load->view('templates/footer');
     }
@@ -38,7 +38,7 @@ class Home extends CI_Controller
     public function coursesdetail()
     {
         $this->load->view('templates/header');
-        $this->load->view('templates/main-navbar');
+        $this->load->view('templates/home-navbar');
         $this->load->view('pages/coursesdetail');
         $this->load->view('templates/footer');
     }
@@ -46,7 +46,7 @@ class Home extends CI_Controller
     public function elements()
     {
         $this->load->view('templates/header');
-        $this->load->view('templates/main-navbar');
+        $this->load->view('templates/home-navbar');
         $this->load->view('pages/element');
         $this->load->view('templates/footer');
     }
@@ -62,7 +62,7 @@ class Home extends CI_Controller
     public function blogdetail()
     {
         $this->load->view('templates/header');
-        $this->load->view('templates/main-navbar');
+        $this->load->view('templates/home-navbar');
         $this->load->view('pages/blogdetail');
         $this->load->view('templates/footer');
     }
@@ -72,7 +72,7 @@ class Home extends CI_Controller
         $data['randomQuotes'] = $this->quotes->randomQuotes();
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');
-        $this->load->view('pages/kartu_prakerja',$data);
+        $this->load->view('pages/kartu_prakerja', $data);
         $this->load->view('templates/footer');
     }
 
@@ -87,7 +87,7 @@ class Home extends CI_Controller
         // echo $artikelID;
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');
-        $this->load->view('pages/artikel',$data);
+        $this->load->view('pages/artikel', $data);
         $this->load->view('templates/footer');
         // echo "masuk";
     }

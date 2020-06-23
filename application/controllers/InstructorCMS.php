@@ -20,11 +20,14 @@ class InstructorCMS extends CI_Controller
 
     function dashboard()
     {
-        if (!$this->session->has_userdata('instructor_detail')) {
-            redirect('instruktur/cms/login');
-        } else {
-            echo 'dashboard';
-        }
+        $this->load->view('templates-instructor/header');
+        $this->load->view('pages-instructor/dashboard');
+        $this->load->view('templates-instructor/footer');
+        // if (!$this->session->has_userdata('instructor_detail')) {
+        //     redirect('instruktur/cms/login');
+        // } else {
+        //     echo 'dashboard';
+        // }
     }
 
     function login()

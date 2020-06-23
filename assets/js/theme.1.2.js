@@ -1,5 +1,5 @@
 var getUrl = window.location;
-var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split('/')[1];
+var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split('/')[0];
 (function($) {
 	'use strict';
 	var nav_offset_top = $('header').height() + 50;
@@ -8,7 +8,6 @@ var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split
 			$(window).scroll(function() {
 				var scroll = $(window).scrollTop();
 				if (scroll >= nav_offset_top) {
-					console.log('berubah dong');
 					$('.header_area').addClass('navbar_fixed');
 					$('#navbar-images').attr('src', baseUrl + '/assets/img/logo_dark.png');
 					$('#category-image').attr('src', baseUrl + '/assets/img/ico-resiet_dark.png');
@@ -26,7 +25,10 @@ var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split
 					$('#header-prakerja a').css('color', 'rgb(95, 95, 95)');
 					$('#header-instruktur').css('padding-top', '0.5rem');
 					$('#header-instruktur a').css('color', 'rgb(95, 95, 95)');
-					$('.main_menu').css({ 'padding-top': '15px', 'padding-bottom': '15px' });
+					$('.main_menu').css({
+						'padding-top': '15px',
+						'padding-bottom': '15px'
+					});
 				} else {
 					$('.header_area').removeClass('navbar_fixed');
 					$('#navbar-images').attr('src', baseUrl + '/assets/img/logo.png');
@@ -141,45 +143,96 @@ var baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split
 			mapTypeControl: false,
 			zoom: $zoom,
 			styles: [
-				{ featureType: 'water', elementType: 'geometry.fill', stylers: [ { color: '#dcdfe6' } ] },
-				{ featureType: 'transit', stylers: [ { color: '#808080' }, { visibility: 'off' } ] },
+				{
+					featureType: 'water',
+					elementType: 'geometry.fill',
+					stylers: [ { color: '#dcdfe6' } ]
+				},
+				{
+					featureType: 'transit',
+					stylers: [ { color: '#808080' }, { visibility: 'off' } ]
+				},
 				{
 					featureType: 'road.highway',
 					elementType: 'geometry.stroke',
 					stylers: [ { visibility: 'on' }, { color: '#dcdfe6' } ]
 				},
-				{ featureType: 'road.highway', elementType: 'geometry.fill', stylers: [ { color: '#ffffff' } ] },
+				{
+					featureType: 'road.highway',
+					elementType: 'geometry.fill',
+					stylers: [ { color: '#ffffff' } ]
+				},
 				{
 					featureType: 'road.local',
 					elementType: 'geometry.fill',
 					stylers: [ { visibility: 'on' }, { color: '#ffffff' }, { weight: 1.8 } ]
 				},
-				{ featureType: 'road.local', elementType: 'geometry.stroke', stylers: [ { color: '#d7d7d7' } ] },
+				{
+					featureType: 'road.local',
+					elementType: 'geometry.stroke',
+					stylers: [ { color: '#d7d7d7' } ]
+				},
 				{
 					featureType: 'poi',
 					elementType: 'geometry.fill',
 					stylers: [ { visibility: 'on' }, { color: '#ebebeb' } ]
 				},
-				{ featureType: 'administrative', elementType: 'geometry', stylers: [ { color: '#a7a7a7' } ] },
-				{ featureType: 'road.arterial', elementType: 'geometry.fill', stylers: [ { color: '#ffffff' } ] },
-				{ featureType: 'road.arterial', elementType: 'geometry.fill', stylers: [ { color: '#ffffff' } ] },
+				{
+					featureType: 'administrative',
+					elementType: 'geometry',
+					stylers: [ { color: '#a7a7a7' } ]
+				},
+				{
+					featureType: 'road.arterial',
+					elementType: 'geometry.fill',
+					stylers: [ { color: '#ffffff' } ]
+				},
+				{
+					featureType: 'road.arterial',
+					elementType: 'geometry.fill',
+					stylers: [ { color: '#ffffff' } ]
+				},
 				{
 					featureType: 'landscape',
 					elementType: 'geometry.fill',
 					stylers: [ { visibility: 'on' }, { color: '#efefef' } ]
 				},
-				{ featureType: 'road', elementType: 'labels.text.fill', stylers: [ { color: '#696969' } ] },
+				{
+					featureType: 'road',
+					elementType: 'labels.text.fill',
+					stylers: [ { color: '#696969' } ]
+				},
 				{
 					featureType: 'administrative',
 					elementType: 'labels.text.fill',
 					stylers: [ { visibility: 'on' }, { color: '#737373' } ]
 				},
-				{ featureType: 'poi', elementType: 'labels.icon', stylers: [ { visibility: 'off' } ] },
-				{ featureType: 'poi', elementType: 'labels', stylers: [ { visibility: 'off' } ] },
-				{ featureType: 'road.arterial', elementType: 'geometry.stroke', stylers: [ { color: '#d6d6d6' } ] },
-				{ featureType: 'road', elementType: 'labels.icon', stylers: [ { visibility: 'off' } ] },
+				{
+					featureType: 'poi',
+					elementType: 'labels.icon',
+					stylers: [ { visibility: 'off' } ]
+				},
+				{
+					featureType: 'poi',
+					elementType: 'labels',
+					stylers: [ { visibility: 'off' } ]
+				},
+				{
+					featureType: 'road.arterial',
+					elementType: 'geometry.stroke',
+					stylers: [ { color: '#d6d6d6' } ]
+				},
+				{
+					featureType: 'road',
+					elementType: 'labels.icon',
+					stylers: [ { visibility: 'off' } ]
+				},
 				{},
-				{ featureType: 'poi', elementType: 'geometry.fill', stylers: [ { color: '#dadada' } ] }
+				{
+					featureType: 'poi',
+					elementType: 'geometry.fill',
+					stylers: [ { color: '#dadada' } ]
+				}
 			]
 		});
 	}

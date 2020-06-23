@@ -139,7 +139,7 @@
             <h3 class="mb-30 title_color">Left Aligned</h3>
             <div class="row">
                 <div class="col-md-3">
-                    <img src="img/elements/d.jpg" alt="" class="img-fluid">
+                    <img src="<?php echo base_url('assets/img/elements/d.jpg'); ?>" alt="" class="img-fluid">
                 </div>
                 <div class="col-md-9 mt-sm-20 left-align-p">
                     <p>Recently, the US Federal government banned online casinos from operating in America by making it illegal to
@@ -168,7 +168,7 @@
                         talk a little about what symptoms</p>
                 </div>
                 <div class="col-md-3">
-                    <img src="img/elements/d.jpg" alt="" class="img-fluid">
+                    <img src="<?php echo base_url('assets/img/elements/d.jpg'); ?>" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -230,7 +230,7 @@
                     </div>
                     <div class="table-row">
                         <div class="serial">01</div>
-                        <div class="country"> <img src="img/elements/f1.jpg" alt="flag">Canada</div>
+                        <div class="country"> <img src="<?php echo base_url('assets/img/elements/f1.jpg'); ?>" alt="flag">Canada</div>
                         <div class="visit">645032</div>
                         <div class="percentage">
                             <div class="progress">
@@ -240,7 +240,7 @@
                     </div>
                     <div class="table-row">
                         <div class="serial">02</div>
-                        <div class="country"> <img src="img/elements/f2.jpg" alt="flag">Canada</div>
+                        <div class="country"> <img src="<?php echo base_url('assets/img/elements/f2.jpg'); ?>" alt="flag">Canada</div>
                         <div class="visit">645032</div>
                         <div class="percentage">
                             <div class="progress">
@@ -250,7 +250,7 @@
                     </div>
                     <div class="table-row">
                         <div class="serial">03</div>
-                        <div class="country"> <img src="img/elements/f3.jpg" alt="flag">Canada</div>
+                        <div class="country"> <img src="<?php echo base_url('assets/img/elements/f3.jpg'); ?>" alt="flag">Canada</div>
                         <div class="visit">645032</div>
                         <div class="percentage">
                             <div class="progress">
@@ -260,7 +260,7 @@
                     </div>
                     <div class="table-row">
                         <div class="serial">04</div>
-                        <div class="country"> <img src="img/elements/f4.jpg" alt="flag">Canada</div>
+                        <div class="country"> <img src="<?php echo base_url('assets/img/elements/f4.jpg'); ?>" alt="flag">Canada</div>
                         <div class="visit">645032</div>
                         <div class="percentage">
                             <div class="progress">
@@ -270,7 +270,7 @@
                     </div>
                     <div class="table-row">
                         <div class="serial">05</div>
-                        <div class="country"> <img src="img/elements/f5.jpg" alt="flag">Canada</div>
+                        <div class="country"> <img src="<?php echo base_url('assets/img/elements/f5.jpg'); ?>" alt="flag">Canada</div>
                         <div class="visit">645032</div>
                         <div class="percentage">
                             <div class="progress">
@@ -280,7 +280,7 @@
                     </div>
                     <div class="table-row">
                         <div class="serial">06</div>
-                        <div class="country"> <img src="img/elements/f6.jpg" alt="flag">Canada</div>
+                        <div class="country"> <img src="<?php echo base_url('assets/img/elements/f6.jpg'); ?>" alt="flag">Canada</div>
                         <div class="visit">645032</div>
                         <div class="percentage">
                             <div class="progress">
@@ -290,7 +290,7 @@
                     </div>
                     <div class="table-row">
                         <div class="serial">07</div>
-                        <div class="country"> <img src="img/elements/f7.jpg" alt="flag">Canada</div>
+                        <div class="country"> <img src="<?php echo base_url('assets/img/elements/f7.jpg'); ?>" alt="flag">Canada</div>
                         <div class="visit">645032</div>
                         <div class="percentage">
                             <div class="progress">
@@ -300,7 +300,7 @@
                     </div>
                     <div class="table-row">
                         <div class="serial">08</div>
-                        <div class="country"> <img src="img/elements/f8.jpg" alt="flag">Canada</div>
+                        <div class="country"> <img src="<?php echo base_url('assets/img/elements/f8.jpg'); ?>" alt="flag">Canada</div>
                         <div class="visit">645032</div>
                         <div class="percentage">
                             <div class="progress">
@@ -315,43 +315,43 @@
             <h3 class="title_color">Image Gallery</h3>
             <div class="row gallery-item">
                 <div class="col-md-4">
-                    <a href="img/elements/g1.jpg" class="img-gal">
-                        <div class="single-gallery-image" style="background: url(img/elements/g1.jpg);"></div>
+                    <a href="<?php echo base_url('assets/img/elements/g1.jpg'); ?>" class="img-gal">
+                        <div class="single-gallery-image" style="background: url(<?php echo base_url('assets/img/elements/g1.jpg'); ?>)"></div>
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="img/elements/g2.jpg" class="img-gal">
-                        <div class="single-gallery-image" style="background: url(img/elements/g2.jpg);"></div>
+                    <a href="<?php echo base_url('assets/img/elements/g2.jpg'); ?>" class="img-gal">
+                        <div class="single-gallery-image" style=background: url(<?php echo base_url('assets/img/elements/g2.jpg);'); ?>"></div>
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="img/elements/g3.jpg" class="img-gal">
-                        <div class="single-gallery-image" style="background: url(img/elements/g3.jpg);"></div>
+                    <a href="<?php echo base_url('assets/img/elements/g3.jpg'); ?>" class="img-gal">
+                        <div class="single-gallery-image" style="background: url(<?php echo base_url('assets/img/elements/g3.jpg);'); ?>"></div>
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a href="img/elements/g4.jpg" class="img-gal">
-                        <div class="single-gallery-image" style="background: url(img/elements/g4.jpg);"></div>
+                    <a href="<?php echo base_url('assets/img/elements/g4.jpg'); ?>" class="img-gal">
+                        <div class="single-gallery-image" style="background: url(<?php echo base_url('assets/img/elements/g4.jpg);'); ?>"></div>
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a href="img/elements/g5.jpg" class="img-gal">
-                        <div class="single-gallery-image" style="background: url(img/elements/g5.jpg);"></div>
+                    <a href="<?php echo base_url('assets/img/elements/g5.jpg'); ?>" class="img-gal">
+                        <div class="single-gallery-image" style="background: url(<?php echo base_url('assets/img/elements/g5.jpg);'); ?>"></div>
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="img/elements/g6.jpg" class="img-gal">
-                        <div class="single-gallery-image" style="background: url(img/elements/g6.jpg);"></div>
+                    <a href="<?php echo base_url('assets/img/elements/g6.jpg'); ?>" class="img-gal">
+                        <div class="single-gallery-image" style="background: url(<?php echo base_url('assets/img/elements/g6.jpg);'); ?>"></div>
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="img/elements/g7.jpg" class="img-gal">
-                        <div class="single-gallery-image" style="background: url(img/elements/g7.jpg);"></div>
+                    <a href="<?php echo base_url('assets/img/elements/g7.jpg'); ?>" class="img-gal">
+                        <div class="single-gallery-image" style="background: url(<?php echo base_url('assets/img/elements/g7.jpg);'); ?>"></div>
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="img/elements/g8.jpg" class="img-gal">
-                        <div class="single-gallery-image" style="background: url(img/elements/g8.jpg);"></div>
+                    <a href="<?php echo base_url('assets/img/elements/g8.jpg'); ?>" class="img-gal">
+                        <div class="single-gallery-image" style="background: url(<?php echo base_url('assets/assets/img/elements/g8.jpg);'); ?>"></div>
                     </a>
                 </div>
             </div>
