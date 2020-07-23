@@ -16,7 +16,7 @@ class Instructor extends CI_Controller
 		$data['topCourses'] = $this->courses->topCourse();
 		$data['topTrainer'] = $this->courses->topTrainer_all();
 		$data['randomQuotes'] = $this->quotes->randomQuotes();
-        $data['randomQuotes1'] = $this->quotes->randomQuotes();
+		$data['randomQuotes1'] = $this->quotes->randomQuotes();
 
 		$this->load->view('templates/header');
 		$this->load->view('templates/home-navbar');
@@ -48,6 +48,7 @@ class Instructor extends CI_Controller
 						'name'      => $data->TRAINER_NAME,
 						'email'     => $data->TRAINER_EMAIL,
 						'role'		=> 'INSTRUCTOR',
+						'id'		=> $data->REC_ID,
 						'logged_in' => TRUE
 					);
 

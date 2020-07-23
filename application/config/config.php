@@ -24,7 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 */
 //BASE URL AL
-$config['base_url'] = 'http://akupastibisa.test/';
+$config['base_url'] = 'https://akupastibisa.dev/';
 //BASE URL WISAN
 // $config['base_url'] = 'http://localhost/akupastibisa/';
 /*

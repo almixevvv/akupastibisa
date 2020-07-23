@@ -13,6 +13,27 @@ class M_courses extends CI_Model
         return $query;
     }
 
+    function getAllCourse()
+    {
+        $this->db->select('*');
+        $this->db->from('v_g_courses');
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
+    function getInstructorCourse($id)
+    {
+        $this->db->select('*');
+        $this->db->from('v_g_courses');
+        $this->db->where('COURSE_TRAINER_ID', $id);
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
     function getCourseContentTitle($id)
     {
         $this->db->select('*');
@@ -66,6 +87,27 @@ class M_courses extends CI_Model
         $this->db->select('*');
         $this->db->from('g_course_content');
         $this->db->where('COURSE_SECTION_PARENT', $id);
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
+    function getWYG()
+    {
+        $this->db->select('*');
+        $this->db->from('m_course_wyg');
+
+        $query = $this->db->get();
+
+        return $query;
+    }
+
+    function getContentType()
+    {
+        $this->db->select('*');
+        $this->db->from('m_course_content_type');
+        $this->db->where('TYPE_STATUS', 'ACTIVE');
 
         $query = $this->db->get();
 

@@ -1,5 +1,5 @@
 <?php if (!defined("BASEPATH")) exit("Hack Attempt");
-class InstructorCMS extends CI_Controller
+class Dashboard extends CI_Controller
 {
 
     function __construct()

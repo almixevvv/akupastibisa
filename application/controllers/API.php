@@ -7,10 +7,13 @@ class API extends CI_Controller
     {
         parent::__construct(true);
         $this->load->model('M_profile', 'profile');
+        $this->load->model('M_courses', 'courses');
     }
 
     function checkEmail()
     {
+        $this->incube->getSecureKey();
+
         $email = $this->input->get('email');
 
         $queryEmail = $this->profile->checkTrainerEmail($email);
@@ -29,6 +32,60 @@ class API extends CI_Controller
                 'message'   => 'data doesnt exist',
                 'code'      => 404
             ));
+        }
+    }
+
+    function getWYG()
+    {
+        header('Content-Type: application/json');
+
+        if ($this->incube->getSecureKey()) {
+            echo json_encode(array(
+                'status'    => 400,
+                'message'   => 'restricted access, please contact system administrator',
+                'code'      => 501
+            ));
+        } else {
+            $queryWYG = $this->courses->getWYG();
+
+            $dtArr = array();
+            foreach ($queryWYG->result() as $dt) {
+                $dtArr[] = array(
+                    'text'  => $dt->NAME,
+                    'value' => $dt->TAG
+                );
+            }
+
+            $encode = json_encode($dtArr);
+
+            echo $encode;
+        }
+    }
+
+    function getCourseType()
+    {
+        header('Content-Type: application/json');
+
+        if ($this->incube->getSecureKey()) {
+            echo json_encode(array(
+                'status'    => 400,
+                'message'   => 'restricted access, please contact system administrator',
+                'code'      => 501
+            ));
+        } else {
+            $queryWYG = $this->courses->getContentType();
+
+            $dtArr = array();
+            foreach ($queryWYG->result() as $dt) {
+                $dtArr[] = array(
+                    'text'  => $dt->TYPE_DESC,
+                    'value' => $dt->TYPE_NAME
+                );
+            }
+
+            $encode = json_encode($dtArr);
+
+            echo $encode;
         }
     }
 }

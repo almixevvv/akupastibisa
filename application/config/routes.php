@@ -34,9 +34,11 @@ $route['ojek-online']           = 'home/ojek_online';
 $route['industri-pariwisata']   = 'home/industri_pariwisata';
 
 //Instructor CMS Route
-$route['instruktur/cms']            = 'InstructorCMS/dashboard';
-$route['instruktur/cms/dashboard']  = 'InstructorCMS/dashboard';
-$route['instruktur/cms/login']      = 'InstructorCMS/login';
+$route['instruktur/cms']                       = 'Instructor-CMS/Dashboard/dashboard';
+$route['instruktur/cms/dashboard']             = 'Instructor-CMS/Dashboard/dashboard';
+$route['instruktur/cms/login']                 = 'Instructor-CMS/Dashboard/login';
+$route['instruktur/cms/courses']               = 'Instructor-CMS/Courses/index';
+$route['instruktur/cms/courses/add']           = 'Instructor-CMS/Courses/addCourse';
 
 //Account URI Routing
 $route['login'] = 'login';

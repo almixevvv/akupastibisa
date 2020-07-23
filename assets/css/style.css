@@ -1,5 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Roboto:400, 400i, 500|Rubik:500, %20600";
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 :root {
 	--star-size: 18px;
 	--star-color: #c8c8c8;
@@ -45,7 +45,7 @@ a:hover {
 body {
 	line-height: 25px;
 	font-size: 16px;
-	font-family: roboto, sans-serif;
+	font-family: 'Lato', roboto, sans-serif;
 	font-weight: 400;
 	color: #7b838a;
 }
@@ -55,13 +55,13 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: rubik, sans-serif;
+	font-family: 'Lato', rubik, sans-serif;
 	font-weight: 500;
 	color: #464646;
 }
 
 .page_title h2 {
-	font-family: Open Sans, sans-serif;
+	font-family: 'Lato', Open Sans, sans-serif;
 	font-size: 36px;
 	line-height: 40px;
 	font-weight: 100;
@@ -70,7 +70,7 @@ h6 {
 	text-align: center;
 }
 .page_content p {
-	font-family: Open Sans, sans-serif;
+	font-family: 'Lato', Open Sans, sans-serif;
 	font-size: 18px;
 	line-height: 30px;
 	font-weight: 100;
@@ -528,7 +528,7 @@ button:focus {
 .blog_banner .banner_inner .blog_b_text h2 {
 	font-size: 60px;
 	font-weight: 500;
-	font-family: roboto, sans-serif;
+	font-family: 'Lato', roboto, sans-serif;
 	line-height: 66px;
 	margin-bottom: 15px;
 }
@@ -579,7 +579,7 @@ button:focus {
 .banner_area .banner_inner .banner_content .page_link a {
 	font-size: 15px;
 	color: #fff;
-	font-family: roboto, sans-serif;
+	font-family: 'Lato', roboto, sans-serif;
 	margin-right: 20px;
 	position: relative;
 	text-transform: capitalize;
@@ -756,7 +756,7 @@ button:focus {
 	text-align: center;
 	border-radius: 50px;
 	background: #fdc632;
-	font-family: rubik, sans-serif;
+	font-family: 'Lato', rubik, sans-serif;
 	font-weight: 500;
 	font-size: 20px;
 	-webkit-transition: all .3s ease 0s;
@@ -1064,25 +1064,25 @@ button:focus {
 	color: #ddd;
 	font-size: 14px;
 	font-weight: 500;
-	font-family: roboto, sans-serif;
+	font-family: 'Lato', roboto, sans-serif;
 }
 .register_form input:-moz-placeholder {
 	color: #ddd;
 	font-size: 14px;
 	font-weight: 500;
-	font-family: roboto, sans-serif;
+	font-family: 'Lato', roboto, sans-serif;
 }
 .register_form input::-moz-placeholder {
 	color: #ddd;
 	font-size: 14px;
 	font-weight: 500;
-	font-family: roboto, sans-serif;
+	font-family: 'Lato', roboto, sans-serif;
 }
 .register_form input::-webkit-input-placeholder {
 	color: #ddd;
 	font-size: 14px;
 	font-weight: 500;
-	font-family: roboto, sans-serif;
+	font-family: 'Lato', roboto, sans-serif;
 }
 .register_form .primary-btn {
 	width: 100%;
@@ -1187,7 +1187,7 @@ button:focus {
 	color: #fff;
 	padding-right: 15px;
 	border-right: 2px solid #fff;
-	font-family: rubik, sans-serif;
+	font-family: 'Lato', rubik, sans-serif;
 	font-size: 14px;
 }
 .single_event .event_details .date span {
@@ -1998,7 +1998,7 @@ button:focus {
 	line-height: 26px;
 	color: #999;
 	border: 1px solid #eee;
-	font-family: roboto, sans-serif;
+	font-family: 'Lato', roboto, sans-serif;
 	border-radius: 0;
 	padding-left: 20px;
 }
@@ -2062,7 +2062,7 @@ button:focus {
 	text-align: center;
 	color: #fdc632;
 	padding-bottom: 10px;
-	font-family: roboto, sans-serif;
+	font-family: 'Lato', roboto, sans-serif;
 }
 .modal-message .modal-dialog .modal-content .modal-header p {
 	display: block;
@@ -3354,7 +3354,7 @@ h6 {
 	line-height: 40px;
 	padding: 0 28px;
 	font-size: 14px;
-	font-family: roboto, sans-serif;
+	font-family: 'Lato', roboto, sans-serif;
 	font-weight: 500;
 	text-transform: uppercase;
 	-webkit-transition: all .3s ease 0s;
@@ -3373,7 +3373,7 @@ h6 {
 	padding: 0 32px;
 	font-size: 13px;
 	font-weight: 600;
-	font-family: roboto, sans-serif;
+	font-family: 'Lato', roboto, sans-serif;
 	color: #002347;
 	line-height: 34px;
 	display: inline-block;
@@ -3681,7 +3681,7 @@ h6 {
 	margin-left: -60px;
 	font-size: 12px;
 	text-transform: uppercase;
-	font-family: rubik, sans-serif;
+	font-family: 'Lato', rubik, sans-serif;
 	font-weight: 600;
 	border: 0;
 	-webkit-transition: all .3s ease 0s;
