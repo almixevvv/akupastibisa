@@ -13,8 +13,8 @@ class Instructor extends CI_Controller
 
 	function index()
 	{
-		$data['topCourses'] = $this->courses->topCourse();
-		$data['topTrainer'] = $this->courses->topTrainer_all();
+		$data['topCourses'] = $this->courses->gettopCourse();
+		$data['topTrainer'] = $this->courses->gettopTrainer_all();
 		$data['randomQuotes'] = $this->quotes->randomQuotes();
 		$data['randomQuotes1'] = $this->quotes->randomQuotes();
 

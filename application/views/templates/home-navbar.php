@@ -115,7 +115,7 @@
                                 </a>
                                 <div class="dropdown-menu" id="dropdown-category-position" aria-labelledby="categoryDropdown">
                                     <?php
-                                    $categoryQuery = $this->courses->navbarCategory();
+                                    $categoryQuery = $this->courses->getnavbarCategory();
                                     foreach ($categoryQuery->result() as $categories) {
                                     ?>
                                         <a class="dropdown-item" href="<?php echo base_url('courses/list/' . $categories->CATEGORY_URL); ?>">

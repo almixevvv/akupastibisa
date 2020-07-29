@@ -16,8 +16,8 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $data['topCourses'] = $this->courses->topCourse();
-        $data['topTrainer'] = $this->courses->topTrainer();
+        $data['topCourses'] = $this->courses->gettopCourse();
+        $data['topTrainer'] = $this->courses->gettopTrainer();
         $data['randomQuotes'] = $this->quotes->randomQuotes();
         $data['randomQuotes1'] = $this->quotes->randomQuotes();
 

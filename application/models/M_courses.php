@@ -97,6 +97,7 @@ class M_courses extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('m_course_wyg');
+        $this->db->where('REC_ID !=', '1');
 
         $query = $this->db->get();
 
@@ -106,8 +107,8 @@ class M_courses extends CI_Model
     function getContentType()
     {
         $this->db->select('*');
-        $this->db->from('m_course_content_type');
-        $this->db->where('TYPE_STATUS', 'ACTIVE');
+        $this->db->from('m_course_categories');
+        $this->db->where('CATEGORY_STATUS', 'ACTIVE');
 
         $query = $this->db->get();
 
@@ -149,11 +150,12 @@ class M_courses extends CI_Model
         return $query;
     }
 
-    function topCourse()
+    function gettopCourse()
     {
         $this->db->select('*');
         $this->db->from('v_g_courses');
         $this->db->order_by('COURSE_RATING', 'DESC');
+        $this->db->where('COURSE_STATUS', 'ACTIVE');
         $this->db->limit(4);
 
         $query = $this->db->get();
@@ -161,7 +163,7 @@ class M_courses extends CI_Model
         return $query;
     }
 
-    function searchCourse($query)
+    function getsearchCourse($query)
     {
         $this->db->select('*');
         $this->db->from('v_g_courses');
@@ -174,7 +176,7 @@ class M_courses extends CI_Model
         return $query;
     }
 
-    function navbarCategory()
+    function getnavbarCategory()
     {
         $this->db->select('*');
         $this->db->from('m_course_categories');
@@ -198,7 +200,7 @@ class M_courses extends CI_Model
         return $query;
     }
 
-    function topTrainer()
+    function gettopTrainer()
     {
         $this->db->select('*');
         $this->db->from('g_trainer');
@@ -211,7 +213,7 @@ class M_courses extends CI_Model
         return $query;
     }
 
-    function topTrainer_all()
+    function gettopTrainer_all()
     {
         $this->db->select('*');
         $this->db->from('g_trainer');
@@ -223,13 +225,34 @@ class M_courses extends CI_Model
         return $query;
     }
 
-    function courseAll($trainer_id)
+    function getcourseAll($trainer_id)
     {
         $this->db->select('*');
         $this->db->from('g_courses');
         $this->db->where('COURSE_TRAINER_ID', $trainer_id);
 
         $query = $this->db->get();
+
+        return $query;
+    }
+
+    function postCourses($data)
+    {
+        $query = $this->db->insert('g_courses', $data);
+
+        return $query;
+    }
+
+    function postCourseWYG($data)
+    {
+        $query = $this->db->insert('g_course_wyg_tag', $data);
+
+        return $query;
+    }
+
+    function postCourseRelated($data)
+    {
+        $query = $this->db->insert('g_course_related_tag', $data);
 
         return $query;
     }

@@ -3,7 +3,7 @@
         <div class="sidebar-brand-icon">
             <img src="<?php echo base_url('assets/img/favicon.png'); ?>" alt="Akupastibisa Logo" />
         </div>
-        <div class="sidebar-brand-text mx-3">Akupastibisa Dashboard</div>
+        <div class="sidebar-brand-text mx-3">Dashboard Instruktur</div>
     </a>
 
     <hr class="sidebar-divider my-0">
@@ -26,7 +26,7 @@
             <i class="fas fa-fw fa-cog"></i>
             <span>Kursus</span>
         </a>
-        <div id="collapseCourse" class="collapse" aria-labelledby="collapseCourse" data-parent="#accordionSidebar">
+        <div id="collapseCourse" class="collapse show" aria-labelledby="collapseCourse" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="<?php echo base_url('instruktur/cms/courses?id=' . $this->session->userdata('user_data')['id']); ?>">Kursus Saya</a>
                 <a class=" collapse-item" href="<?php echo base_url('instruktur/cms/courses/add'); ?>">Tambah Kursus</a>
@@ -40,7 +40,7 @@
             <i class="fas fa-fw fa-wrench"></i>
             <span>Pengaturan Profil</span>
         </a>
-        <div id="collapseCategories" class="collapse" aria-labelledby="collapseCategories" data-parent="#accordionSidebar">
+        <div id="collapseCategories" class="collapse show" aria-labelledby="collapseCategories" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="utilities-color.html">Data diri</a>
                 <a class="collapse-item" href="utilities-color.html">Ubah Password</a>

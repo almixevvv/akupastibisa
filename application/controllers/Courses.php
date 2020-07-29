@@ -21,7 +21,7 @@ class Courses extends CI_Controller
         $data['courseData']     = $this->courses->getCourseContentTotal($courseID);
         $data['courseWYG']      = $this->courses->getCourseWYG($courseID);
         $data['courseList'] = $this->courses->getCourseFromUrl($courseID);
-        
+
 
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');
@@ -54,7 +54,7 @@ class Courses extends CI_Controller
 
         $searchQuery = $this->input->get('query');
 
-        $data['courseList'] = $this->courses->searchCourse($searchQuery);
+        $data['courseList'] = $this->courses->getsearchCourse($searchQuery);
 
         $this->load->view('templates/header');
         $this->load->view('templates/home-navbar');

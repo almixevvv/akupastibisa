@@ -27,32 +27,29 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
+                                        <tr class="text-center">
+                                            <th>No</th>
                                             <th>Nama</th>
                                             <th>Instruktur</th>
                                             <th>Rating</th>
                                             <th>Harga</th>
-                                            <th> </th>
+                                            <th>Status</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Nama</th>
-                                            <th>Instruktur</th>
-                                            <th>Rating</th>
-                                            <th>Harga</th>
-                                            <th> </th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <?php foreach ($courseList->result() as $crs) { ?>
                                             <tr>
+                                                <td><?php echo $recNo++; ?></td>
                                                 <td><?php echo $crs->COURSE_NAME; ?></td>
                                                 <td><?php echo $crs->TRAINER_NAME; ?></td>
                                                 <td><?php echo $crs->COURSE_AVERAGE_RATING; ?></td>
                                                 <td><?php echo 'IDR. ' . number_format($crs->COURSE_PRICE, 2, ',', '.'); ?></td>
+                                                <td style="color: <?php echo ($crs->COURSE_STATUS == 'INACTIVE' ? '#e74a3b' : '#1cc88a'); ?>"><?php echo $crs->COURSE_STATUS; ?></td>
                                                 <td>
-                                                    <button type="button" class="btn btn-info btn-circle" data-toggle="modal" data-target="#detailModal" data-id="<?php echo $crs->COURSE_ID; ?>"> <i class="fas fa-info-circle"></i> </button>
+                                                    <button type="button" class="btn btn-info btn-circle" data-toggle="modal" data-target="#detailModal" data-id="<?php echo $crs->COURSE_ID; ?>" title="Lihat detail kursus Anda"> <i class="fas fa-info-circle"></i> </button>
+                                                    <button type="button" class="btn btn-success btn-circle" title="Tambah Konten Kursus" disabled> <i class="fas fa-plus"></i> </button>
+                                                    <button type="button" class="btn btn-danger btn-circle" title="Hapus kursus Anda"> <i class="fas fa-trash"></i> </button>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -94,8 +91,9 @@
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.21/af-2.3.5/b-1.6.2/r-2.2.5/sc-2.0.2/datatables.min.js"></script>
     <script>
-        const getUrl = window.location;
-        const baseUrl = getUrl.protocol + '//' + getUrl.host + '/' + getUrl.pathname.split('/')[0];
+        $(function() {
+            $(document).tooltip();
+        });
 
         $('#dataTable').dataTable({
             "columns": [
